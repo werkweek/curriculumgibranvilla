@@ -649,7 +649,94 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* Split Hero Styles */
+    .hero-content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3.5rem;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+    .hero-image-col {
+      flex: 0 0 280px;
+    }
+    .profile-frame {
+      width: 280px;
+      height: 360px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-luxury), var(--shadow-gold);
+      background: var(--bg-card);
+      position: relative;
+    }
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .profile-frame:hover .profile-img {
+      transform: scale(1.05);
+    }
+    .hero-text-col {
+      flex: 1;
+    }
+    
+    /* Bento & Showcase Image Styles */
+    .bento-image-wrapper {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .bento-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .bento-block:hover .bento-img {
+      transform: scale(1.05);
+    }
+    
+    .showcase-image-wrapper {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .showcase-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .showcase-card:hover .showcase-img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 900px) {
+      .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .hero-image-col {
+        flex: 0 0 auto;
+        margin: 0 auto;
+      }
+      .cta-group, .contact-pills {
+        justify-content: center !important;
+      }
+    }
   </style>
+
 </head>
 <body>
 
@@ -671,42 +758,52 @@
 
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-badge">
-        <i class="fa-solid fa-crown"></i> Full-Stack AI & Media Content Creator
-      </div>
-      <h1 class="hero-name">GIBRAN SAMUEL VILLA FRANCO</h1>
-      <p class="hero-tagline">
-        Ingeniero en Sistemas Computacionales • Creador de Contenido Multimedia • 
-        <strong>Vibe Coder & AI Software Developer</strong> • Especialista en <strong>DaVinci Resolve</strong> y <strong>Canva Pro con IA</strong>.
-      </p>
+      <div class="hero-content-wrapper">
+        <div class="hero-image-col">
+          <div class="profile-frame">
+            <img src="img/profile.jpg" alt="Gibran Samuel Villa Franco" class="profile-img">
+          </div>
+        </div>
+        <div class="hero-text-col">
+          <div class="hero-badge">
+            <i class="fa-solid fa-crown"></i> Full-Stack AI & Media Content Creator
+          </div>
+          <h1 class="hero-name">GIBRAN SAMUEL VILLA FRANCO</h1>
+          <p class="hero-tagline">
+            Ingeniero en Sistemas Computacionales • Creador de Contenido Multimedia • 
+            <strong>Vibe Coder & AI Software Developer</strong> • Especialista en <strong>DaVinci Resolve</strong> y <strong>Canva Pro con IA</strong>.
+          </p>
 
-      <div class="cta-group">
-        <a href="mailto:samf3212@gmail.com" class="btn-lg btn-gold">
-          <i class="fa-solid fa-paper-plane"></i> Contactar por Email
-        </a>
-        <a href="https://instagram.com/samfrankmedia" target="_blank" class="btn-lg btn-outline-gold">
-          <i class="fa-brands fa-instagram"></i> @samfrankmedia
-        </a>
-      </div>
+          <div class="cta-group" style="justify-content: flex-start;">
+            <a href="mailto:samf3212@gmail.com" class="btn-lg btn-gold">
+              <i class="fa-solid fa-paper-plane"></i> Contactar por Email
+            </a>
+            <a href="https://instagram.com/samfrankmedia" target="_blank" class="btn-lg btn-outline-gold">
+              <i class="fa-brands fa-instagram"></i> @samfrankmedia
+            </a>
+          </div>
 
-      <div class="contact-pills">
-        <a href="tel:6143550095" class="pill">
-          <i class="fa-solid fa-phone"></i> 614-355-0095 / 614-304-2608
-        </a>
-        <a href="mailto:samf3212@gmail.com" class="pill" onclick="copyToClipboard('samf3212@gmail.com'); return false;">
-          <i class="fa-solid fa-copy"></i> samf3212@gmail.com
-        </a>
-        <span class="pill">
-          <i class="fa-solid fa-location-dot"></i> Chihuahua, Chihuahua, México
-        </span>
-        <span class="pill">
-          <i class="fa-solid fa-globe"></i> Inglés C1 Advanced (90%)
-        </span>
-        <span class="pill">
-          🇨🇳 Chino Mandarín (HSK 1 - +600 días autodidacta)
-        </span>
+          <div class="contact-pills" style="justify-content: flex-start;">
+            <a href="tel:6143550095" class="pill">
+              <i class="fa-solid fa-phone"></i> 614-355-0095 / 614-304-2608
+            </a>
+            <a href="mailto:samf3212@gmail.com" class="pill" onclick="copyToClipboard('samf3212@gmail.com'); return false;">
+              <i class="fa-solid fa-copy"></i> samf3212@gmail.com
+            </a>
+            <span class="pill">
+              <i class="fa-solid fa-location-dot"></i> Chihuahua, Chihuahua, México
+            </span>
+            <span class="pill">
+              <i class="fa-solid fa-globe"></i> Inglés C1 Advanced (90%)
+            </span>
+            <span class="pill">
+              🇨🇳 Chino Mandarín (HSK 1 - +600 días autodidacta)
+            </span>
+          </div>
+        </div>
       </div>
     </section>
+
 
     <!-- Executive Stats Grid -->
     <section class="stats-section">
@@ -742,6 +839,9 @@
           <div class="bento-header">
             <i class="fa-solid fa-code"></i> Software, IA & Vibe Coding
           </div>
+          <div class="bento-image-wrapper">
+            <img src="img/coding.jpg" alt="Software, IA & Vibe Coding" class="bento-img">
+          </div>
           <div class="badge-list">
             <span class="badge badge-gold">Vibe Coding & Pair Programming</span>
             <span class="badge badge-gold">Desarrollo Web con IA</span>
@@ -758,6 +858,9 @@
           <div class="bento-header">
             <i class="fa-solid fa-film"></i> Producción, Diseño & Drones
           </div>
+          <div class="bento-image-wrapper">
+            <img src="img/drone.jpg" alt="Producción, Diseño & Drones" class="bento-img">
+          </div>
           <div class="badge-list">
             <span class="badge badge-gold">DaVinci Resolve (Nivel Avanzado)</span>
             <span class="badge badge-gold">Canva Pro con IA Avanzado</span>
@@ -768,6 +871,7 @@
             <span class="badge">Producción de Podcasts</span>
           </div>
         </div>
+
 
         <div class="bento-block">
           <div class="bento-header">
@@ -797,6 +901,9 @@
         <div class="showcase-card">
           <div>
             <div class="showcase-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="showcase-image-wrapper">
+              <img src="img/wedding.jpg" alt="Sam Frank Media" class="showcase-img">
+            </div>
             <h3 class="showcase-title">@samfrankmedia</h3>
             <p class="showcase-desc">
               Canal principal de creación de contenido audiovisual, tomas aéreas cinematográficas con dron, producciones comerciales y desarrollo digital.
@@ -806,6 +913,7 @@
             Visitar Instagram <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
+
 
         <div class="showcase-card">
           <div>
