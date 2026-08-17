@@ -3,44 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gibran Samuel Villa Franco | Executive Full-Stack AI & Media Creator</title>
+  <title id="page-title">Gibran Samuel Villa Franco | Business Systems & AI Software Engineer</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Portafolio Ejecutivo de Gibran Samuel Villa Franco. Ingeniero en Sistemas, Creador de Contenido, Experto en DaVinci Resolve, Canva IA, Vibe Coding y Piloto de Dron FAA.">
+  <meta name="description" id="page-meta-desc" content="Portafolio Ejecutivo y CV Adaptable de Gibran Samuel Villa Franco. Ingeniero en Sistemas, Business Systems Developer, Automatización con IA y Producción Tecnológica.">
   <meta name="author" content="Gibran Samuel Villa Franco">
 
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
       /* Luxury Dark Tech Palette */
-      --bg-dark: #090b10;
-      --bg-card: rgba(15, 19, 28, 0.82);
-      --bg-card-hover: rgba(22, 28, 42, 0.92);
-      --border-subtle: rgba(255, 255, 255, 0.07);
+      --bg-dark: #07090e;
+      --bg-card: rgba(13, 17, 26, 0.86);
+      --bg-card-hover: rgba(20, 26, 40, 0.94);
+      --border-subtle: rgba(255, 255, 255, 0.08);
       
-      /* Accent Colors: Champagne Gold, Cobalt Blue, Platinum Silver */
+      /* Accent Colors: Champagne Gold, Cobalt Blue, Emerald Green */
       --gold-primary: #d4af37;
-      --gold-light: #f3e5ab;
-      --gold-dark: #aa7c11;
-      --gradient-gold: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
-      --gradient-gold-subtle: linear-gradient(135deg, rgba(243, 229, 171, 0.12) 0%, rgba(212, 175, 55, 0.05) 100%);
+      --gold-light: #f5e7b2;
+      --gold-dark: #a0740e;
+      --gradient-gold: linear-gradient(135deg, #f5e7b2 0%, #d4af37 50%, #a0740e 100%);
+      --gradient-gold-subtle: linear-gradient(135deg, rgba(245, 231, 178, 0.12) 0%, rgba(212, 175, 55, 0.04) 100%);
 
       --cobalt-primary: #0284c7;
+      --cobalt-light: #38bdf8;
       --cobalt-deep: #1e40af;
       --gradient-cobalt: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #1e40af 100%);
+
+      --emerald-primary: #10b981;
+      --emerald-light: #34d399;
 
       --silver-platinum: #e2e8f0;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --text-dim: #64748b;
 
-      --shadow-luxury: 0 25px 60px rgba(0, 0, 0, 0.6);
-      --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.15);
+      --shadow-luxury: 0 25px 60px rgba(0, 0, 0, 0.65);
+      --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.18);
+      --shadow-blue: 0 10px 30px rgba(2, 132, 199, 0.2);
     }
 
     * {
@@ -57,9 +62,9 @@
       line-height: 1.65;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 50%, rgba(2, 132, 199, 0.06) 0%, transparent 45%),
-        radial-gradient(circle at 50% 90%, rgba(30, 64, 175, 0.04) 0%, transparent 50%);
+        radial-gradient(circle at 12% 12%, rgba(212, 175, 55, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 88% 45%, rgba(2, 132, 199, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
       background-attachment: fixed;
     }
 
@@ -71,7 +76,7 @@
       background: var(--bg-dark);
     }
     ::-webkit-scrollbar-thumb {
-      background: rgba(212, 175, 55, 0.3);
+      background: rgba(212, 175, 55, 0.35);
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
@@ -79,7 +84,7 @@
     }
 
     .container {
-      max-width: 1140px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
@@ -91,33 +96,36 @@
       left: 50%;
       transform: translateX(-50%);
       width: calc(100% - 3rem);
-      max-width: 1100px;
-      background: rgba(11, 14, 22, 0.88);
+      max-width: 1120px;
+      background: rgba(10, 13, 20, 0.90);
       backdrop-filter: blur(24px);
-      border: 1px solid rgba(212, 175, 55, 0.2);
+      border: 1px solid rgba(212, 175, 55, 0.25);
       border-radius: 60px;
-      padding: 0.75rem 2rem;
+      padding: 0.75rem 1.75rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     }
 
     .nav-brand {
       font-family: 'Cinzel', serif;
       font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.15em;
+      font-size: 1.15rem;
+      letter-spacing: 0.12em;
       background: var(--gradient-gold);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.75rem;
+      gap: 1.5rem;
       list-style: none;
     }
 
@@ -134,13 +142,19 @@
       color: var(--gold-light);
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
     .nav-btn {
       background: var(--gradient-gold);
       color: #080a0f;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
       font-size: 0.85rem;
-      padding: 0.55rem 1.4rem;
+      padding: 0.55rem 1.25rem;
       border-radius: 50px;
       border: none;
       cursor: pointer;
@@ -148,67 +162,262 @@
       transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+      gap: 0.45rem;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
     }
 
     .nav-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45);
     }
 
-    @media (max-width: 768px) {
+    .nav-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--silver-platinum);
+      padding: 0.55rem 1rem;
+      font-size: 0.82rem;
+    }
+
+    .nav-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border-color: var(--gold-primary);
+    }
+
+    @media (max-width: 960px) {
       .nav-links { display: none; }
+    }
+
+    /* DYNAMIC ROLE SWITCHER BAR (MAIN FEATURE) */
+    .role-switcher-container {
+      margin-top: 6.8rem;
+      margin-bottom: 2rem;
+      background: rgba(14, 18, 28, 0.92);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 20px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 10;
+    }
+
+    .role-switcher-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .role-switcher-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .role-share-btn {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .role-share-btn:hover {
+      background: var(--gold-primary);
+      color: #090b10;
+    }
+
+    .role-tabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .role-tab-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .role-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .role-tab-btn.active {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.1);
+    }
+
+    .role-tab-btn.active::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gradient-gold);
+    }
+
+    .role-tab-name {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .role-tab-btn.active .role-tab-name {
+      color: var(--gold-light);
+    }
+
+    .role-tab-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .role-summary-banner {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      background: rgba(2, 132, 199, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .role-summary-banner i {
+      color: var(--cobalt-light);
+      font-size: 1.1rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Hero Section */
     .hero {
-      padding-top: 9.5rem;
-      padding-bottom: 4.5rem;
-      text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 3.5rem;
+      text-align: left;
       position: relative;
+    }
+
+    .hero-content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-image-col {
+      flex: 0 0 280px;
+    }
+
+    .profile-frame {
+      width: 280px;
+      height: 360px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-luxury), var(--shadow-gold);
+      background: var(--bg-card);
+      position: relative;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .profile-frame:hover .profile-img {
+      transform: scale(1.05);
+    }
+
+    .hero-text-col {
+      flex: 1;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      background: rgba(212, 175, 55, 0.08);
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.4);
       color: var(--gold-light);
       padding: 0.45rem 1.4rem;
       border-radius: 50px;
       font-family: 'Outfit', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 600;
+      font-size: 0.84rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: all 0.3s ease;
     }
 
     .hero-name {
       font-family: 'Cinzel', serif;
-      font-size: 3.6rem;
+      font-size: 3.2rem;
       font-weight: 700;
       line-height: 1.15;
-      letter-spacing: 0.04em;
-      margin-bottom: 1.25rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
       background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     @media (max-width: 768px) {
-      .hero-name { font-size: 2.3rem; }
+      .hero-name { font-size: 2.2rem; }
     }
 
     .hero-tagline {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 840px;
-      margin: 0 auto 2.75rem;
+      max-width: 800px;
+      margin-bottom: 2rem;
       font-weight: 300;
       line-height: 1.7;
+      min-height: 58px;
     }
 
     .hero-tagline strong {
@@ -218,47 +427,59 @@
 
     .cta-group {
       display: flex;
-      justify-content: center;
-      gap: 1.25rem;
+      justify-content: flex-start;
+      gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 3.25rem;
+      margin-bottom: 2rem;
     }
 
     .btn-lg {
-      padding: 0.9rem 2.2rem;
-      font-size: 0.95rem;
+      padding: 0.85rem 1.8rem;
+      font-size: 0.92rem;
       border-radius: 50px;
       font-weight: 700;
       font-family: 'Outfit', sans-serif;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.55rem;
       transition: all 0.3s ease;
       cursor: pointer;
+      border: none;
     }
 
     .btn-gold {
       background: var(--gradient-gold);
       color: #080a0f;
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.28);
     }
 
     .btn-gold:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.45);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
     }
 
     .btn-outline-gold {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(212, 175, 55, 0.35);
       color: var(--gold-light);
     }
 
     .btn-outline-gold:hover {
-      background: rgba(212, 175, 55, 0.08);
+      background: rgba(212, 175, 55, 0.12);
       border-color: var(--gold-primary);
       transform: translateY(-3px);
+    }
+
+    .btn-cobalt {
+      background: var(--gradient-cobalt);
+      color: #ffffff;
+      box-shadow: 0 8px 25px rgba(2, 132, 199, 0.3);
+    }
+
+    .btn-cobalt:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.4);
     }
 
     /* Contact Pills */
@@ -266,26 +487,25 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.65rem;
       flex-wrap: wrap;
-      margin-top: 1rem;
     }
 
     .pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      background: rgba(15, 23, 42, 0.72);
+      gap: 0.5rem;
+      background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(16px);
-      border: 1px solid rgba(212, 175, 55, 0.28);
-      padding: 0.55rem 1.15rem;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 0.45rem 1rem;
       border-radius: 12px;
       color: #f1f5f9;
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       font-weight: 500;
       text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .pill:hover {
@@ -293,21 +513,34 @@
       color: #ffffff;
       border-color: var(--gold-primary);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
     }
 
     .pill i {
       color: var(--gold-light);
     }
 
+    @media (max-width: 900px) {
+      .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .hero-image-col {
+        margin: 0 auto;
+      }
+      .cta-group, .contact-pills {
+        justify-content: center !important;
+      }
+    }
+
     /* Executive Stat Cards */
     .stats-section {
-      padding: 2.5rem 0 3.5rem;
+      padding: 1.5rem 0 2.5rem;
     }
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.25rem;
     }
 
@@ -316,7 +549,7 @@
       backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
       border-radius: 20px;
-      padding: 2rem 1.5rem;
+      padding: 1.75rem 1.5rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -335,25 +568,25 @@
     }
 
     .stat-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       border-color: rgba(212, 175, 55, 0.4);
       box-shadow: var(--shadow-gold);
     }
 
     .stat-number {
       font-family: 'Cinzel', serif;
-      font-size: 2.75rem;
+      font-size: 2.5rem;
       font-weight: 700;
       background: var(--gradient-gold);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1.1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .stat-label {
       color: var(--text-muted);
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 500;
     }
 
@@ -373,12 +606,20 @@
       border-color: rgba(255, 255, 255, 0.12);
     }
 
+    .section-title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
     .section-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.7rem;
+      font-size: 1.65rem;
       font-weight: 700;
       letter-spacing: -0.01em;
-      margin-bottom: 1.75rem;
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -392,10 +633,43 @@
       -webkit-text-fill-color: transparent;
     }
 
+    /* Interactive Skill Search & Tag Filters */
+    .skill-search-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      max-width: 320px;
+      transition: all 0.25s ease;
+    }
+
+    .skill-search-box:focus-within {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .skill-search-input {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.85rem;
+      width: 100%;
+      outline: none;
+    }
+
+    .skill-search-input::placeholder {
+      color: var(--text-dim);
+    }
+
     /* Bento Grid Matrix */
     .bento-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
@@ -405,22 +679,60 @@
       border-radius: 20px;
       padding: 1.75rem;
       transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .bento-block.highlighted-block {
+      border-color: rgba(212, 175, 55, 0.5);
+      background: rgba(212, 175, 55, 0.03);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
     }
 
     .bento-block:hover {
       background: var(--bg-card-hover);
-      border-color: rgba(212, 175, 55, 0.3);
+      border-color: rgba(212, 175, 55, 0.35);
+      transform: translateY(-3px);
     }
 
     .bento-header {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       font-weight: 700;
       color: var(--gold-light);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      justify-content: space-between;
+    }
+
+    .bento-badge-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+
+    .bento-image-wrapper {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .bento-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .bento-block:hover .bento-img {
+      transform: scale(1.06);
     }
 
     .badge-list {
@@ -433,24 +745,43 @@
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: var(--text-main);
-      padding: 0.45rem 0.85rem;
+      padding: 0.42rem 0.8rem;
       border-radius: 10px;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 500;
       transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge.match-search {
+      background: rgba(212, 175, 55, 0.25) !important;
+      border-color: var(--gold-primary) !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     }
 
     .badge-gold {
       background: rgba(212, 175, 55, 0.12) !important;
-      border-color: rgba(212, 175, 55, 0.35) !important;
+      border-color: rgba(212, 175, 55, 0.38) !important;
       color: var(--gold-light) !important;
       font-weight: 600 !important;
     }
 
     .badge-cobalt {
       background: rgba(2, 132, 199, 0.12) !important;
-      border-color: rgba(2, 132, 199, 0.35) !important;
+      border-color: rgba(2, 132, 199, 0.38) !important;
       color: #38bdf8 !important;
+      font-weight: 600 !important;
+    }
+
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.12) !important;
+      border-color: rgba(16, 185, 129, 0.38) !important;
+      color: #34d399 !important;
       font-weight: 600 !important;
     }
 
@@ -465,7 +796,7 @@
       background: rgba(255, 255, 255, 0.015);
       border: 1px solid var(--border-subtle);
       border-radius: 20px;
-      padding: 2rem;
+      padding: 1.85rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -473,39 +804,59 @@
     }
 
     .showcase-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       border-color: rgba(212, 175, 55, 0.35);
       background: var(--bg-card-hover);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
     }
 
     .showcase-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
       background: var(--gradient-gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       color: #080a0f;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.25rem;
       box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+    }
+
+    .showcase-image-wrapper {
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .showcase-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .showcase-card:hover .showcase-img {
+      transform: scale(1.06);
     }
 
     .showcase-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       color: var(--text-main);
     }
 
     .showcase-desc {
       color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.65;
-      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.35rem;
     }
 
     .showcase-link {
@@ -514,13 +865,13 @@
       gap: 0.5rem;
       color: var(--gold-light);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       text-decoration: none;
       transition: gap 0.25s ease;
     }
 
     .showcase-link:hover {
-      gap: 0.8rem;
+      gap: 0.75rem;
     }
 
     /* Executive Timeline */
@@ -550,7 +901,7 @@
 
     .role-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--text-main);
     }
@@ -577,9 +928,10 @@
 
     .role-bullets li {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       position: relative;
       padding-left: 1.25rem;
+      line-height: 1.55;
     }
 
     .role-bullets li::before {
@@ -587,8 +939,13 @@
       position: absolute;
       left: 0;
       color: var(--gold-primary);
-      font-size: 0.65rem;
-      top: 3px;
+      font-size: 0.62rem;
+      top: 4px;
+    }
+
+    .role-bullets li strong {
+      color: #f1f5f9;
+      font-weight: 600;
     }
 
     /* 2 Columns Grid */
@@ -656,92 +1013,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-    /* Split Hero Styles */
-    .hero-content-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 3.5rem;
-      text-align: left;
-      margin-top: 1.5rem;
-    }
-    .hero-image-col {
-      flex: 0 0 280px;
-    }
-    .profile-frame {
-      width: 280px;
-      height: 360px;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 2px solid rgba(212, 175, 55, 0.4);
-      box-shadow: var(--shadow-luxury), var(--shadow-gold);
-      background: var(--bg-card);
-      position: relative;
-    }
-    .profile-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .profile-frame:hover .profile-img {
-      transform: scale(1.05);
-    }
-    .hero-text-col {
-      flex: 1;
-    }
-    
-    /* Bento & Showcase Image Styles */
-    .bento-image-wrapper {
-      width: 100%;
-      height: 140px;
-      overflow: hidden;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    .bento-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .bento-block:hover .bento-img {
-      transform: scale(1.05);
-    }
-    
-    .showcase-image-wrapper {
-      width: 100%;
-      height: 160px;
-      overflow: hidden;
-      border-radius: 12px;
-      margin-bottom: 1.2rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    .showcase-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .showcase-card:hover .showcase-img {
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 900px) {
-      .hero-content-wrapper {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-      }
-      .hero-image-col {
-        flex: 0 0 auto;
-        margin: 0 auto;
-      }
-      .cta-group, .contact-pills {
-        justify-content: center !important;
-      }
-    }
 
     /* Interactive Background Canvas */
     #bg-canvas {
@@ -753,12 +1024,126 @@
       pointer-events: none;
       z-index: 0;
     }
+
     .container, .navbar, footer {
       position: relative;
       z-index: 2;
     }
-  </style>
 
+    /* ATS PRINT / PDF EXPORT STYLESHEET */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        background-image: none !important;
+        font-family: 'Arial', sans-serif !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+      }
+
+      #bg-canvas, .navbar, .role-switcher-container, .cta-group, .skill-search-box, .showcase-image-wrapper, .bento-image-wrapper, .toast, .role-share-btn {
+        display: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .hero {
+        padding-top: 0 !important;
+        padding-bottom: 1rem !important;
+      }
+
+      .profile-frame {
+        display: none !important;
+      }
+
+      .hero-name {
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
+        font-size: 20pt !important;
+        margin-bottom: 4pt !important;
+      }
+
+      .hero-badge {
+        border: 1px solid #000000 !important;
+        color: #000000 !important;
+        font-size: 10pt !important;
+        padding: 2pt 8pt !important;
+      }
+
+      .hero-tagline {
+        color: #222222 !important;
+        font-size: 10.5pt !important;
+        margin-bottom: 10pt !important;
+      }
+
+      .contact-pills {
+        gap: 8pt !important;
+      }
+
+      .pill {
+        border: 1px solid #999999 !important;
+        background: transparent !important;
+        color: #000000 !important;
+        font-size: 9pt !important;
+        padding: 2pt 6pt !important;
+        box-shadow: none !important;
+      }
+
+      .card, .stat-card, .bento-block, .showcase-card {
+        background: #ffffff !important;
+        border: 1px solid #dddddd !important;
+        box-shadow: none !important;
+        color: #000000 !important;
+        padding: 10pt !important;
+        margin-bottom: 12pt !important;
+        page-break-inside: avoid;
+      }
+
+      .section-title {
+        color: #000000 !important;
+        font-size: 14pt !important;
+        border-bottom: 1.5pt solid #000000 !important;
+        padding-bottom: 3pt !important;
+      }
+
+      .section-title i {
+        display: none !important;
+      }
+
+      .role-title {
+        color: #000000 !important;
+        font-size: 11.5pt !important;
+      }
+
+      .company-name {
+        color: #333333 !important;
+        font-size: 10pt !important;
+      }
+
+      .role-date {
+        color: #555555 !important;
+      }
+
+      .role-bullets li {
+        color: #111111 !important;
+        font-size: 9.5pt !important;
+      }
+
+      .role-bullets li::before {
+        color: #000000 !important;
+      }
+
+      .badge {
+        background: #f1f1f1 !important;
+        border: 1px solid #cccccc !important;
+        color: #000000 !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -767,20 +1152,79 @@
 
   <!-- Executive Navigation -->
   <nav class="navbar">
-    <a href="#" class="nav-brand">GIBRAN VILLA</a>
+    <a href="#" class="nav-brand">
+      <i class="fa-solid fa-code-merge" style="color: var(--gold-primary);"></i> GIBRAN VILLA
+    </a>
     <ul class="nav-links">
       <li><a href="#especialidades">Habilidades</a></li>
-      <li><a href="#proyectos">Canales & Proyectos</a></li>
       <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#certificaciones">Certificaciones</a></li>
+      <li><a href="#proyectos">Proyectos Clave</a></li>
+      <li><a href="#certificaciones">Educación & Certificaciones</a></li>
     </ul>
-    <a href="curriculum_gibran_villa.pdf" download class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-      <i class="fa-solid fa-file-pdf"></i> Descargar PDF CV
-    </a>
-
+    <div class="nav-actions">
+      <button onclick="exportATSResume()" class="nav-btn nav-btn-secondary" title="Generar versión limpia para sistemas ATS y reclutadores">
+        <i class="fa-solid fa-print"></i> ATS PDF
+      </button>
+      <a href="curriculum_gibran_villa.pdf" download id="pdf-download-btn" class="nav-btn">
+        <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
+      </a>
+    </div>
   </nav>
 
   <div class="container">
+
+    <!-- DYNAMIC ROLE SELECTOR (ADAPTABLE CV ENGINE) -->
+    <div class="role-switcher-container">
+      <div class="role-switcher-header">
+        <div class="role-switcher-title">
+          <i class="fa-solid fa-sliders"></i> Modo Reclutador / Enfoque del Perfil
+        </div>
+        <button onclick="copyRoleLink()" class="role-share-btn" id="role-share-btn">
+          <i class="fa-solid fa-link"></i> Copiar enlace de este perfil
+        </button>
+      </div>
+
+      <div class="role-tabs">
+        <!-- Tab 1: Business Systems & Software -->
+        <button class="role-tab-btn active" id="tab-systems" onclick="setRole('systems')">
+          <div class="role-tab-name">
+            <i class="fa-solid fa-server" style="color: #38bdf8;"></i> Business Systems & Dev
+          </div>
+          <div class="role-tab-sub">Integraciones, Python, APIs, ALM, SLAs y Arquitectura Empresarial (GKN Aerospace).</div>
+        </button>
+
+        <!-- Tab 2: AI & Automation -->
+        <button class="role-tab-btn" id="tab-ai" onclick="setRole('ai')">
+          <div class="role-tab-name">
+            <i class="fa-solid fa-brain" style="color: #f5e7b2;"></i> AI & Automation Engineer
+          </div>
+          <div class="role-tab-sub">Vibe Coding, Agentes Autónomos, Prompt Engineering, Bots y Flujos LLM.</div>
+        </button>
+
+        <!-- Tab 3: Creative Tech & Media -->
+        <button class="role-tab-btn" id="tab-media" onclick="setRole('media')">
+          <div class="role-tab-name">
+            <i class="fa-solid fa-clapperboard" style="color: #34d399;"></i> Media & Creative Tech
+          </div>
+          <div class="role-tab-sub">DaVinci Resolve, Pipelines de Edición, Drones (FAA) y Podcast Multicámara.</div>
+        </button>
+
+        <!-- Tab 4: Holistic / Full Profile -->
+        <button class="role-tab-btn" id="tab-all" onclick="setRole('all')">
+          <div class="role-tab-name">
+            <i class="fa-solid fa-globe" style="color: #e2e8f0;"></i> Perfil Ejecutivo Integral
+          </div>
+          <div class="role-tab-sub">Visión completa: Sistemas Computacionales + IA + Creación de Medios.</div>
+        </button>
+      </div>
+
+      <div class="role-summary-banner" id="role-banner">
+        <i class="fa-solid fa-circle-info"></i>
+        <span id="role-banner-text">
+          <strong>Vista activa: Business Systems & Software Engineer.</strong> Resalta experiencia en desarrollo de sistemas empresariales, APIs, ciclo de vida de aplicaciones (ALM), automatización de procesos y cumplimiento de SLAs.
+        </span>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -791,28 +1235,27 @@
           </div>
         </div>
         <div class="hero-text-col">
-          <div class="hero-badge">
-            <i class="fa-solid fa-crown"></i> Full-Stack AI & Media Content Creator
+          <div class="hero-badge" id="hero-badge">
+            <i class="fa-solid fa-server"></i> Business Systems Developer
           </div>
           <h1 class="hero-name">GIBRAN SAMUEL VILLA FRANCO</h1>
-          <p class="hero-tagline">
-            Ingeniero en Sistemas Computacionales • Creador de Contenido Multimedia • 
-            <strong>Vibe Coder & AI Software Developer</strong> • Especialista en <strong>DaVinci Resolve</strong> y <strong>Canva Pro con IA</strong>.
+          <p class="hero-tagline" id="hero-tagline">
+            Ingeniero en Sistemas Computacionales (UACH) especializado en <strong>arquitectura de software, integraciones empresariales (APIs/ALM), automatización con Python</strong> y soporte bajo estándares SLA.
           </p>
 
-          <div class="cta-group" style="justify-content: flex-start;">
+          <div class="cta-group">
             <a href="mailto:samf3212@gmail.com" class="btn-lg btn-gold">
               <i class="fa-solid fa-paper-plane"></i> Contactar por Email
             </a>
             <a href="https://www.linkedin.com/in/gibran-villa/" target="_blank" class="btn-lg btn-outline-gold">
               <i class="fa-brands fa-linkedin"></i> LinkedIn
             </a>
-            <a href="https://instagram.com/samfrankmedia" target="_blank" class="btn-lg btn-outline-gold">
-              <i class="fa-brands fa-instagram"></i> @samfrankmedia
-            </a>
+            <button onclick="exportATSResume()" class="btn-lg btn-cobalt">
+              <i class="fa-solid fa-file-pdf"></i> Imprimir / ATS PDF
+            </button>
           </div>
 
-          <div class="contact-pills" style="justify-content: flex-start;">
+          <div class="contact-pills">
             <a href="tel:6143042608" class="pill">
               <i class="fa-solid fa-phone"></i> 614-304-2608
             </a>
@@ -823,213 +1266,120 @@
               <i class="fa-solid fa-copy"></i> samf3212@gmail.com
             </a>
             <span class="pill">
-              <i class="fa-solid fa-location-dot"></i> Chihuahua, Chihuahua, México
+              <i class="fa-solid fa-location-dot"></i> Chihuahua, Chih., México
             </span>
             <span class="pill">
               <i class="fa-solid fa-globe"></i> Inglés C1 Advanced (90%)
             </span>
             <span class="pill">
-              🇨🇳 Chino Mandarín (HSK 1 - +600 días autodidacta)
+              🇨🇳 Chino Mandarín (HSK 1 - +600 días)
             </span>
           </div>
         </div>
       </div>
     </section>
 
-
     <!-- Executive Stats Grid -->
     <section class="stats-section">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">600+</div>
-          <div class="stat-label">Días de Estudio Autodidacta en Chino Mandarín</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">53+</div>
-          <div class="stat-label">Episodios Semanales Podcast "Hijos del Trago"</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">18+</div>
-          <div class="stat-label">Marcas Comerciales e Inmobiliarias Atendidas</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Desarrollo Ágil con IA & Vibe Coding</div>
-        </div>
+      <div class="stats-grid" id="stats-grid">
+        <!-- Rendered via JS based on active role -->
       </div>
     </section>
 
     <!-- Bento Skills Matrix -->
     <section id="especialidades" class="card">
-      <h2 class="section-title">
-        <i class="fa-solid fa-microchip"></i> Habilidades Técnicas y Especialidades
-      </h2>
+      <div class="section-title-wrapper">
+        <h2 class="section-title">
+          <i class="fa-solid fa-microchip"></i> Matriz de Competencias y Tecnologías
+        </h2>
+        <div class="skill-search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color: var(--gold-light);"></i>
+          <input type="text" id="skill-search" class="skill-search-input" placeholder="Buscar tecnología (Python, APIs, SLA...)" oninput="filterSkills(this.value)">
+        </div>
+      </div>
 
-      <div class="bento-grid">
-
-        <div class="bento-block">
+      <div class="bento-grid" id="bento-grid">
+        <!-- Dynamic Bento Blocks -->
+        <div class="bento-block" id="bento-software">
           <div class="bento-header">
-            <i class="fa-solid fa-code"></i> Software, IA & Vibe Coding
+            <span><i class="fa-solid fa-code"></i> Desarrollo de Sistemas & APIs</span>
+            <span class="bento-badge-tag">Core IT</span>
           </div>
           <div class="bento-image-wrapper">
             <img src="img/coding.jpg" alt="Software, IA & Vibe Coding" class="bento-img">
           </div>
           <div class="badge-list">
-            <span class="badge badge-gold">Vibe Coding & Pair Programming</span>
-            <span class="badge badge-gold">Desarrollo Web con IA</span>
-            <span class="badge">HTML5 / CSS3 / JavaScript</span>
-            <span class="badge">Python & Node.js</span>
-            <span class="badge badge-cobalt">Prompt Engineering Avanzado</span>
-            <span class="badge">Gemini / GPT-4 / Qwen / Civitai</span>
-            <span class="badge">Automatización de Flujos & Bots</span>
-            <span class="badge">Google Workspace API & CRM</span>
+            <span class="badge badge-gold">Integración de Sistemas & APIs</span>
+            <span class="badge badge-gold">Python & Node.js</span>
+            <span class="badge badge-gold">Application Lifecycle Management (ALM)</span>
+            <span class="badge">Testing Unitario & de Integración</span>
+            <span class="badge">Google Workspace API & Webhooks</span>
+            <span class="badge">JavaScript / HTML5 / CSS3</span>
+            <span class="badge badge-cobalt">Arquitectura de Software & CRM</span>
+            <span class="badge">Bases de Datos & ETL Pipelines</span>
+            <span class="badge">Soporte Nivel 2/3 & SLAs</span>
           </div>
         </div>
 
-        <div class="bento-block">
+        <div class="bento-block" id="bento-ai">
           <div class="bento-header">
-            <i class="fa-solid fa-film"></i> Producción, Diseño & Drones
+            <span><i class="fa-solid fa-brain"></i> IA Generativa & Automatización</span>
+            <span class="bento-badge-tag">Innovación</span>
+          </div>
+          <div class="bento-image-wrapper">
+            <img src="img/ai_lab.jpg" alt="IA Generativa & Vibe Coding" class="bento-img">
+          </div>
+          <div class="badge-list">
+            <span class="badge badge-gold">Vibe Coding & Pair Programming</span>
+            <span class="badge badge-gold">Prompt Engineering Avanzado</span>
+            <span class="badge">Desarrollo con Agentes Autónomos</span>
+            <span class="badge">Model Context Protocol (MCP)</span>
+            <span class="badge badge-cobalt">Gemini Pro / GPT-4 / Claude</span>
+            <span class="badge">Automatización de Tareas Repetitivas</span>
+            <span class="badge">Procesamiento de Documentos & Datos</span>
+          </div>
+        </div>
+
+        <div class="bento-block" id="bento-media">
+          <div class="bento-header">
+            <span><i class="fa-solid fa-film"></i> Media Tech, Drones & Gestión</span>
+            <span class="bento-badge-tag">Creativo</span>
           </div>
           <div class="bento-image-wrapper">
             <img src="img/drone.jpg" alt="Producción, Diseño & Drones" class="bento-img">
           </div>
           <div class="badge-list">
-            <span class="badge badge-gold">DaVinci Resolve (Nivel Avanzado)</span>
-            <span class="badge badge-gold">Canva Pro con IA Avanzado</span>
-            <span class="badge">Adobe After Effects & Premiere Pro</span>
-            <span class="badge">Avid Media Composer</span>
+            <span class="badge badge-gold">DaVinci Resolve (Pipelines y Scripting)</span>
             <span class="badge badge-cobalt">Piloto Dron Certificado (FAA TRUST)</span>
-            <span class="badge">Fotografía 360° & Fotogrametría 3D</span>
-            <span class="badge">Producción de Podcasts</span>
+            <span class="badge">Producción Multicámara & Streaming</span>
+            <span class="badge">Documentación Técnica & Capacitación</span>
+            <span class="badge">Liderazgo de Equipos Comerciales (+12)</span>
+            <span class="badge">Fotogrametría 3D & Fotografía 360°</span>
+            <span class="badge badge-emerald">Inglés C1 / Chino Mandarín HSK 1</span>
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- Experience Timeline (Dynamic Content per Role) -->
+    <section id="experiencia" class="card">
+      <h2 class="section-title">
+        <i class="fa-solid fa-briefcase"></i> Experiencia Profesional & Trayectoria
+      </h2>
 
-        <div class="bento-block">
-          <div class="bento-header">
-            <i class="fa-solid fa-chart-line"></i> Estrategia, Ventas & Idiomas
-          </div>
-          <div class="bento-image-wrapper">
-            <img src="img/strategy.jpg" alt="Estrategia, Ventas & Idiomas" class="bento-img">
-          </div>
-          <div class="badge-list">
-            <span class="badge badge-gold">Contenido TikTok / Reels / Shorts</span>
-            <span class="badge">Estrategia de Crecimiento Orgánico</span>
-            <span class="badge">Liderazgo de Equipos de Ventas (+12)</span>
-            <span class="badge">Negociación & Captación Inmobiliaria</span>
-            <span class="badge">Copywriting & Storytelling</span>
-            <span class="badge badge-cobalt">Chino Mandarín (HSK 1 - Autodidacta)</span>
-          </div>
-        </div>
-
-
+      <div class="timeline" id="experience-timeline">
+        <!-- Rendered dynamically via JS according to selected role -->
       </div>
     </section>
 
     <!-- Showcase Projects -->
     <section id="proyectos" class="card">
       <h2 class="section-title">
-        <i class="fa-solid fa-photo-film"></i> Canales de Contenido & Proyectos Destacados
+        <i class="fa-solid fa-laptop-code"></i> Proyectos Relevantes & Casos de Éxito
       </h2>
 
-      <div class="showcase-grid">
-
-        <div class="showcase-card">
-          <div>
-            <div class="showcase-icon"><i class="fa-brands fa-instagram"></i></div>
-            <div class="showcase-image-wrapper">
-              <img src="img/wedding.jpg" alt="Sam Frank Media" class="showcase-img">
-            </div>
-            <h3 class="showcase-title">@samfrankmedia</h3>
-            <p class="showcase-desc">
-              Canal principal de creación de contenido audiovisual, tomas aéreas cinematográficas con dron, producciones comerciales y desarrollo digital.
-            </p>
-          </div>
-          <a href="https://instagram.com/samfrankmedia" target="_blank" class="showcase-link">
-            Visitar Instagram <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-
-        <div class="showcase-card">
-          <div>
-            <div class="showcase-icon"><i class="fa-brands fa-youtube"></i></div>
-            <div class="showcase-image-wrapper">
-              <img src="img/ai_lab.jpg" alt="Delta Prompt Labs AI" class="showcase-img">
-            </div>
-            <h3 class="showcase-title">@deltapromptlabs</h3>
-            <p class="showcase-desc">
-              Canal enfocado en Inteligencia Artificial, Vibe Coding, experimentos de Prompt Engineering y desarrollo de software asistido por agentes.
-            </p>
-          </div>
-          <a href="https://youtube.com/@deltapromptlabs" target="_blank" class="showcase-link">
-            Ver Canal YouTube <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-
-        <div class="showcase-card">
-          <div>
-            <div class="showcase-icon"><i class="fa-solid fa-podcast"></i></div>
-            <div class="showcase-image-wrapper">
-              <img src="img/podcast.jpg" alt="Podcast Hijos del Trago" class="showcase-img">
-            </div>
-            <h3 class="showcase-title">Podcast Hijos del Trago</h3>
-            <p class="showcase-desc">
-              Producción ejecutiva e integral de podcast semanal de formato largo (+53 episodios continuos), mezcla de audio, multicámara y distribución.
-            </p>
-          </div>
-          <a href="https://youtube.com/@hijosdeltrago" target="_blank" class="showcase-link">
-            Escuchar Episodios <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-
-      </div>
-    </section>
-
-    <!-- Experience Timeline -->
-    <section id="experiencia" class="card">
-      <h2 class="section-title">
-        <i class="fa-solid fa-briefcase"></i> Experiencia Profesional
-      </h2>
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="role-title">Creador de Contenido & Desarrollador de Software con IA</div>
-          <div class="company-name">Estudio VSM / Sam Frank Media / Delta Prompt Labs</div>
-          <div class="role-date">Septiembre 2025 – Presente</div>
-          <ul class="role-bullets">
-            <li>Producción audiovisual integral para plataformas digitales (TikTok, Instagram, YouTube) impulsando alcance orgánico y engagement.</li>
-            <li>Desarrollo de soluciones web y automatización de flujos de trabajo creativos apoyado en **Vibe Coding** y agentes de IA.</li>
-            <li>Edición en **DaVinci Resolve**, diseño en **Canva Pro con IA** y cinematografía aérea con dron (acreditación FAA TRUST).</li>
-            <li>Producción ejecutiva de "Hijos del Trago Podcast" (+53 episodios semanales continuos).</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="role-title">Ventas & Marketing Digital</div>
-          <div class="company-name">SIP Servicios Independientes Profesionales</div>
-          <div class="role-date">Agosto 2025 – Mayo 2026</div>
-          <ul class="role-bullets">
-            <li>Estrategias de posicionamiento inmobiliario con video con dron, fotogrametría 3D y recorridos 360°.</li>
-            <li>Asesoría, captación y cierre exitoso de transacciones comerciales y notariales (Infonavit, Fovissste).</li>
-            <li>Elaboración de identidades publicitarias físicas y digitales (lonas, tarjetas, gafetes y formatos contractuales).</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="role-title">Líder de Ventas, Marketing & Sistemas</div>
-          <div class="company-name">4Arrow Servicios Inmobiliarios</div>
-          <div class="role-date">Agosto 2021 – Mayo 2025</div>
-          <ul class="role-bullets">
-            <li>Dirección, reclutamiento y capacitación comercial de equipo de más de 12 asesores inmobiliarios.</li>
-            <li>Programación e implementación de CRM personalizado en Google Workspace con integración de IA.</li>
-            <li>Dirección de sesiones multimediales para catálogo comercial de bienes raíces.</li>
-          </ul>
-        </div>
-
+      <div class="showcase-grid" id="showcase-grid">
+        <!-- Rendered dynamically via JS -->
       </div>
     </section>
 
@@ -1044,45 +1394,45 @@
 
           <div class="info-item">
             <div class="info-title">Ingeniería en Sistemas Computacionales</div>
-            <div class="info-subtitle">Opción Hardware</div>
+            <div class="info-subtitle">Opción Hardware / Arquitectura de Sistemas</div>
             <div class="info-desc">Universidad Autónoma de Chihuahua (UACH) – 2012</div>
           </div>
 
           <div style="margin-top: 1.5rem;">
-            <div class="info-title">Idiomas</div>
+            <div class="info-title">Competencia Lingüística</div>
             <div class="info-desc">🇲🇽 <strong>Español:</strong> Nativo</div>
-            <div class="info-desc">🇺🇸 <strong>Inglés:</strong> C1 Advanced (90% / Proficiency)</div>
-            <div class="info-desc">🇨🇳 <strong>Chino Mandarín:</strong> Nivel Inicial (HSK 1 - Estudio activo +600 días autodidacta)</div>
+            <div class="info-desc">🇺🇸 <strong>Inglés:</strong> C1 Advanced (90% / Negociación y Documentación Técnica)</div>
+            <div class="info-desc">🇨🇳 <strong>Chino Mandarín:</strong> HSK 1 (+600 días de estudio diario autodidacta)</div>
           </div>
         </div>
 
         <div>
           <h2 class="section-title">
-            <i class="fa-solid fa-award"></i> Certificaciones
+            <i class="fa-solid fa-award"></i> Certificaciones Profesionales
           </h2>
 
           <div class="info-item">
-            <div class="info-title">Prompting for Generative AI</div>
-            <div class="info-subtitle">Adobe</div>
-            <div class="info-desc">Generación de imágenes, video y vectores.</div>
+            <div class="info-title">Introduction to Artificial Intelligence</div>
+            <div class="info-subtitle">IBM</div>
+            <div class="info-desc">Arquitectura de IA, Machine Learning, Deep Learning y NLP.</div>
           </div>
 
           <div class="info-item">
             <div class="info-title">Google AI Essentials Specialization</div>
             <div class="info-subtitle">Google</div>
-            <div class="info-desc">IA generativa para creación de contenido y storytelling.</div>
+            <div class="info-desc">IA generativa para optimización de procesos y storytelling técnico.</div>
           </div>
 
           <div class="info-item">
-            <div class="info-title">Introduction to Artificial Intelligence</div>
-            <div class="info-subtitle">IBM</div>
-            <div class="info-desc">Fundamentos de IA, Machine Learning, Deep Learning y NLP.</div>
+            <div class="info-title">Prompting for Generative AI</div>
+            <div class="info-subtitle">Adobe</div>
+            <div class="info-desc">Ingeniería de prompts y generación digital de activos.</div>
           </div>
 
           <div class="info-item">
             <div class="info-title">The Recreational UAS Safety Test (TRUST)</div>
             <div class="info-subtitle">FAA (Federal Aviation Administration)</div>
-            <div class="info-desc">Acreditación federal estadounidense para operación de drones.</div>
+            <div class="info-desc">Acreditación federal estadounidense para operaciones de dron.</div>
           </div>
         </div>
 
@@ -1091,26 +1441,380 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Gibran Samuel Villa Franco — Full-Stack AI & Media Content Creator</p>
+      <p>© 2026 Gibran Samuel Villa Franco — Ingeniero en Sistemas Computacionales</p>
       <p style="margin-top: 0.5rem;">
-        Diseño Ejecutivo en Obsidian & Champagne Gold. Desarrollado con ⚡ <strong>Vibe Coding</strong>.
+        Desarrollado con ⚡ <strong>Vibe Coding</strong> en Obsidian Dark & Champagne Gold.
       </p>
     </footer>
 
   </div>
 
-  <div id="toast" class="toast">¡Copiado al portapapeles!</div>
+  <div id="toast" class="toast">¡Enlace copiado al portapapeles!</div>
 
   <script>
-    function copyToClipboard(text) {
+    // DATA MATRIX FOR ADAPTABLE CV PROFILES
+    const CV_PROFILES = {
+      systems: {
+        pageTitle: "Gibran Villa | Business Systems Developer & Software Engineer",
+        metaDesc: "CV y Portafolio de Gibran Villa: Ingeniero en Sistemas, Business Systems Developer para GKN Aerospace, Python, integraciones API y soporte SLA.",
+        badge: '<i class="fa-solid fa-server"></i> Business Systems Developer',
+        tagline: 'Ingeniero en Sistemas Computacionales (UACH) especializado en <strong>desarrollo de integraciones empresariales (APIs/ALM), automatización de procesos con Python</strong>, testing de aplicaciones y resolución de incidencias bajo estándares SLA.',
+        bannerText: '<strong>Vista activa: Business Systems & Software Developer (Perfil GKN Aerospace).</strong> Enfocada en arquitectura de aplicaciones, integración de datos/APIs, ciclo de vida de software (ALM), testing y soporte técnico L2/L3.',
+        highlightBlock: 'bento-software',
+        stats: [
+          { number: "100%", label: "Ciclo de Vida de Software (ALM & Testing)" },
+          { number: "C1", label: "Inglés Avanzado / Técnico (90%)" },
+          { number: "12+", label: "Años de Trayectoria en Sistemas (UACH)" },
+          { number: "99.9%", label: "Resolución de Incidencias & SLAs" }
+        ],
+        experience: [
+          {
+            title: "Desarrollador de Sistemas & Automatización de Procesos (IT / ALM)",
+            company: "Delta Prompt Labs / Consultoría de Sistemas Independiente",
+            date: "Septiembre 2025 – Presente",
+            bullets: [
+              "Diseño y desarrollo de <strong>micro-servicios y scripts en Python / Node.js</strong> para la automatización e integración de flujos de trabajo empresariales.",
+              "Implementación de arquitectura de pruebas (unit testing e integración) asegurando la estabilidad antes del despliegue en entornos productivos.",
+              "Documentación técnica rigurosa de procedimientos, diagramas de flujo y manuales de operación de soluciones internas.",
+              "Gestión de requerimientos técnicos y resolución de fallos bajo acuerdos de nivel de servicio (SLAs)."
+            ]
+          },
+          {
+            title: "Líder de Sistemas, Procesos & Plataforma CRM",
+            company: "4Arrow Servicios Inmobiliarios",
+            date: "Agosto 2021 – Mayo 2025",
+            bullets: [
+              "Programación y despliegue de <strong>CRM corporativo sobre Google Workspace APIs</strong> con módulos de automatización para seguimiento comercial.",
+              "Capacitación estructurada y soporte continuo a más de 12 usuarios finales en el uso de herramientas tecnológicas internas.",
+              "Gestión y mantenimiento de bases de datos de clientes e integración con plataformas externas de mercadeo.",
+              "Optimización de tiempos de respuesta operativa en un 40% mediante la estandarización de procesos de captura de datos."
+            ]
+          },
+          {
+            title: "Especialista en Sistemas y Soluciones Digitales",
+            company: "SIP Servicios Independientes Profesionales",
+            date: "Agosto 2025 – Mayo 2026",
+            bullets: [
+              "Desarrollo e integración de herramientas digitales para procesamiento de levantamientos topográficos y fotogrametría 3D.",
+              "Mantenimiento de integridad de información contractual y cumplimiento de normativas de seguridad de datos."
+            ]
+          }
+        ],
+        projects: [
+          {
+            icon: "fa-solid fa-network-wired",
+            title: "Enterprise Automation Hub & APIs",
+            desc: "Suite de scripts y conectores en Python para sincronización bidireccional entre bases de datos, APIs de mensajería y servicios en la nube.",
+            linkText: "Consultar Arquitectura",
+            linkUrl: "mailto:samf3212@gmail.com?subject=Consulta%20Enterprise%20Automation%20Hub"
+          },
+          {
+            icon: "fa-brands fa-youtube",
+            title: "@deltapromptlabs — AI & Software Lab",
+            desc: "Plataforma de experimentación e investigación en ingeniería de software asistida por IA, pruebas de arquitectura y Vibe Coding.",
+            linkText: "Ver Laboratorio YouTube",
+            linkUrl: "https://youtube.com/@deltapromptlabs"
+          },
+          {
+            icon: "fa-solid fa-database",
+            title: "Workspace Custom CRM & Workflows",
+            desc: "Sistema integral de gestión de clientes y automatización de embudos desarrollado a la medida para operaciones de alto volumen.",
+            linkText: "Detalles del Proyecto",
+            linkUrl: "mailto:samf3212@gmail.com?subject=Consulta%20Workspace%20CRM"
+          }
+        ]
+      },
+      ai: {
+        pageTitle: "Gibran Villa | AI Systems & Automation Engineer",
+        metaDesc: "CV de Gibran Villa: Especialista en Vibe Coding, Agentes Autónomos de IA, Prompt Engineering y Flujos de Automatización.",
+        badge: '<i class="fa-solid fa-brain"></i> AI & Automation Engineer',
+        tagline: 'Ingeniero en Sistemas enfocado en <strong>desarrollo asistido por IA (Vibe Coding), agentes autónomos, Model Context Protocol (MCP)</strong> y automatización de flujos de trabajo de alto impacto.',
+        bannerText: '<strong>Vista activa: AI & Automation Specialist.</strong> Enfocada en pipelines de Inteligencia Artificial Generativa, agentes autónomos, Prompt Engineering y desarrollo acelerado de software.',
+        highlightBlock: 'bento-ai',
+        stats: [
+          { number: "100%", label: "Desarrollo Asistido con IA (Vibe Coding)" },
+          { number: "18+", label: "Modelos & APIs de IA Dominadas" },
+          { number: "600+", label: "Días de Estudio Disciplinado en Chino" },
+          { number: "10x", label: "Aceleración de Entregables con Agentes" }
+        ],
+        experience: [
+          {
+            title: "Desarrollador de Software con IA & Vibe Coder",
+            company: "Delta Prompt Labs / Estudio VSM",
+            date: "Septiembre 2025 – Presente",
+            bullets: [
+              "Construcción y orquestación de agentes de IA y servidores MCP (Model Context Protocol) para automatizar pipelines complejos de software.",
+              "Investigación avanzada en Prompt Engineering para modelos multimodales (Gemini, GPT-4, Claude, Civitai).",
+              "Desarrollo ágil de herramientas web full-stack reduciendo los ciclos tradicionales de entrega.",
+              "Creación de contenido educativo técnico en YouTube sobre arquitectura de software impulsada por agentes."
+            ]
+          },
+          {
+            title: "Líder de Sistemas & Automatización de Ventas",
+            company: "4Arrow Servicios Inmobiliarios",
+            date: "Agosto 2021 – Mayo 2025",
+            bullets: [
+              "Integración de modelos predictivos y asistentes inteligentes para la calificación de prospectos.",
+              "Automatización de campañas y reportes mediante scripts de integración en tiempo real."
+            ]
+          }
+        ],
+        projects: [
+          {
+            icon: "fa-brands fa-youtube",
+            title: "@deltapromptlabs",
+            desc: "Canal y laboratorio enfocado en Inteligencia Artificial, Vibe Coding, experimentos de Prompt Engineering y agentes.",
+            linkText: "Ver Canal YouTube",
+            linkUrl: "https://youtube.com/@deltapromptlabs"
+          },
+          {
+            icon: "fa-solid fa-robot",
+            title: "Autonomous Agent Tooling (MCP)",
+            desc: "Desarrollo de módulos e interoperabilidad entre herramientas de escritorio y LLMs para generación automatizada de tareas.",
+            linkText: "Ver Detalles",
+            linkUrl: "https://youtube.com/@deltapromptlabs"
+          }
+        ]
+      },
+      media: {
+        pageTitle: "Gibran Villa | Media Creator & Creative Technologist",
+        metaDesc: "Portafolio Creativo de Gibran Villa: DaVinci Resolve Avanzado, Piloto Dron FAA TRUST, Producción de Podcast y Medios Digitales.",
+        badge: '<i class="fa-solid fa-clapperboard"></i> Media & Creative Technologist',
+        tagline: 'Creador Audiovisual e Ingeniero en Sistemas especializado en <strong>DaVinci Resolve avanzado, cinematografía aérea con dron (FAA TRUST)</strong> y producción de podcasts multicámara.',
+        bannerText: '<strong>Vista activa: Media & Creative Technologist.</strong> Enfocada en producción audiovisual de alta gama, edición en DaVinci Resolve, vuelos con dron y contenidos virales.',
+        highlightBlock: 'bento-media',
+        stats: [
+          { number: "53+", label: "Episodios Semanales Podcast 'Hijos del Trago'" },
+          { number: "18+", label: "Marcas Comerciales e Inmobiliarias Atendidas" },
+          { number: "FAA", label: "Piloto Certificado de Dron (TRUST)" },
+          { number: "4K HDR", label: "Pipeline Integral en DaVinci Resolve" }
+        ],
+        experience: [
+          {
+            title: "Director Audiovisual & Creador de Contenido",
+            company: "Sam Frank Media / Estudio VSM",
+            date: "Septiembre 2025 – Presente",
+            bullets: [
+              "Producción ejecutiva e ingeniería de audio y video para 'Hijos del Trago Podcast' (+53 episodios continuos).",
+              "Edición profesional, etalonaje y mezcla en <strong>DaVinci Resolve</strong> con flujos multicámara y proxies optimizados.",
+              "Vuelos cinemáticos con dron y fotogrametría bajo certificación federal FAA TRUST.",
+              "Estrategia y edición de video vertical para TikTok, Instagram Reels y YouTube Shorts."
+            ]
+          },
+          {
+            title: "Marketing Digital & Producción Inmobiliaria",
+            company: "SIP Servicios Profesionales / 4Arrow",
+            date: "Agosto 2021 – Mayo 2026",
+            bullets: [
+              "Producción de recorridos virtuales 360°, fotografía publicitaria y material promocional.",
+              "Diseño de identidad visual y campañas publicitarias físicas y digitales."
+            ]
+          }
+        ],
+        projects: [
+          {
+            icon: "fa-brands fa-instagram",
+            title: "@samfrankmedia",
+            desc: "Canal principal de creación de contenido audiovisual, tomas aéreas cinematográficas con dron y producciones comerciales.",
+            linkText: "Visitar Instagram",
+            linkUrl: "https://instagram.com/samfrankmedia"
+          },
+          {
+            icon: "fa-solid fa-podcast",
+            title: "Podcast Hijos del Trago",
+            desc: "Producción integral de podcast semanal de formato largo (+53 episodios continuos), mezcla de audio y multicámara.",
+            linkText: "Escuchar Episodios",
+            linkUrl: "https://youtube.com/@hijosdeltrago"
+          }
+        ]
+      },
+      all: {
+        pageTitle: "Gibran Samuel Villa Franco | Executive Full-Stack & Systems Engineer",
+        metaDesc: "Portafolio Integral de Gibran Samuel Villa Franco: Ingeniero en Sistemas, Business Systems Developer, IA y Producción de Medios.",
+        badge: '<i class="fa-solid fa-crown"></i> Full-Stack Systems & AI Executive',
+        tagline: 'Ingeniero en Sistemas Computacionales • <strong>Business Systems Developer</strong> • Especialista en <strong>Vibe Coding con IA, DaVinci Resolve</strong> y Cinematografía con Dron (FAA TRUST).',
+        bannerText: '<strong>Vista activa: Perfil Ejecutivo Integral.</strong> Combina todas las disciplinas: Ingeniería de Sistemas, Inteligencia Artificial, Producción Audiovisual y Liderazgo.',
+        highlightBlock: null,
+        stats: [
+          { number: "12+", label: "Años de Trayectoria en Sistemas (UACH)" },
+          { number: "53+", label: "Episodios Podcast 'Hijos del Trago'" },
+          { number: "C1", label: "Inglés Avanzado (90%)" },
+          { number: "600+", label: "Días de Chino Mandarín HSK 1" }
+        ],
+        experience: [
+          {
+            title: "Desarrollador de Sistemas, Creador de Medios & Consultor IA",
+            company: "Sam Frank Media / Delta Prompt Labs",
+            date: "Septiembre 2025 – Presente",
+            bullets: [
+              "Desarrollo de micro-servicios, integraciones de APIs y automatizaciones con Python y Vibe Coding.",
+              "Producción ejecutiva de 'Hijos del Trago Podcast' (+53 episodios) y dirección de medios digitales.",
+              "Operación cinematográfica de drones (FAA TRUST) y edición avanzada en DaVinci Resolve."
+            ]
+          },
+          {
+            title: "Líder de Sistemas, Marketing & Ventas",
+            company: "4Arrow Servicios Inmobiliarios",
+            date: "Agosto 2021 – Mayo 2025",
+            bullets: [
+              "Dirección, reclutamiento y capacitación comercial de equipo de más de 12 asesores.",
+              "Programación y puesta en marcha de CRM corporativo sobre Google Workspace APIs.",
+              "Dirección y producción de catálogos multimedia comerciales."
+            ]
+          }
+        ],
+        projects: [
+          {
+            icon: "fa-brands fa-youtube",
+            title: "@deltapromptlabs (AI & Dev Lab)",
+            desc: "Investigación aplicada en IA, Prompt Engineering y desarrollo asistido por agentes.",
+            linkText: "Ver Laboratorio",
+            linkUrl: "https://youtube.com/@deltapromptlabs"
+          },
+          {
+            icon: "fa-brands fa-instagram",
+            title: "@samfrankmedia (Audiovisual)",
+            desc: "Tomas aéreas cinematográficas, producciones publicitarias y desarrollo digital.",
+            linkText: "Ver Instagram",
+            linkUrl: "https://instagram.com/samfrankmedia"
+          },
+          {
+            icon: "fa-solid fa-podcast",
+            title: "Podcast Hijos del Trago",
+            desc: "Producción semanal de formato largo con streaming y mezcla multicámara.",
+            linkText: "Ver Episodios",
+            linkUrl: "https://youtube.com/@hijosdeltrago"
+          }
+        ]
+      }
+    };
+
+    let currentRole = 'systems';
+
+    // RENDER FUNCTION
+    function setRole(roleKey, updateUrl = true) {
+      if (!CV_PROFILES[roleKey]) roleKey = 'systems';
+      currentRole = roleKey;
+      const data = CV_PROFILES[roleKey];
+
+      // 1. Update Tabs Active State
+      document.querySelectorAll('.role-tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeTab = document.getElementById(`tab-${roleKey}`);
+      if (activeTab) activeTab.classList.add('active');
+
+      // 2. Update Header & Meta
+      document.title = data.pageTitle;
+      const metaEl = document.getElementById('page-meta-desc');
+      if (metaEl) metaEl.setAttribute('content', data.metaDesc);
+
+      // 3. Update Hero
+      document.getElementById('hero-badge').innerHTML = data.badge;
+      document.getElementById('hero-tagline').innerHTML = data.tagline;
+      document.getElementById('role-banner-text').innerHTML = data.bannerText;
+
+      // 4. Highlight Selected Bento Block
+      document.querySelectorAll('.bento-block').forEach(b => b.classList.remove('highlighted-block'));
+      if (data.highlightBlock) {
+        const blk = document.getElementById(data.highlightBlock);
+        if (blk) blk.classList.add('highlighted-block');
+      }
+
+      // 5. Update Stats
+      const statsGrid = document.getElementById('stats-grid');
+      statsGrid.innerHTML = data.stats.map(s => `
+        <div class="stat-card">
+          <div class="stat-number">${s.number}</div>
+          <div class="stat-label">${s.label}</div>
+        </div>
+      `).join('');
+
+      // 6. Update Timeline
+      const timeline = document.getElementById('experience-timeline');
+      timeline.innerHTML = data.experience.map(item => `
+        <div class="timeline-item">
+          <div class="role-title">${item.title}</div>
+          <div class="company-name">${item.company}</div>
+          <div class="role-date">${item.date}</div>
+          <ul class="role-bullets">
+            ${item.bullets.map(b => `<li>${b}</li>`).join('')}
+          </ul>
+        </div>
+      `).join('');
+
+      // 7. Update Showcase Projects
+      const showcaseGrid = document.getElementById('showcase-grid');
+      showcaseGrid.innerHTML = data.projects.map(p => `
+        <div class="showcase-card">
+          <div>
+            <div class="showcase-icon"><i class="${p.icon}"></i></div>
+            <h3 class="showcase-title">${p.title}</h3>
+            <p class="showcase-desc">${p.desc}</p>
+          </div>
+          <a href="${p.linkUrl}" target="_blank" class="showcase-link">
+            ${p.linkText} <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      `).join('');
+
+      // 8. Update URL Query Param without page reload
+      if (updateUrl && window.history && window.history.replaceState) {
+        const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?role=' + roleKey;
+        window.history.replaceState({ path: newUrl }, '', newUrl);
+      }
+    }
+
+    // COPY SHARE LINK
+    function copyRoleLink() {
+      const shareUrl = window.location.origin + window.location.pathname + '?role=' + currentRole;
+      copyToClipboard(shareUrl, `¡Enlace copiado para perfil: ${currentRole.toUpperCase()}!`);
+    }
+
+    // TOAST NOTIFICATION
+    function copyToClipboard(text, customMessage) {
       navigator.clipboard.writeText(text).then(() => {
         const toast = document.getElementById('toast');
+        toast.innerText = customMessage || "¡Copiado al portapapeles!";
         toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2500);
+        setTimeout(() => toast.classList.remove('show'), 2800);
       });
     }
 
-    // High-End Interactive Background: Volumetric 3D Waves, Atmospheric Glow & Glowing Neural Constellation
+    // PRINT / EXPORT ATS RESUME
+    function exportATSResume() {
+      window.print();
+    }
+
+    // LIVE SKILL SEARCH & FILTER
+    function filterSkills(query) {
+      const q = query.trim().toLowerCase();
+      const badges = document.querySelectorAll('.badge');
+      badges.forEach(badge => {
+        const text = badge.innerText.toLowerCase();
+        if (q.length > 0 && text.includes(q)) {
+          badge.classList.add('match-search');
+        } else {
+          badge.classList.remove('match-search');
+        }
+      });
+    }
+
+    // INITIALIZE FROM URL PARAMETERS
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const roleParam = urlParams.get('role');
+      if (roleParam) {
+        if (roleParam.includes('sys') || roleParam.includes('gkn') || roleParam.includes('dev')) setRole('systems', false);
+        else if (roleParam.includes('ai') || roleParam.includes('auto')) setRole('ai', false);
+        else if (roleParam.includes('media') || roleParam.includes('content')) setRole('media', false);
+        else if (roleParam.includes('all')) setRole('all', false);
+        else setRole(roleParam, false);
+      } else {
+        // Default to systems developer
+        setRole('systems', false);
+      }
+    });
+
+    // High-End Interactive Background: Volumetric 3D Waves & Neural Constellation
     (function initBackgroundCanvas() {
       const canvas = document.getElementById('bg-canvas');
       if (!canvas) return;
@@ -1135,15 +1839,14 @@
         mouse.y = null;
       });
 
-      // 1. Glowing Stardust & Constellation Nodes
       const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 9500), 125);
       const particles = [];
-      const goldColors = ['#f3e5ab', '#d4af37', '#e6c66e', '#ffffff'];
+      const goldColors = ['#f5e7b2', '#d4af37', '#e6c66e', '#ffffff'];
       const blueColors = ['#38bdf8', '#0284c7', '#7dd3fc', '#60a5fa'];
 
       for (let i = 0; i < particleCount; i++) {
         const isGold = Math.random() > 0.35;
-        const isMajor = Math.random() < 0.30; // Star nodes with halo/bloom
+        const isMajor = Math.random() < 0.30;
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
@@ -1159,7 +1862,6 @@
         });
       }
 
-      // 2. Multi-Ribbon Wave Configuration (Volumetric Splines)
       const ribbons = [
         {
           name: 'gold-primary',
@@ -1170,7 +1872,7 @@
           freq: 0.0015,
           speed: 0.013,
           r: 212, g: 175, b: 55,
-          maxAlpha: 0.28
+          maxAlpha: 0.26
         },
         {
           name: 'cobalt-secondary',
@@ -1181,7 +1883,7 @@
           freq: 0.0012,
           speed: -0.010,
           r: 56, g: 189, b: 248,
-          maxAlpha: 0.22
+          maxAlpha: 0.20
         },
         {
           name: 'gold-accent',
@@ -1191,8 +1893,8 @@
           amp: 50,
           freq: 0.0020,
           speed: 0.016,
-          r: 243, g: 229, b: 171,
-          maxAlpha: 0.16
+          r: 245, g: 231, b: 178,
+          maxAlpha: 0.15
         }
       ];
 
@@ -1202,22 +1904,20 @@
         time += 1;
         ctx.clearRect(0, 0, width, height);
 
-        // A. Atmospheric Ambient Nebulae / Radial Lighting
         const g1 = ctx.createRadialGradient(width * 0.75, height * 0.28, 20, width * 0.75, height * 0.28, width * 0.45);
-        g1.addColorStop(0, 'rgba(212, 175, 55, 0.09)');
-        g1.addColorStop(0.5, 'rgba(212, 175, 55, 0.025)');
+        g1.addColorStop(0, 'rgba(212, 175, 55, 0.08)');
+        g1.addColorStop(0.5, 'rgba(212, 175, 55, 0.02)');
         g1.addColorStop(1, 'transparent');
         ctx.fillStyle = g1;
         ctx.fillRect(0, 0, width, height);
 
         const g2 = ctx.createRadialGradient(width * 0.2, height * 0.65, 20, width * 0.2, height * 0.65, width * 0.4);
-        g2.addColorStop(0, 'rgba(2, 132, 199, 0.07)');
-        g2.addColorStop(0.6, 'rgba(30, 64, 175, 0.018)');
+        g2.addColorStop(0, 'rgba(2, 132, 199, 0.06)');
+        g2.addColorStop(0.6, 'rgba(30, 64, 175, 0.015)');
         g2.addColorStop(1, 'transparent');
         ctx.fillStyle = g2;
         ctx.fillRect(0, 0, width, height);
 
-        // B. Volumetric 3D Wave Ribbons
         ribbons.forEach(r => {
           const baseY = height * r.yRatio;
           for (let i = 0; i < r.lines; i++) {
@@ -1253,7 +1953,6 @@
           }
         });
 
-        // C. Interactive Neural Nodes & Glowing Constellation Links
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
           p.x += p.vx;
@@ -1264,11 +1963,9 @@
           if (p.y < -10) p.y = height + 10;
           if (p.y > height + 10) p.y = -10;
 
-          // Twinkle pulse
           const twinkle = Math.sin(time * p.speed + p.phase) * 0.35 + 0.65;
           const currentAlpha = p.baseAlpha * twinkle;
 
-          // Mouse Attraction / Laser Connection
           if (mouse.x !== null) {
             const dx = mouse.x - p.x;
             const dy = mouse.y - p.y;
@@ -1284,7 +1981,6 @@
             }
           }
 
-          // Draw Star / Particle
           if (p.isMajor) {
             ctx.save();
             ctx.shadowBlur = 14;
@@ -1303,7 +1999,6 @@
             ctx.fill();
           }
 
-          // Inter-node Constellation Filaments
           for (let j = i + 1; j < particles.length; j++) {
             const p2 = particles[j];
             const dx = p.x - p2.x;
