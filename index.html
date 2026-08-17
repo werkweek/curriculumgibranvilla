@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Gibran Samuel Villa Franco | Business Systems & AI Software Engineer</title>
+  <title id="page-title">Gibran Samuel Villa Franco | Business Systems, AI & Hardware Engineer</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" id="page-meta-desc" content="Portafolio Ejecutivo y CV Adaptable de Gibran Samuel Villa Franco. Ingeniero en Sistemas, Business Systems Developer, Automatización con IA y Producción Tecnológica.">
+  <meta name="description" id="page-meta-desc" content="Portafolio Ejecutivo y CV Adaptable de Gibran Samuel Villa Franco. Ingeniero en Sistemas (Hardware), Business Systems Developer, Fabricación Digital (Láser/3D), IA y Producción Tecnológica.">
   <meta name="author" content="Gibran Samuel Villa Franco">
 
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -23,7 +23,7 @@
       --bg-card-hover: rgba(20, 26, 40, 0.94);
       --border-subtle: rgba(255, 255, 255, 0.08);
       
-      /* Accent Colors: Champagne Gold, Cobalt Blue, Emerald Green */
+      /* Accent Colors: Champagne Gold, Cobalt Blue, Emerald Green, Amber */
       --gold-primary: #d4af37;
       --gold-light: #f5e7b2;
       --gold-dark: #a0740e;
@@ -37,6 +37,9 @@
 
       --emerald-primary: #10b981;
       --emerald-light: #34d399;
+
+      --amber-primary: #f59e0b;
+      --amber-light: #fcd34d;
 
       --silver-platinum: #e2e8f0;
       --text-main: #f8fafc;
@@ -56,7 +59,7 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-main);
       line-height: 1.65;
@@ -96,12 +99,12 @@
       left: 50%;
       transform: translateX(-50%);
       width: calc(100% - 3rem);
-      max-width: 1120px;
-      background: rgba(10, 13, 20, 0.90);
+      max-width: 1140px;
+      background: rgba(10, 13, 20, 0.92);
       backdrop-filter: blur(24px);
       border: 1px solid rgba(212, 175, 55, 0.25);
       border-radius: 60px;
-      padding: 0.75rem 1.75rem;
+      padding: 0.65rem 1.75rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -125,14 +128,14 @@
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.35rem;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 500;
       letter-spacing: 0.02em;
       transition: color 0.3s ease;
@@ -148,13 +151,51 @@
       gap: 0.75rem;
     }
 
+    /* Language Switcher Capsule */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 50px;
+      padding: 0.2rem 0.3rem;
+      gap: 0.2rem;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.35rem 0.65rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .lang-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .lang-btn.active {
+      background: var(--gradient-gold);
+      color: #080a0f;
+      box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+    }
+
     .nav-btn {
       background: var(--gradient-gold);
       color: #080a0f;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
-      font-size: 0.85rem;
-      padding: 0.55rem 1.25rem;
+      font-size: 0.84rem;
+      padding: 0.5rem 1.15rem;
       border-radius: 50px;
       border: none;
       cursor: pointer;
@@ -162,7 +203,7 @@
       transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
       box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
     }
 
@@ -171,25 +212,11 @@
       box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45);
     }
 
-    .nav-btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: var(--silver-platinum);
-      padding: 0.55rem 1rem;
-      font-size: 0.82rem;
-    }
-
-    .nav-btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: #ffffff;
-      border-color: var(--gold-primary);
-    }
-
-    @media (max-width: 960px) {
+    @media (max-width: 990px) {
       .nav-links { display: none; }
     }
 
-    /* DYNAMIC ROLE SWITCHER BAR (MAIN FEATURE) */
+    /* DYNAMIC ROLE SWITCHER BAR */
     .role-switcher-container {
       margin-top: 6.8rem;
       margin-bottom: 2rem;
@@ -785,6 +812,13 @@
       font-weight: 600 !important;
     }
 
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.12) !important;
+      border-color: rgba(245, 158, 11, 0.38) !important;
+      color: #fcd34d !important;
+      font-weight: 600 !important;
+    }
+
     /* Showcase Cards */
     .showcase-grid {
       display: grid;
@@ -822,26 +856,6 @@
       color: #080a0f;
       margin-bottom: 1.25rem;
       box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
-    }
-
-    .showcase-image-wrapper {
-      width: 100%;
-      height: 150px;
-      overflow: hidden;
-      border-radius: 12px;
-      margin-bottom: 1.1rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .showcase-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .showcase-card:hover .showcase-img {
-      transform: scale(1.06);
     }
 
     .showcase-title {
@@ -1041,7 +1055,7 @@
         line-height: 1.4 !important;
       }
 
-      #bg-canvas, .navbar, .role-switcher-container, .cta-group, .skill-search-box, .showcase-image-wrapper, .bento-image-wrapper, .toast, .role-share-btn {
+      #bg-canvas, .navbar, .role-switcher-container, .cta-group, .skill-search-box, .bento-image-wrapper, .toast, .role-share-btn {
         display: none !important;
       }
 
@@ -1147,7 +1161,7 @@
 </head>
 <body>
 
-  <!-- Background Animated Canvas (Neural Nodes & Fluid Energy Waves) -->
+  <!-- Background Animated Canvas -->
   <canvas id="bg-canvas"></canvas>
 
   <!-- Executive Navigation -->
@@ -1156,14 +1170,21 @@
       <i class="fa-solid fa-code-merge" style="color: var(--gold-primary);"></i> GIBRAN VILLA
     </a>
     <ul class="nav-links">
-      <li><a href="#especialidades">Habilidades</a></li>
-      <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#proyectos">Proyectos Clave</a></li>
-      <li><a href="#certificaciones">Educación & Certificaciones</a></li>
+      <li><a href="#especialidades" id="nav-skills">Habilidades</a></li>
+      <li><a href="#experiencia" id="nav-exp">Experiencia</a></li>
+      <li><a href="#proyectos" id="nav-projects">Proyectos</a></li>
+      <li><a href="#certificaciones" id="nav-certs">Educación</a></li>
     </ul>
     <div class="nav-actions">
-      <button onclick="window.print()" class="nav-btn" title="Imprimir o guardar en PDF">
-        <i class="fa-solid fa-print"></i> Imprimir CV
+      <!-- Language Switcher -->
+      <div class="lang-switcher" title="Select Language / 选择语言">
+        <button class="lang-btn active" id="lang-es" onclick="setLanguage('es')">🇲🇽 ES</button>
+        <button class="lang-btn" id="lang-en" onclick="setLanguage('en')">🇺🇸 EN</button>
+        <button class="lang-btn" id="lang-zh" onclick="setLanguage('zh')">🇨🇳 中文</button>
+      </div>
+
+      <button onclick="window.print()" class="nav-btn" id="nav-print-btn" title="Imprimir o guardar en PDF / Print to PDF">
+        <i class="fa-solid fa-print"></i> <span id="nav-print-text">Imprimir CV</span>
       </button>
     </div>
   </nav>
@@ -1173,11 +1194,11 @@
     <!-- DYNAMIC ROLE SELECTOR (ADAPTABLE CV ENGINE) -->
     <div class="role-switcher-container">
       <div class="role-switcher-header">
-        <div class="role-switcher-title">
+        <div class="role-switcher-title" id="role-switcher-heading">
           <i class="fa-solid fa-sliders"></i> Modo Reclutador / Enfoque del Perfil
         </div>
         <button onclick="copyRoleLink()" class="role-share-btn" id="role-share-btn">
-          <i class="fa-solid fa-link"></i> Copiar enlace de este perfil
+          <i class="fa-solid fa-link"></i> <span id="role-share-text">Copiar enlace de este perfil</span>
         </button>
       </div>
 
@@ -1185,40 +1206,48 @@
         <!-- Tab 1: Business Systems & Software -->
         <button class="role-tab-btn active" id="tab-systems" onclick="setRole('systems')">
           <div class="role-tab-name">
-            <i class="fa-solid fa-server" style="color: #38bdf8;"></i> Business Systems & Dev
+            <i class="fa-solid fa-server" style="color: #38bdf8;"></i> <span id="tab-title-systems">Business Systems & Dev</span>
           </div>
-          <div class="role-tab-sub">Integraciones, Python, APIs, ALM, SLAs y Arquitectura Empresarial (GKN Aerospace).</div>
+          <div class="role-tab-sub" id="tab-sub-systems">Integraciones, Python, APIs, ALM, SLAs y Arquitectura Empresarial (GKN Aerospace).</div>
         </button>
 
         <!-- Tab 2: AI & Automation -->
         <button class="role-tab-btn" id="tab-ai" onclick="setRole('ai')">
           <div class="role-tab-name">
-            <i class="fa-solid fa-brain" style="color: #f5e7b2;"></i> AI & Automation Engineer
+            <i class="fa-solid fa-brain" style="color: #f5e7b2;"></i> <span id="tab-title-ai">AI & Automation Engineer</span>
           </div>
-          <div class="role-tab-sub">Vibe Coding, Agentes Autónomos, Prompt Engineering, Bots y Flujos LLM.</div>
+          <div class="role-tab-sub" id="tab-sub-ai">Vibe Coding, Agentes Autónomos, Prompt Engineering, Bots y Flujos LLM.</div>
         </button>
 
-        <!-- Tab 3: Creative Tech & Media -->
+        <!-- Tab 3: Hardware & Digital Fabrication -->
+        <button class="role-tab-btn" id="tab-hardware" onclick="setRole('hardware')">
+          <div class="role-tab-name">
+            <i class="fa-solid fa-microchip" style="color: #fcd34d;"></i> <span id="tab-title-hardware">Hardware & Fab 3D/Láser</span>
+          </div>
+          <div class="role-tab-sub" id="tab-sub-hardware">Corte Láser (LightBurn), Impresión 3D FDM / Resina SLA, Prototipado y CAD.</div>
+        </button>
+
+        <!-- Tab 4: Creative Tech & Media -->
         <button class="role-tab-btn" id="tab-media" onclick="setRole('media')">
           <div class="role-tab-name">
-            <i class="fa-solid fa-clapperboard" style="color: #34d399;"></i> Media & Creative Tech
+            <i class="fa-solid fa-clapperboard" style="color: #34d399;"></i> <span id="tab-title-media">Media & Creative Tech</span>
           </div>
-          <div class="role-tab-sub">DaVinci Resolve, Pipelines de Edición, Drones (FAA) y Podcast Multicámara.</div>
+          <div class="role-tab-sub" id="tab-sub-media">DaVinci Resolve, Pipelines de Edición, Drones (FAA) y Podcast Multicámara.</div>
         </button>
 
-        <!-- Tab 4: Holistic / Full Profile -->
+        <!-- Tab 5: Holistic / Full Profile -->
         <button class="role-tab-btn" id="tab-all" onclick="setRole('all')">
           <div class="role-tab-name">
-            <i class="fa-solid fa-globe" style="color: #e2e8f0;"></i> Perfil Ejecutivo Integral
+            <i class="fa-solid fa-globe" style="color: #e2e8f0;"></i> <span id="tab-title-all">Perfil Ejecutivo Integral</span>
           </div>
-          <div class="role-tab-sub">Visión completa: Sistemas Computacionales + IA + Creación de Medios.</div>
+          <div class="role-tab-sub" id="tab-sub-all">Sistemas Computacionales + Hardware/Fab + IA + Creación de Medios.</div>
         </button>
       </div>
 
       <div class="role-summary-banner" id="role-banner">
         <i class="fa-solid fa-circle-info"></i>
         <span id="role-banner-text">
-          <strong>Vista activa: Business Systems & Software Engineer.</strong> Resalta experiencia en desarrollo de sistemas empresariales, APIs, ciclo de vida de aplicaciones (ALM), automatización de procesos y cumplimiento de SLAs.
+          <strong>Vista activa: Business Systems & Software Engineer.</strong>
         </span>
       </div>
     </div>
@@ -1241,18 +1270,18 @@
           </p>
 
           <div class="cta-group">
-            <a href="mailto:samf3212@gmail.com" class="btn-lg btn-gold">
-              <i class="fa-solid fa-paper-plane"></i> Contactar por Email
+            <a href="mailto:samf3212@gmail.com" class="btn-lg btn-gold" id="hero-cta-email">
+              <i class="fa-solid fa-paper-plane"></i> <span>Contactar por Email</span>
             </a>
             <a href="https://www.linkedin.com/in/gibran-villa/" target="_blank" class="btn-lg btn-outline-gold">
               <i class="fa-brands fa-linkedin"></i> LinkedIn
             </a>
-            <button onclick="window.print()" class="btn-lg btn-cobalt">
-              <i class="fa-solid fa-print"></i> Imprimir CV
+            <button onclick="window.print()" class="btn-lg btn-cobalt" id="hero-cta-print">
+              <i class="fa-solid fa-print"></i> <span>Imprimir CV</span>
             </button>
           </div>
 
-          <div class="contact-pills">
+          <div class="contact-pills" id="contact-pills-container">
             <a href="tel:6143042608" class="pill">
               <i class="fa-solid fa-phone"></i> 614-304-2608
             </a>
@@ -1263,13 +1292,13 @@
               <i class="fa-solid fa-copy"></i> samf3212@gmail.com
             </a>
             <span class="pill">
-              <i class="fa-solid fa-location-dot"></i> Chihuahua, Chih., México
+              <i class="fa-solid fa-location-dot"></i> <span id="pill-loc">Chihuahua, Chih., México</span>
             </span>
             <span class="pill">
-              <i class="fa-solid fa-globe"></i> Inglés C1 Advanced (90%)
+              <i class="fa-solid fa-globe"></i> <span id="pill-eng">Inglés C1 Advanced (90%)</span>
             </span>
             <span class="pill">
-              🇨🇳 Chino Mandarín (HSK 1 - +600 días)
+              🇨🇳 <span id="pill-zh">Chino Mandarín (HSK 1 - +600 días)</span>
             </span>
           </div>
         </div>
@@ -1279,99 +1308,41 @@
     <!-- Executive Stats Grid -->
     <section class="stats-section">
       <div class="stats-grid" id="stats-grid">
-        <!-- Rendered via JS based on active role -->
+        <!-- Rendered via JS -->
       </div>
     </section>
 
     <!-- Bento Skills Matrix -->
     <section id="especialidades" class="card">
       <div class="section-title-wrapper">
-        <h2 class="section-title">
+        <h2 class="section-title" id="skills-heading">
           <i class="fa-solid fa-microchip"></i> Matriz de Competencias y Tecnologías
         </h2>
         <div class="skill-search-box">
           <i class="fa-solid fa-magnifying-glass" style="color: var(--gold-light);"></i>
-          <input type="text" id="skill-search" class="skill-search-input" placeholder="Buscar tecnología (Python, APIs, SLA...)" oninput="filterSkills(this.value)">
+          <input type="text" id="skill-search" class="skill-search-input" placeholder="Buscar (Python, Láser, 3D, SLA...)" oninput="filterSkills(this.value)">
         </div>
       </div>
 
       <div class="bento-grid" id="bento-grid">
-        <!-- Dynamic Bento Blocks -->
-        <div class="bento-block" id="bento-software">
-          <div class="bento-header">
-            <span><i class="fa-solid fa-code"></i> Desarrollo de Sistemas & APIs</span>
-            <span class="bento-badge-tag">Core IT</span>
-          </div>
-          <div class="bento-image-wrapper">
-            <img src="img/coding.jpg" alt="Software, IA & Vibe Coding" class="bento-img">
-          </div>
-          <div class="badge-list">
-            <span class="badge badge-gold">Integración de Sistemas & APIs</span>
-            <span class="badge badge-gold">Python & Node.js</span>
-            <span class="badge badge-gold">Application Lifecycle Management (ALM)</span>
-            <span class="badge">Testing Unitario & de Integración</span>
-            <span class="badge">Google Workspace API & Webhooks</span>
-            <span class="badge">JavaScript / HTML5 / CSS3</span>
-            <span class="badge badge-cobalt">Arquitectura de Software & CRM</span>
-            <span class="badge">Bases de Datos & ETL Pipelines</span>
-            <span class="badge">Soporte Nivel 2/3 & SLAs</span>
-          </div>
-        </div>
-
-        <div class="bento-block" id="bento-ai">
-          <div class="bento-header">
-            <span><i class="fa-solid fa-brain"></i> IA Generativa & Automatización</span>
-            <span class="bento-badge-tag">Innovación</span>
-          </div>
-          <div class="bento-image-wrapper">
-            <img src="img/ai_lab.jpg" alt="IA Generativa & Vibe Coding" class="bento-img">
-          </div>
-          <div class="badge-list">
-            <span class="badge badge-gold">Vibe Coding & Pair Programming</span>
-            <span class="badge badge-gold">Prompt Engineering Avanzado</span>
-            <span class="badge">Desarrollo con Agentes Autónomos</span>
-            <span class="badge">Model Context Protocol (MCP)</span>
-            <span class="badge badge-cobalt">Gemini Pro / GPT-4 / Claude</span>
-            <span class="badge">Automatización de Tareas Repetitivas</span>
-            <span class="badge">Procesamiento de Documentos & Datos</span>
-          </div>
-        </div>
-
-        <div class="bento-block" id="bento-media">
-          <div class="bento-header">
-            <span><i class="fa-solid fa-film"></i> Media Tech, Drones & Gestión</span>
-            <span class="bento-badge-tag">Creativo</span>
-          </div>
-          <div class="bento-image-wrapper">
-            <img src="img/drone.jpg" alt="Producción, Diseño & Drones" class="bento-img">
-          </div>
-          <div class="badge-list">
-            <span class="badge badge-gold">DaVinci Resolve (Pipelines y Scripting)</span>
-            <span class="badge badge-cobalt">Piloto Dron Certificado (FAA TRUST)</span>
-            <span class="badge">Producción Multicámara & Streaming</span>
-            <span class="badge">Documentación Técnica & Capacitación</span>
-            <span class="badge">Liderazgo de Equipos Comerciales (+12)</span>
-            <span class="badge">Fotogrametría 3D & Fotografía 360°</span>
-            <span class="badge badge-emerald">Inglés C1 / Chino Mandarín HSK 1</span>
-          </div>
-        </div>
+        <!-- Dynamic Bento Blocks rendered via JS for multilingual support -->
       </div>
     </section>
 
     <!-- Experience Timeline (Dynamic Content per Role) -->
     <section id="experiencia" class="card">
-      <h2 class="section-title">
+      <h2 class="section-title" id="exp-heading">
         <i class="fa-solid fa-briefcase"></i> Experiencia Profesional & Trayectoria
       </h2>
 
       <div class="timeline" id="experience-timeline">
-        <!-- Rendered dynamically via JS according to selected role -->
+        <!-- Rendered dynamically via JS -->
       </div>
     </section>
 
     <!-- Showcase Projects -->
     <section id="proyectos" class="card">
-      <h2 class="section-title">
+      <h2 class="section-title" id="projects-heading">
         <i class="fa-solid fa-laptop-code"></i> Proyectos Relevantes & Casos de Éxito
       </h2>
 
@@ -1382,64 +1353,15 @@
 
     <!-- Education & Certifications -->
     <section id="certificaciones" class="card">
-      <div class="two-col">
-
-        <div>
-          <h2 class="section-title">
-            <i class="fa-solid fa-graduation-cap"></i> Educación e Idiomas
-          </h2>
-
-          <div class="info-item">
-            <div class="info-title">Ingeniería en Sistemas Computacionales</div>
-            <div class="info-subtitle">Opción Hardware / Arquitectura de Sistemas</div>
-            <div class="info-desc">Universidad Autónoma de Chihuahua (UACH) – 2012</div>
-          </div>
-
-          <div style="margin-top: 1.5rem;">
-            <div class="info-title">Competencia Lingüística</div>
-            <div class="info-desc">🇲🇽 <strong>Español:</strong> Nativo</div>
-            <div class="info-desc">🇺🇸 <strong>Inglés:</strong> C1 Advanced (90% / Negociación y Documentación Técnica)</div>
-            <div class="info-desc">🇨🇳 <strong>Chino Mandarín:</strong> HSK 1 (+600 días de estudio diario autodidacta)</div>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="section-title">
-            <i class="fa-solid fa-award"></i> Certificaciones Profesionales
-          </h2>
-
-          <div class="info-item">
-            <div class="info-title">Introduction to Artificial Intelligence</div>
-            <div class="info-subtitle">IBM</div>
-            <div class="info-desc">Arquitectura de IA, Machine Learning, Deep Learning y NLP.</div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-title">Google AI Essentials Specialization</div>
-            <div class="info-subtitle">Google</div>
-            <div class="info-desc">IA generativa para optimización de procesos y storytelling técnico.</div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-title">Prompting for Generative AI</div>
-            <div class="info-subtitle">Adobe</div>
-            <div class="info-desc">Ingeniería de prompts y generación digital de activos.</div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-title">The Recreational UAS Safety Test (TRUST)</div>
-            <div class="info-subtitle">FAA (Federal Aviation Administration)</div>
-            <div class="info-desc">Acreditación federal estadounidense para operaciones de dron.</div>
-          </div>
-        </div>
-
+      <div class="two-col" id="education-certifications-container">
+        <!-- Rendered dynamically via JS -->
       </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Gibran Samuel Villa Franco — Ingeniero en Sistemas Computacionales</p>
-      <p style="margin-top: 0.5rem;">
+      <p id="footer-text">© 2026 Gibran Samuel Villa Franco — Ingeniero en Sistemas Computacionales</p>
+      <p style="margin-top: 0.5rem;" id="footer-sub">
         Desarrollado con ⚡ <strong>Vibe Coding</strong> en Obsidian Dark & Champagne Gold.
       </p>
     </footer>
@@ -1449,250 +1371,1102 @@
   <div id="toast" class="toast">¡Enlace copiado al portapapeles!</div>
 
   <script>
-    // DATA MATRIX FOR ADAPTABLE CV PROFILES
-    const CV_PROFILES = {
-      systems: {
-        pageTitle: "Gibran Villa | Business Systems Developer & Software Engineer",
-        metaDesc: "CV y Portafolio de Gibran Villa: Ingeniero en Sistemas, Business Systems Developer para GKN Aerospace, Python, integraciones API y soporte SLA.",
-        badge: '<i class="fa-solid fa-server"></i> Business Systems Developer',
-        tagline: 'Ingeniero en Sistemas Computacionales (UACH) especializado en <strong>desarrollo de integraciones empresariales (APIs/ALM), automatización de procesos con Python</strong>, testing de aplicaciones y resolución de incidencias bajo estándares SLA.',
-        bannerText: '<strong>Vista activa: Business Systems & Software Developer (Perfil GKN Aerospace).</strong> Enfocada en arquitectura de aplicaciones, integración de datos/APIs, ciclo de vida de software (ALM), testing y soporte técnico L2/L3.',
-        highlightBlock: 'bento-software',
-        stats: [
-          { number: "100%", label: "Ciclo de Vida de Software (ALM & Testing)" },
-          { number: "C1", label: "Inglés Avanzado / Técnico (90%)" },
-          { number: "12+", label: "Años de Trayectoria en Sistemas (UACH)" },
-          { number: "99.9%", label: "Resolución de Incidencias & SLAs" }
-        ],
-        experience: [
+    // COMPLETE TRILINGUAL DATA MATRIX (ES, EN, ZH)
+    const DICTIONARY = {
+      es: {
+        nav: { skills: "Habilidades", exp: "Experiencia", projects: "Proyectos", certs: "Educación", print: "Imprimir CV" },
+        roleSwitcherTitle: "Modo Reclutador / Enfoque del Perfil",
+        roleShareBtn: "Copiar enlace de este perfil",
+        toastCopied: "¡Copiado al portapapeles!",
+        toastLinkCopied: "¡Enlace copiado para perfil activo!",
+        headings: {
+          skills: "Matriz de Competencias y Tecnologías",
+          exp: "Experiencia Profesional & Trayectoria",
+          projects: "Proyectos Relevantes & Casos de Éxito",
+          eduTitle: "Educación e Idiomas",
+          certsTitle: "Certificaciones Profesionales",
+          searchPlaceholder: "Buscar (Python, Láser, 3D, SLA, LightBurn...)"
+        },
+        pills: {
+          loc: "Chihuahua, Chih., México",
+          eng: "Inglés C1 Advanced (90%)",
+          zh: "Chino Mandarín (HSK 1 - +600 días)"
+        },
+        ctas: { email: "Contactar por Email", print: "Imprimir CV" },
+        footer: {
+          text: "© 2026 Gibran Samuel Villa Franco — Ingeniero en Sistemas Computacionales",
+          sub: "Desarrollado con ⚡ <strong>Vibe Coding</strong> en Obsidian Dark & Champagne Gold."
+        },
+        bento: [
           {
-            title: "Desarrollador de Sistemas & Automatización de Procesos (IT / ALM)",
-            company: "Delta Prompt Labs / Consultoría de Sistemas Independiente",
-            date: "Septiembre 2025 – Presente",
-            bullets: [
-              "Diseño y desarrollo de <strong>micro-servicios y scripts en Python / Node.js</strong> para la automatización e integración de flujos de trabajo empresariales.",
-              "Implementación de arquitectura de pruebas (unit testing e integración) asegurando la estabilidad antes del despliegue en entornos productivos.",
-              "Documentación técnica rigurosa de procedimientos, diagramas de flujo y manuales de operación de soluciones internas.",
-              "Gestión de requerimientos técnicos y resolución de fallos bajo acuerdos de nivel de servicio (SLAs)."
+            id: "bento-software",
+            title: "Desarrollo de Sistemas & APIs",
+            tag: "Core IT",
+            img: "img/coding.jpg",
+            badges: [
+              { text: "Integración de Sistemas & APIs", cls: "badge-gold" },
+              { text: "Python & Node.js", cls: "badge-gold" },
+              { text: "Application Lifecycle Management (ALM)", cls: "badge-gold" },
+              { text: "Testing Unitario & de Integración", cls: "" },
+              { text: "Google Workspace API & Webhooks", cls: "" },
+              { text: "JavaScript / HTML5 / CSS3", cls: "" },
+              { text: "Arquitectura de Software & CRM", cls: "badge-cobalt" },
+              { text: "Bases de Datos & ETL Pipelines", cls: "" },
+              { text: "Soporte Nivel 2/3 & SLAs", cls: "" }
             ]
           },
           {
-            title: "Líder de Sistemas, Procesos & Plataforma CRM",
-            company: "4Arrow Servicios Inmobiliarios",
-            date: "Agosto 2021 – Mayo 2025",
-            bullets: [
-              "Programación y despliegue de <strong>CRM corporativo sobre Google Workspace APIs</strong> con módulos de automatización para seguimiento comercial.",
-              "Capacitación estructurada y soporte continuo a más de 12 usuarios finales en el uso de herramientas tecnológicas internas.",
-              "Gestión y mantenimiento de bases de datos de clientes e integración con plataformas externas de mercadeo.",
-              "Optimización de tiempos de respuesta operativa en un 40% mediante la estandarización de procesos de captura de datos."
+            id: "bento-hardware",
+            title: "Hardware, Prototipado 3D & Láser",
+            tag: "Fabricación Digital",
+            img: "img/drone.jpg",
+            badges: [
+              { text: "Corte & Grabado Láser (LightBurn)", cls: "badge-gold" },
+              { text: "Impresión 3D FDM / Filamento", cls: "badge-amber" },
+              { text: "Impresión 3D Resina (SLA / MSLA)", cls: "badge-amber" },
+              { text: "Slicing (Cura / PrusaSlicer / Chitubox)", cls: "badge-gold" },
+              { text: "Calibración de Parámetros & E-steps", cls: "" },
+              { text: "Post-procesamiento Químico & Curado UV", cls: "" },
+              { text: "Diseño CAD/CAM & Tolerancias Mecánicas", cls: "badge-cobalt" },
+              { text: "Mantenimiento & Nivelación Mecánica", cls: "" },
+              { text: "Seguridad Operativa & Extracción de Humos", cls: "" }
             ]
           },
           {
-            title: "Especialista en Sistemas y Soluciones Digitales",
-            company: "SIP Servicios Independientes Profesionales",
-            date: "Agosto 2025 – Mayo 2026",
-            bullets: [
-              "Desarrollo e integración de herramientas digitales para procesamiento de levantamientos topográficos y fotogrametría 3D.",
-              "Mantenimiento de integridad de información contractual y cumplimiento de normativas de seguridad de datos."
+            id: "bento-ai",
+            title: "IA Generativa & Automatización",
+            tag: "Innovación",
+            img: "img/ai_lab.jpg",
+            badges: [
+              { text: "Vibe Coding & Pair Programming", cls: "badge-gold" },
+              { text: "Prompt Engineering Avanzado", cls: "badge-gold" },
+              { text: "Desarrollo con Agentes Autónomos", cls: "" },
+              { text: "Model Context Protocol (MCP)", cls: "" },
+              { text: "Gemini Pro / GPT-4 / Claude", cls: "badge-cobalt" },
+              { text: "Automatización de Tareas Repetitivas", cls: "" },
+              { text: "Procesamiento de Documentos & Datos", cls: "" }
+            ]
+          },
+          {
+            id: "bento-media",
+            title: "Media Tech, Drones & Gestión",
+            tag: "Creativo",
+            img: "img/wedding.jpg",
+            badges: [
+              { text: "DaVinci Resolve (Pipelines y Scripting)", cls: "badge-gold" },
+              { text: "Piloto Dron Certificado (FAA TRUST)", cls: "badge-cobalt" },
+              { text: "Producción Multicámara & Streaming", cls: "" },
+              { text: "Documentación Técnica & Capacitación", cls: "" },
+              { text: "Liderazgo de Equipos Comerciales (+12)", cls: "" },
+              { text: "Fotogrametría 3D & Fotografía 360°", cls: "" },
+              { text: "Inglés C1 / Chino Mandarín HSK 1", cls: "badge-emerald" }
             ]
           }
         ],
-        projects: [
-          {
-            icon: "fa-solid fa-network-wired",
-            title: "Enterprise Automation Hub & APIs",
-            desc: "Suite de scripts y conectores en Python para sincronización bidireccional entre bases de datos, APIs de mensajería y servicios en la nube.",
-            linkText: "Consultar Arquitectura",
-            linkUrl: "mailto:samf3212@gmail.com?subject=Consulta%20Enterprise%20Automation%20Hub"
-          },
-          {
-            icon: "fa-brands fa-youtube",
-            title: "@deltapromptlabs — AI & Software Lab",
-            desc: "Plataforma de experimentación e investigación en ingeniería de software asistida por IA, pruebas de arquitectura y Vibe Coding.",
-            linkText: "Ver Laboratorio YouTube",
-            linkUrl: "https://youtube.com/@deltapromptlabs"
-          },
-          {
-            icon: "fa-solid fa-database",
-            title: "Workspace Custom CRM & Workflows",
-            desc: "Sistema integral de gestión de clientes y automatización de embudos desarrollado a la medida para operaciones de alto volumen.",
-            linkText: "Detalles del Proyecto",
-            linkUrl: "mailto:samf3212@gmail.com?subject=Consulta%20Workspace%20CRM"
-          }
-        ]
+        education: {
+          degreeTitle: "Ingeniería en Sistemas Computacionales",
+          degreeSub: "Opción Hardware / Arquitectura de Sistemas",
+          degreeDesc: "Universidad Autónoma de Chihuahua (UACH) – 2012",
+          langTitle: "Competencia Lingüística",
+          langs: [
+            "🇲🇽 <strong>Español:</strong> Nativo",
+            "🇺🇸 <strong>Inglés:</strong> C1 Advanced (90% / Negociación y Documentación Técnica)",
+            "🇨🇳 <strong>Chino Mandarín:</strong> HSK 1 (+600 días de estudio diario autodidacta)"
+          ],
+          certs: [
+            { title: "Introduction to Artificial Intelligence", sub: "IBM", desc: "Arquitectura de IA, Machine Learning, Deep Learning y NLP." },
+            { title: "Google AI Essentials Specialization", sub: "Google", desc: "IA generativa para optimización de procesos y storytelling técnico." },
+            { title: "Prompting for Generative AI", sub: "Adobe", desc: "Ingeniería de prompts y generación digital de activos." },
+            { title: "The Recreational UAS Safety Test (TRUST)", sub: "FAA (Federal Aviation Administration)", desc: "Acreditación federal estadounidense para operaciones de dron." }
+          ]
+        }
       },
-      ai: {
-        pageTitle: "Gibran Villa | AI Systems & Automation Engineer",
-        metaDesc: "CV de Gibran Villa: Especialista en Vibe Coding, Agentes Autónomos de IA, Prompt Engineering y Flujos de Automatización.",
-        badge: '<i class="fa-solid fa-brain"></i> AI & Automation Engineer',
-        tagline: 'Ingeniero en Sistemas enfocado en <strong>desarrollo asistido por IA (Vibe Coding), agentes autónomos, Model Context Protocol (MCP)</strong> y automatización de flujos de trabajo de alto impacto.',
-        bannerText: '<strong>Vista activa: AI & Automation Specialist.</strong> Enfocada en pipelines de Inteligencia Artificial Generativa, agentes autónomos, Prompt Engineering y desarrollo acelerado de software.',
-        highlightBlock: 'bento-ai',
-        stats: [
-          { number: "100%", label: "Desarrollo Asistido con IA (Vibe Coding)" },
-          { number: "18+", label: "Modelos & APIs de IA Dominadas" },
-          { number: "600+", label: "Días de Estudio Disciplinado en Chino" },
-          { number: "10x", label: "Aceleración de Entregables con Agentes" }
-        ],
-        experience: [
+
+      en: {
+        nav: { skills: "Skills", exp: "Experience", projects: "Projects", certs: "Education", print: "Print CV" },
+        roleSwitcherTitle: "Recruiter Mode / Profile Focus",
+        roleShareBtn: "Copy Link for this Profile",
+        toastCopied: "Copied to clipboard!",
+        toastLinkCopied: "Link copied for active profile!",
+        headings: {
+          skills: "Skills & Technical Competencies Matrix",
+          exp: "Professional Experience & Career Path",
+          projects: "Featured Projects & Case Studies",
+          eduTitle: "Education & Languages",
+          certsTitle: "Professional Certifications",
+          searchPlaceholder: "Search (Python, Laser, 3D, SLA, LightBurn...)"
+        },
+        pills: {
+          loc: "Chihuahua, Chih., Mexico",
+          eng: "English C1 Advanced (90%)",
+          zh: "Mandarin Chinese (HSK 1 - +600 days)"
+        },
+        ctas: { email: "Contact via Email", print: "Print CV" },
+        footer: {
+          text: "© 2026 Gibran Samuel Villa Franco — Computer Systems Engineer",
+          sub: "Built with ⚡ <strong>Vibe Coding</strong> in Obsidian Dark & Champagne Gold."
+        },
+        bento: [
           {
-            title: "Desarrollador de Software con IA & Vibe Coder",
-            company: "Delta Prompt Labs / Estudio VSM",
-            date: "Septiembre 2025 – Presente",
-            bullets: [
-              "Construcción y orquestación de agentes de IA y servidores MCP (Model Context Protocol) para automatizar pipelines complejos de software.",
-              "Investigación avanzada en Prompt Engineering para modelos multimodales (Gemini, GPT-4, Claude, Civitai).",
-              "Desarrollo ágil de herramientas web full-stack reduciendo los ciclos tradicionales de entrega.",
-              "Creación de contenido educativo técnico en YouTube sobre arquitectura de software impulsada por agentes."
+            id: "bento-software",
+            title: "Systems Development & APIs",
+            tag: "Core IT",
+            img: "img/coding.jpg",
+            badges: [
+              { text: "Systems Integration & APIs", cls: "badge-gold" },
+              { text: "Python & Node.js", cls: "badge-gold" },
+              { text: "Application Lifecycle Management (ALM)", cls: "badge-gold" },
+              { text: "Unit & Integration Testing", cls: "" },
+              { text: "Google Workspace API & Webhooks", cls: "" },
+              { text: "JavaScript / HTML5 / CSS3", cls: "" },
+              { text: "Software Architecture & Custom CRM", cls: "badge-cobalt" },
+              { text: "Databases & ETL Pipelines", cls: "" },
+              { text: "Level 2/3 Technical Support & SLAs", cls: "" }
             ]
           },
           {
-            title: "Líder de Sistemas & Automatización de Ventas",
-            company: "4Arrow Servicios Inmobiliarios",
-            date: "Agosto 2021 – Mayo 2025",
-            bullets: [
-              "Integración de modelos predictivos y asistentes inteligentes para la calificación de prospectos.",
-              "Automatización de campañas y reportes mediante scripts de integración en tiempo real."
+            id: "bento-hardware",
+            title: "Hardware, 3D Fabrication & Laser",
+            tag: "Digital Fab",
+            img: "img/drone.jpg",
+            badges: [
+              { text: "Diode Laser Cutting & Engraving (LightBurn)", cls: "badge-gold" },
+              { text: "3D Printing FDM (Filament)", cls: "badge-amber" },
+              { text: "3D Printing SLA / MSLA (Resin)", cls: "badge-amber" },
+              { text: "Slicing (Cura / PrusaSlicer / Chitubox)", cls: "badge-gold" },
+              { text: "Thermal Parameters & E-step Calibration", cls: "" },
+              { text: "Chemical Post-Processing & UV Curing", cls: "" },
+              { text: "CAD/CAM Design & Mechanical Tolerances", cls: "badge-cobalt" },
+              { text: "Hardware Maintenance & Bed Leveling", cls: "" },
+              { text: "Operational Safety & Fume Extraction", cls: "" }
+            ]
+          },
+          {
+            id: "bento-ai",
+            title: "Generative AI & Automation",
+            tag: "Innovation",
+            img: "img/ai_lab.jpg",
+            badges: [
+              { text: "Vibe Coding & Pair Programming", cls: "badge-gold" },
+              { text: "Advanced Prompt Engineering", cls: "badge-gold" },
+              { text: "Autonomous Agent Tooling", cls: "" },
+              { text: "Model Context Protocol (MCP)", cls: "" },
+              { text: "Gemini Pro / GPT-4 / Claude", cls: "badge-cobalt" },
+              { text: "Workflow & Process Automation", cls: "" },
+              { text: "Document & Data Extraction", cls: "" }
+            ]
+          },
+          {
+            id: "bento-media",
+            title: "Media Tech, Drones & Leadership",
+            tag: "Creative",
+            img: "img/wedding.jpg",
+            badges: [
+              { text: "DaVinci Resolve (Pipelines & Scripting)", cls: "badge-gold" },
+              { text: "Certified Drone Pilot (FAA TRUST)", cls: "badge-cobalt" },
+              { text: "Multi-Camera Production & Streaming", cls: "" },
+              { text: "Technical Documentation & Training", cls: "" },
+              { text: "Commercial Sales Team Leadership (+12)", cls: "" },
+              { text: "3D Photogrammetry & 360° Tours", cls: "" },
+              { text: "English C1 / Mandarin Chinese HSK 1", cls: "badge-emerald" }
             ]
           }
         ],
-        projects: [
-          {
-            icon: "fa-brands fa-youtube",
-            title: "@deltapromptlabs",
-            desc: "Canal y laboratorio enfocado en Inteligencia Artificial, Vibe Coding, experimentos de Prompt Engineering y agentes.",
-            linkText: "Ver Canal YouTube",
-            linkUrl: "https://youtube.com/@deltapromptlabs"
-          },
-          {
-            icon: "fa-solid fa-robot",
-            title: "Autonomous Agent Tooling (MCP)",
-            desc: "Desarrollo de módulos e interoperabilidad entre herramientas de escritorio y LLMs para generación automatizada de tareas.",
-            linkText: "Ver Detalles",
-            linkUrl: "https://youtube.com/@deltapromptlabs"
-          }
-        ]
+        education: {
+          degreeTitle: "B.S. in Computer Systems Engineering",
+          degreeSub: "Hardware Architecture Option",
+          degreeDesc: "Autonomous University of Chihuahua (UACH) – 2012",
+          langTitle: "Language Proficiency",
+          langs: [
+            "🇲🇽 <strong>Spanish:</strong> Native",
+            "🇺🇸 <strong>English:</strong> C1 Advanced (90% / Technical & Business Fluency)",
+            "🇨🇳 <strong>Mandarin Chinese:</strong> HSK 1 (+600 days of daily self-taught study)"
+          ],
+          certs: [
+            { title: "Introduction to Artificial Intelligence", sub: "IBM", desc: "AI architecture, Machine Learning, Deep Learning, and NLP." },
+            { title: "Google AI Essentials Specialization", sub: "Google", desc: "Generative AI for workflow efficiency and technical storytelling." },
+            { title: "Prompting for Generative AI", sub: "Adobe", desc: "Prompt engineering and digital asset generation." },
+            { title: "The Recreational UAS Safety Test (TRUST)", sub: "FAA (Federal Aviation Administration)", desc: "U.S. federal certification for drone operations." }
+          ]
+        }
       },
-      media: {
-        pageTitle: "Gibran Villa | Media Creator & Creative Technologist",
-        metaDesc: "Portafolio Creativo de Gibran Villa: DaVinci Resolve Avanzado, Piloto Dron FAA TRUST, Producción de Podcast y Medios Digitales.",
-        badge: '<i class="fa-solid fa-clapperboard"></i> Media & Creative Technologist',
-        tagline: 'Creador Audiovisual e Ingeniero en Sistemas especializado en <strong>DaVinci Resolve avanzado, cinematografía aérea con dron (FAA TRUST)</strong> y producción de podcasts multicámara.',
-        bannerText: '<strong>Vista activa: Media & Creative Technologist.</strong> Enfocada en producción audiovisual de alta gama, edición en DaVinci Resolve, vuelos con dron y contenidos virales.',
-        highlightBlock: 'bento-media',
-        stats: [
-          { number: "53+", label: "Episodios Semanales Podcast 'Hijos del Trago'" },
-          { number: "18+", label: "Marcas Comerciales e Inmobiliarias Atendidas" },
-          { number: "FAA", label: "Piloto Certificado de Dron (TRUST)" },
-          { number: "4K HDR", label: "Pipeline Integral en DaVinci Resolve" }
-        ],
-        experience: [
+
+      zh: {
+        nav: { skills: "专业技能", exp: "工作经验", projects: "重点项目", certs: "教育背景", print: "打印简历" },
+        roleSwitcherTitle: "招聘官模式 / 简历视角切换",
+        roleShareBtn: "复制此配置专属链接",
+        toastCopied: "已成功复制到剪贴板！",
+        toastLinkCopied: "已复制当前角色的专属链接！",
+        headings: {
+          skills: "专业技术与核心能力矩阵",
+          exp: "职业经历与项目履历",
+          projects: "代表性工程与实践案例",
+          eduTitle: "教育背景与语言能力",
+          certsTitle: "专业资质认证",
+          searchPlaceholder: "搜索技能 (Python, 激光雕刻, 3D打印, SLA...)"
+        },
+        pills: {
+          loc: "墨西哥奇瓦瓦州 (Chihuahua, MX)",
+          eng: "英语 C1 高级流利 (90%)",
+          zh: "中文普通话 (HSK 1 - 连续自学600余天)"
+        },
+        ctas: { email: "发送邮件联系", print: "打印简历 (PDF)" },
+        footer: {
+          text: "© 2026 Gibran Samuel Villa Franco — 计算机系统与硬件工程师",
+          sub: "基于 ⚡ <strong>Vibe Coding</strong> 敏捷构建 | 黑曜金奢华视觉系统"
+        },
+        bento: [
           {
-            title: "Director Audiovisual & Creador de Contenido",
-            company: "Sam Frank Media / Estudio VSM",
-            date: "Septiembre 2025 – Presente",
-            bullets: [
-              "Producción ejecutiva e ingeniería de audio y video para 'Hijos del Trago Podcast' (+53 episodios continuos).",
-              "Edición profesional, etalonaje y mezcla en <strong>DaVinci Resolve</strong> con flujos multicámara y proxies optimizados.",
-              "Vuelos cinemáticos con dron y fotogrametría bajo certificación federal FAA TRUST.",
-              "Estrategia y edición de video vertical para TikTok, Instagram Reels y YouTube Shorts."
+            id: "bento-software",
+            title: "系统开发与 API 集成",
+            tag: "核心IT",
+            img: "img/coding.jpg",
+            badges: [
+              { text: "企业系统集成与 REST APIs", cls: "badge-gold" },
+              { text: "Python & Node.js 脚本工程", cls: "badge-gold" },
+              { text: "应用程序生命周期管理 (ALM)", cls: "badge-gold" },
+              { text: "单元测试与集成测试", cls: "" },
+              { text: "Google Workspace API 与自动化", cls: "" },
+              { text: "JavaScript / HTML5 / CSS3", cls: "" },
+              { text: "软件架构与企业定制 CRM", cls: "badge-cobalt" },
+              { text: "数据库与 ETL 数据流", cls: "" },
+              { text: "二/三级技术支持与 SLA 运维", cls: "" }
             ]
           },
           {
-            title: "Marketing Digital & Producción Inmobiliaria",
-            company: "SIP Servicios Profesionales / 4Arrow",
-            date: "Agosto 2021 – Mayo 2026",
-            bullets: [
-              "Producción de recorridos virtuales 360°, fotografía publicitaria y material promocional.",
-              "Diseño de identidad visual y campañas publicitarias físicas y digitales."
-            ]
-          }
-        ],
-        projects: [
-          {
-            icon: "fa-brands fa-instagram",
-            title: "@samfrankmedia",
-            desc: "Canal principal de creación de contenido audiovisual, tomas aéreas cinematográficas con dron y producciones comerciales.",
-            linkText: "Visitar Instagram",
-            linkUrl: "https://instagram.com/samfrankmedia"
-          },
-          {
-            icon: "fa-solid fa-podcast",
-            title: "Podcast Hijos del Trago",
-            desc: "Producción integral de podcast semanal de formato largo (+53 episodios continuos), mezcla de audio y multicámara.",
-            linkText: "Escuchar Episodios",
-            linkUrl: "https://youtube.com/@hijosdeltrago"
-          }
-        ]
-      },
-      all: {
-        pageTitle: "Gibran Samuel Villa Franco | Executive Full-Stack & Systems Engineer",
-        metaDesc: "Portafolio Integral de Gibran Samuel Villa Franco: Ingeniero en Sistemas, Business Systems Developer, IA y Producción de Medios.",
-        badge: '<i class="fa-solid fa-crown"></i> Full-Stack Systems & AI Executive',
-        tagline: 'Ingeniero en Sistemas Computacionales • <strong>Business Systems Developer</strong> • Especialista en <strong>Vibe Coding con IA, DaVinci Resolve</strong> y Cinematografía con Dron (FAA TRUST).',
-        bannerText: '<strong>Vista activa: Perfil Ejecutivo Integral.</strong> Combina todas las disciplinas: Ingeniería de Sistemas, Inteligencia Artificial, Producción Audiovisual y Liderazgo.',
-        highlightBlock: null,
-        stats: [
-          { number: "12+", label: "Años de Trayectoria en Sistemas (UACH)" },
-          { number: "53+", label: "Episodios Podcast 'Hijos del Trago'" },
-          { number: "C1", label: "Inglés Avanzado (90%)" },
-          { number: "600+", label: "Días de Chino Mandarín HSK 1" }
-        ],
-        experience: [
-          {
-            title: "Desarrollador de Sistemas, Creador de Medios & Consultor IA",
-            company: "Sam Frank Media / Delta Prompt Labs",
-            date: "Septiembre 2025 – Presente",
-            bullets: [
-              "Desarrollo de micro-servicios, integraciones de APIs y automatizaciones con Python y Vibe Coding.",
-              "Producción ejecutiva de 'Hijos del Trago Podcast' (+53 episodios) y dirección de medios digitales.",
-              "Operación cinematográfica de drones (FAA TRUST) y edición avanzada en DaVinci Resolve."
+            id: "bento-hardware",
+            title: "硬件工程、3D打印与激光智造",
+            tag: "数字制造",
+            img: "img/drone.jpg",
+            badges: [
+              { text: "二极管激光切割与雕刻 (LightBurn)", cls: "badge-gold" },
+              { text: "FDM 熔融沉积 3D打印 (线材)", cls: "badge-amber" },
+              { text: "SLA / MSLA 光固化 3D打印 (树脂)", cls: "badge-amber" },
+              { text: "切片算法与软件 (Cura / Prusa / Chitubox)", cls: "badge-gold" },
+              { text: "温度曲线与挤出机步进精确校准", cls: "" },
+              { text: "化学后处理 (异丙醇清洗与二次UV固化)", cls: "" },
+              { text: "CAD/CAM 三维建模与机械公差配合", cls: "badge-cobalt" },
+              { text: "硬件日常维护与热床调平工程", cls: "" },
+              { text: "工业作业安全与烟雾净化管理", cls: "" }
             ]
           },
           {
-            title: "Líder de Sistemas, Marketing & Ventas",
-            company: "4Arrow Servicios Inmobiliarios",
-            date: "Agosto 2021 – Mayo 2025",
-            bullets: [
-              "Dirección, reclutamiento y capacitación comercial de equipo de más de 12 asesores.",
-              "Programación y puesta en marcha de CRM corporativo sobre Google Workspace APIs.",
-              "Dirección y producción de catálogos multimedia comerciales."
+            id: "bento-ai",
+            title: "生成式人工智能与自动化",
+            tag: "前沿创新",
+            img: "img/ai_lab.jpg",
+            badges: [
+              { text: "Vibe Coding 协同编程开发", cls: "badge-gold" },
+              { text: "高级提示词工程 (Prompt Engineering)", cls: "badge-gold" },
+              { text: "自主智能体工作流 (AI Agents)", cls: "" },
+              { text: "模型上下文协议 (MCP 架构)", cls: "" },
+              { text: "Gemini Pro / GPT-4 / Claude 部署", cls: "badge-cobalt" },
+              { text: "自动化工作流构建与机器人", cls: "" },
+              { text: "非结构化文档与数据智能提取", cls: "" }
+            ]
+          },
+          {
+            id: "bento-media",
+            title: "多媒体科技、无人机与团队领导",
+            tag: "创意视效",
+            img: "img/wedding.jpg",
+            badges: [
+              { text: "DaVinci Resolve 达芬奇全流程后期", cls: "badge-gold" },
+              { text: "美国 FAA TRUST 认证无人机飞手", cls: "badge-cobalt" },
+              { text: "多机位现场导播与实时流媒体", cls: "" },
+              { text: "技术规范文档编制与用户培训", cls: "" },
+              { text: "商业团队管理与赋能 (+12人)", cls: "" },
+              { text: "3D倾斜摄影测量与360°全景制作", cls: "" },
+              { text: "流利英语 (C1) / 进修中文 (HSK 1)", cls: "badge-emerald" }
             ]
           }
         ],
-        projects: [
-          {
-            icon: "fa-brands fa-youtube",
-            title: "@deltapromptlabs (AI & Dev Lab)",
-            desc: "Investigación aplicada en IA, Prompt Engineering y desarrollo asistido por agentes.",
-            linkText: "Ver Laboratorio",
-            linkUrl: "https://youtube.com/@deltapromptlabs"
-          },
-          {
-            icon: "fa-brands fa-instagram",
-            title: "@samfrankmedia (Audiovisual)",
-            desc: "Tomas aéreas cinematográficas, producciones publicitarias y desarrollo digital.",
-            linkText: "Ver Instagram",
-            linkUrl: "https://instagram.com/samfrankmedia"
-          },
-          {
-            icon: "fa-solid fa-podcast",
-            title: "Podcast Hijos del Trago",
-            desc: "Producción semanal de formato largo con streaming y mezcla multicámara.",
-            linkText: "Ver Episodios",
-            linkUrl: "https://youtube.com/@hijosdeltrago"
-          }
-        ]
+        education: {
+          degreeTitle: "计算机系统工程学士学位",
+          degreeSub: "硬件架构与系统方向",
+          degreeDesc: "墨西哥奇瓦瓦自治大学 (UACH) – 2012年毕业",
+          langTitle: "语言应用能力",
+          langs: [
+            "🇲🇽 <strong>西班牙语：</strong>母语水平",
+            "🇺🇸 <strong>英语：</strong>C1 高级应用水平 (90% / 商务洽谈与技术文档)",
+            "🇨🇳 <strong>中文普通话：</strong>HSK 1 基础（连续自学进修 600 余天）"
+          ],
+          certs: [
+            { title: "Introduction to Artificial Intelligence", sub: "IBM", desc: "人工智能架构、机器学习、深度学习与自然语言处理。" },
+            { title: "Google AI Essentials Specialization", sub: "Google", desc: "生成式AI在业务效能与技术叙事中的应用。" },
+            { title: "Prompting for Generative AI", sub: "Adobe", desc: "提示词工程与数字化资产生成。" },
+            { title: "The Recreational UAS Safety Test (TRUST)", sub: "FAA (美国联邦航空管理局)", desc: "美国联邦无人机安全运行执照。" }
+          ]
+        }
       }
     };
 
-    let currentRole = 'systems';
+    // MULTILINGUAL ROLE PROFILES DATA
+    const ROLE_DATA = {
+      systems: {
+        es: {
+          badge: '<i class="fa-solid fa-server"></i> Business Systems Developer',
+          tabTitle: "Business Systems & Dev",
+          tabSub: "Integraciones, Python, APIs, ALM, SLAs y Arquitectura Empresarial (GKN Aerospace).",
+          tagline: 'Ingeniero en Sistemas Computacionales (UACH) especializado en <strong>desarrollo de integraciones empresariales (APIs/ALM), automatización de procesos con Python</strong>, testing de aplicaciones y resolución de incidencias bajo estándares SLA.',
+          bannerText: '<strong>Vista activa: Business Systems & Software Developer (Perfil GKN Aerospace).</strong> Enfocada en arquitectura de aplicaciones, integración de datos/APIs, ciclo de vida de software (ALM), testing y soporte técnico L2/L3.',
+          highlightBlock: 'bento-software',
+          stats: [
+            { number: "100%", label: "Ciclo de Vida de Software (ALM & Testing)" },
+            { number: "C1", label: "Inglés Avanzado / Técnico (90%)" },
+            { number: "12+", label: "Años de Trayectoria en Sistemas (UACH)" },
+            { number: "99.9%", label: "Resolución de Incidencias & SLAs" }
+          ],
+          experience: [
+            {
+              title: "Desarrollador de Sistemas & Automatización de Procesos (IT / ALM)",
+              company: "Delta Prompt Labs / Consultoría de Sistemas Independiente",
+              date: "Septiembre 2025 – Presente",
+              bullets: [
+                "Diseño y desarrollo de <strong>micro-servicios y scripts en Python / Node.js</strong> para la automatización e integración de flujos de trabajo empresariales.",
+                "Implementación de arquitectura de pruebas (unit testing e integración) asegurando la estabilidad antes del despliegue en entornos productivos.",
+                "Documentación técnica rigurosa de procedimientos, diagramas de flujo y manuales de operación de soluciones internas.",
+                "Gestión de requerimientos técnicos y resolución de incidencias bajo acuerdos de nivel de servicio (SLAs)."
+              ]
+            },
+            {
+              title: "Líder de Sistemas, Procesos & Plataforma CRM",
+              company: "4Arrow Servicios Inmobiliarios",
+              date: "Agosto 2021 – Mayo 2025",
+              bullets: [
+                "Programación y despliegue de <strong>CRM corporativo sobre Google Workspace APIs</strong> con módulos de automatización para seguimiento comercial.",
+                "Capacitación estructurada y soporte continuo a más de 12 usuarios finales en el uso de herramientas tecnológicas internas.",
+                "Gestión y mantenimiento de bases de datos de clientes e integración con plataformas externas de mercadeo.",
+                "Optimización de tiempos de respuesta operativa en un 40% mediante la estandarización de procesos de captura de datos."
+              ]
+            },
+            {
+              title: "Especialista en Sistemas y Soluciones Digitales",
+              company: "SIP Servicios Independientes Profesionales",
+              date: "Agosto 2025 – Mayo 2026",
+              bullets: [
+                "Desarrollo e integración de herramientas digitales para procesamiento de levantamientos y fotogrametría 3D.",
+                "Mantenimiento de integridad de información contractual y cumplimiento de normativas de seguridad de datos."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-solid fa-network-wired",
+              title: "Enterprise Automation Hub & APIs",
+              desc: "Suite de scripts y conectores en Python para sincronización bidireccional entre bases de datos, APIs de mensajería y servicios en la nube.",
+              linkText: "Consultar Arquitectura",
+              linkUrl: "mailto:samf3212@gmail.com?subject=Consulta%20Enterprise%20Automation%20Hub"
+            },
+            {
+              icon: "fa-brands fa-youtube",
+              title: "@deltapromptlabs — AI & Software Lab",
+              desc: "Plataforma de experimentación e investigación en ingeniería de software asistida por IA, pruebas de arquitectura y Vibe Coding.",
+              linkText: "Ver Laboratorio YouTube",
+              linkUrl: "https://youtube.com/@deltapromptlabs"
+            },
+            {
+              icon: "fa-solid fa-database",
+              title: "Workspace Custom CRM & Workflows",
+              desc: "Sistema integral de gestión de clientes y automatización de embudos desarrollado a la medida para operaciones de alto volumen.",
+              linkText: "Detalles del Proyecto",
+              linkUrl: "mailto:samf3212@gmail.com?subject=Consulta%20Workspace%20CRM"
+            }
+          ]
+        },
+        en: {
+          badge: '<i class="fa-solid fa-server"></i> Business Systems Developer',
+          tabTitle: "Business Systems & Dev",
+          tabSub: "Enterprise Integrations, Python, APIs, ALM, SLAs & Architecture (GKN Aerospace).",
+          tagline: 'Computer Systems Engineer (UACH) specialized in <strong>enterprise application integrations (APIs/ALM), Python process automation</strong>, software testing, and SLA-driven issue resolution.',
+          bannerText: '<strong>Active View: Business Systems & Software Developer (GKN Aerospace Target Profile).</strong> Focused on application architecture, API integration, ALM lifecycle, and L2/L3 support.',
+          highlightBlock: 'bento-software',
+          stats: [
+            { number: "100%", label: "ALM Lifecycle & Integration Testing" },
+            { number: "C1", label: "Technical & Business English (90%)" },
+            { number: "12+", label: "Years Systems Foundation (UACH)" },
+            { number: "99.9%", label: "SLA Resolution & Incident Management" }
+          ],
+          experience: [
+            {
+              title: "Systems Developer & Process Automation Engineer (IT / ALM)",
+              company: "Delta Prompt Labs / Independent IT Consulting",
+              date: "Sept 2025 – Present",
+              bullets: [
+                "Architected and deployed <strong>Python and Node.js microservices</strong> to automate and integrate business workflows and third-party APIs.",
+                "Implemented automated testing strategies (unit & integration testing) ensuring zero downtime before production rollouts.",
+                "Authored detailed technical documentation, operational flowcharts, and user manuals for internal solutions.",
+                "Managed software change requests and resolved incidents within strict Service Level Agreements (SLAs)."
+              ]
+            },
+            {
+              title: "Lead Systems & Custom CRM Developer",
+              company: "4Arrow Real Estate Group",
+              date: "Aug 2021 – May 2025",
+              bullets: [
+                "Built and maintained a <strong>custom CRM on top of Google Workspace APIs</strong> with automated lead distribution pipelines.",
+                "Conducted technical training and ongoing support for 12+ end users across the organization.",
+                "Secured database integrity and synchronized pipelines with external marketing and transaction systems.",
+                "Decreased operational turnaround time by 40% through standardized data capture workflows."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-solid fa-network-wired",
+              title: "Enterprise Automation Hub & APIs",
+              desc: "Python connectivity suite for bidirectional data sync between databases, messaging APIs, and cloud services.",
+              linkText: "Request Architecture Details",
+              linkUrl: "mailto:samf3212@gmail.com?subject=Enterprise%20Automation%20Hub"
+            },
+            {
+              icon: "fa-brands fa-youtube",
+              title: "@deltapromptlabs — AI & Dev Lab",
+              desc: "Research and engineering channel demonstrating automated software development and agile Vibe Coding.",
+              linkText: "Visit YouTube Lab",
+              linkUrl: "https://youtube.com/@deltapromptlabs"
+            }
+          ]
+        },
+        zh: {
+          badge: '<i class="fa-solid fa-server"></i> 业务系统开发与集成工程师',
+          tabTitle: "业务系统与软件开发",
+          tabSub: "企业系统集成、Python、API接口、ALM生命周期与SLA保障 (对标GKN航空航天)。",
+          tagline: '奇瓦瓦自治大学 (UACH) 计算机系统工程师，专注于<strong>企业系统集成 (APIs/ALM)、Python 自动化工作流构建</strong>、系统测试与 SLA 服务级别协议履约支持。',
+          bannerText: '<strong>当前视图：业务系统与软件开发工程师 (GKN Aerospace 适配视图)。</strong>聚焦企业软件架构、API接口集成、ALM生命周期以及高标准技术运维。',
+          highlightBlock: 'bento-software',
+          stats: [
+            { number: "100%", label: "ALM 软件生命周期与集成测试" },
+            { number: "C1", label: "高级商务与技术英语 (90%)" },
+            { number: "12+", label: "计算机系统工程专业底蕴 (UACH)" },
+            { number: "99.9%", label: "SLA 运维履约与故障响应率" }
+          ],
+          experience: [
+            {
+              title: "系统开发与业务流程自动化工程师 (IT / ALM)",
+              company: "Delta Prompt Labs / 独立IT系统咨询",
+              date: "2025年9月 – 至今",
+              bullets: [
+                "设计并开发基于 <strong>Python / Node.js 的微服务与连接器</strong>，实现跨部门业务流与云端 API 的全自动对接。",
+                "构建单元测试与集成测试保障体系，确保上线前环境的高可用性与数据完整性。",
+                "编制规范严谨的系统技术文档、架构拓扑图与终端用户操作手册。",
+                "严格遵照 SLA 服务级别协议处理变更请求与突发技术故障。"
+              ]
+            },
+            {
+              title: "系统架构与企业级 CRM 负责人",
+              company: "4Arrow 商业与不动产服务机构",
+              date: "2021年8月 – 2025年5月",
+              bullets: [
+                "基于 <strong>Google Workspace APIs 自主开发定制企业 CRM 系统</strong>，内置自动化线索流转引擎。",
+                "为全公司 12 名以上业务人员提供系统化技术培训与日常运维支持。",
+                "通过标准化数据治理，将内部运营响应速度提升 40%。"
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-solid fa-network-wired",
+              title: "Enterprise Automation Hub & APIs",
+              desc: "基于 Python 的跨平台数据同步与 API 聚合调度中枢。",
+              linkText: "咨询系统架构",
+              linkUrl: "mailto:samf3212@gmail.com?subject=Inquiry%20Automation%20Hub"
+            }
+          ]
+        }
+      },
 
-    // RENDER FUNCTION
+      hardware: {
+        es: {
+          badge: '<i class="fa-solid fa-microchip"></i> Hardware & Digital Fabrication Specialist',
+          tabTitle: "Hardware & Fab 3D/Láser",
+          tabSub: "Corte Láser (LightBurn), Impresión 3D FDM / Resina SLA, Prototipado y CAD.",
+          tagline: 'Ingeniero en Sistemas Computacionales (Opción Hardware - UACH) con sólida experiencia en <strong>fabricación digital aditiva/sustractiva, corte láser con LightBurn, impresión 3D FDM/SLA</strong> y prototipado funcional.',
+          bannerText: '<strong>Vista activa: Hardware, Fabricación Digital & Prototipado 3D.</strong> Resalta dominio en parametrización de láser, laminado 3D, post-procesamiento químico de resina y calibración mecánica.',
+          highlightBlock: 'bento-hardware',
+          stats: [
+            { number: "FDM+SLA", label: "Dominio de Filamento y Resina UV" },
+            { number: "LightBurn", label: "Corte & Grabado Láser Parametrizado" },
+            { number: "0.05mm", label: "Tolerancias Mecánicas & Calibración" },
+            { number: "100%", label: "Seguridad Operativa & Mantenimiento" }
+          ],
+          experience: [
+            {
+              title: "Especialista en Prototipado Rápido & Fabricación Digital",
+              company: "Laboratorio Independiente de Hardware & Delta Labs",
+              date: "Enero 2024 – Presente",
+              bullets: [
+                "Operación experta de <strong>cortadores láser de diodo mediante LightBurn</strong>: cálculo de punto focal, calibración de velocidad/potencia/aceleración por material, vectorización y control de quemado.",
+                "Impresión 3D de alta precisión en <strong>Filamento (FDM)</strong>: nivelación de cama, compensación de Z-offset, calibración de E-steps, retracción y optimización térmica en Cura / PrusaSlicer.",
+                "Impresión 3D de <strong>Resina (SLA/MSLA)</strong>: cálculo de matrices de exposición UV, diseño de soportes y ahuecado con drenaje en Chitubox, post-procesamiento químico (lavado ultrasónico con IPA y curado UV).",
+                "Mantenimiento preventivo/correctivo de hardware: tensión de bandas, lubricación de guías lineales, sustitución de boquillas y alineación óptica."
+              ]
+            },
+            {
+              title: "Ingeniería de Sistemas & Integración de Dispositivos",
+              company: "SIP Servicios / 4Arrow",
+              date: "Agosto 2021 – Mayo 2025",
+              bullets: [
+                "Diseño y fabricación de monturas y gabinetes personalizados mediante impresión 3D para equipo de telemetría y sensores.",
+                "Implementación de protocolos de seguridad en taller: extracción activa de humos y gestión de residuos químicos."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-solid fa-cube",
+              title: "Precision 3D Enclosures & Prototyping",
+              desc: "Diseño y manufactura de carcasas rígidas y funcionales con tolerancias milimétricas combinando resina de alta tenacidad y FDM.",
+              linkText: "Consultar Proyectos de Fabricación",
+              linkUrl: "mailto:samf3212@gmail.com?subject=Prototipado%20Digital"
+            },
+            {
+              icon: "fa-solid fa-bolt",
+              title: "LightBurn Laser Parameter Presets",
+              desc: "Biblioteca de parámetros optimizados de corte y grabado por densidad de material para optimizar tiempos de producción.",
+              linkText: "Ver Metodología",
+              linkUrl: "mailto:samf3212@gmail.com?subject=Laser%20LightBurn"
+            }
+          ]
+        },
+        en: {
+          badge: '<i class="fa-solid fa-microchip"></i> Hardware & Digital Fabrication Specialist',
+          tabTitle: "Hardware & 3D/Laser Fab",
+          tabSub: "Diode Laser (LightBurn), FDM & SLA Resin 3D Printing, Rapid Prototyping.",
+          tagline: 'Computer Systems Engineer (Hardware Option - UACH) with deep hands-on expertise in <strong>digital manufacturing, diode laser cutting with LightBurn, FDM & SLA/MSLA 3D printing</strong>, and mechanical calibration.',
+          bannerText: '<strong>Active View: Hardware, Digital Fabrication & 3D Prototyping.</strong> Highlighting laser parametrization, slicing algorithms, chemical post-processing, and hardware maintenance.',
+          highlightBlock: 'bento-hardware',
+          stats: [
+            { number: "FDM+SLA", label: "Filament & UV Resin Mastery" },
+            { number: "LightBurn", label: "Laser Cutting & Engraving Calibration" },
+            { number: "0.05mm", label: "Mechanical Tolerances & Fitting" },
+            { number: "100%", label: "Shop Safety & Hardware Maintenance" }
+          ],
+          experience: [
+            {
+              title: "Digital Fabrication & Rapid Prototyping Specialist",
+              company: "Hardware Lab & Delta Labs",
+              date: "Jan 2024 – Present",
+              bullets: [
+                "Advanced operation of <strong>diode laser systems via LightBurn</strong>: focal point calculation, speed/power/acceleration curve tuning, vector tracing, and kerf compensation.",
+                "High-precision <strong>FDM 3D printing</strong>: bed leveling, Z-offset adjustment, extruder E-step tuning, retraction tuning, and thermal profile management in Cura / PrusaSlicer.",
+                "High-detail <strong>Resin 3D printing (SLA/MSLA)</strong>: UV exposure calibration via test matrices, custom supports & hollow drainage in Chitubox, chemical post-processing (IPA wash & UV cure).",
+                "Preventative and corrective hardware maintenance: belt tensioning, linear rail lubrication, nozzle replacement, and optical path alignment."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-solid fa-cube",
+              title: "Precision 3D Enclosures & Prototyping",
+              desc: "Design and production of functional electronic enclosures and custom brackets with tight mechanical tolerances.",
+              linkText: "Request Fab Details",
+              linkUrl: "mailto:samf3212@gmail.com?subject=Hardware%20Fabrication"
+            }
+          ]
+        },
+        zh: {
+          badge: '<i class="fa-solid fa-microchip"></i> 硬件工程与数字智造专家',
+          tabTitle: "硬件工程与3D/激光制造",
+          tabSub: "LightBurn 激光切割、FDM 线材 / SLA 光固化 3D打印、快速成型与CAD配合。",
+          tagline: '计算机系统工程师（UACH 硬件工程方向），在<strong>数字增材/减材制造、LightBurn 激光雕刻切割、FDM 及 SLA 光固化 3D 打印</strong>与机械公差配合方面具备丰富实战经验。',
+          bannerText: '<strong>当前视图：硬件工程、数字智造与 3D 快速成型。</strong>展示激光参数调试、切片算法、化学后处理与精密机械标定能力。',
+          highlightBlock: 'bento-hardware',
+          stats: [
+            { number: "FDM+SLA", label: "线材与光敏树脂双工艺精通" },
+            { number: "LightBurn", label: "二极管激光参数精确标定" },
+            { number: "0.05mm", label: "精密机械装配公差控制" },
+            { number: "100%", label: "车间安全规范与设备维护" }
+          ],
+          experience: [
+            {
+              title: "数字智造与快速成型工程师",
+              company: "硬件研发实验室 & Delta Labs",
+              date: "2024年1月 – 至今",
+              bullets: [
+                "熟练操作<strong>二极管激光切割机 (基于 LightBurn 平台)</strong>：焦点测算、材质切速/功率/加速度曲线调校、矢量优化与切缝补偿。",
+                "高精度 <strong>FDM 熔融沉积 3D打印</strong>：热床精调、Z轴微距补偿、挤出机步进值 (E-steps) 校准及 Cura / PrusaSlicer 切片优化。",
+                "高精细度 <strong>SLA/MSLA 光固化 3D打印</strong>：曝光测试矩阵测定、Chitubox 镂空打孔加支撑、异丙醇 (IPA) 超声波清洗与二次紫外固化。",
+                "机电设备日常维保：同步带张紧、导轨润滑、喷头更换与光路校准。"
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-solid fa-cube",
+              title: "Precision 3D Enclosures & Prototyping",
+              desc: "面向传感器与电子设备的精密结构件与外壳快速成型定制方案。",
+              linkText: "咨询制造项目",
+              linkUrl: "mailto:samf3212@gmail.com?subject=Hardware%20Fabrication"
+            }
+          ]
+        }
+      },
+
+      ai: {
+        es: {
+          badge: '<i class="fa-solid fa-brain"></i> AI & Automation Engineer',
+          tabTitle: "AI & Automation Engineer",
+          tabSub: "Vibe Coding, Agentes Autónomos, Prompt Engineering, Bots y Flujos LLM.",
+          tagline: 'Ingeniero en Sistemas enfocado en <strong>desarrollo asistido por IA (Vibe Coding), agentes autónomos, Model Context Protocol (MCP)</strong> y automatización de flujos de trabajo de alto impacto.',
+          bannerText: '<strong>Vista activa: AI & Automation Specialist.</strong> Enfocada en pipelines de Inteligencia Artificial Generativa, agentes autónomos, Prompt Engineering y desarrollo acelerado de software.',
+          highlightBlock: 'bento-ai',
+          stats: [
+            { number: "100%", label: "Desarrollo Asistido con IA (Vibe Coding)" },
+            { number: "18+", label: "Modelos & APIs de IA Dominadas" },
+            { number: "600+", label: "Días de Estudio Disciplinado en Chino" },
+            { number: "10x", label: "Aceleración de Entregables con Agentes" }
+          ],
+          experience: [
+            {
+              title: "Desarrollador de Software con IA & Vibe Coder",
+              company: "Delta Prompt Labs / Estudio VSM",
+              date: "Septiembre 2025 – Presente",
+              bullets: [
+                "Construcción y orquestación de agentes de IA y servidores MCP (Model Context Protocol) para automatizar pipelines complejos de software.",
+                "Investigación avanzada en Prompt Engineering para modelos multimodales (Gemini, GPT-4, Claude).",
+                "Desarrollo ágil de herramientas web full-stack reduciendo los ciclos tradicionales de entrega."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-youtube",
+              title: "@deltapromptlabs",
+              desc: "Canal y laboratorio enfocado en Inteligencia Artificial, Vibe Coding, experimentos de Prompt Engineering y agentes.",
+              linkText: "Ver Canal YouTube",
+              linkUrl: "https://youtube.com/@deltapromptlabs"
+            }
+          ]
+        },
+        en: {
+          badge: '<i class="fa-solid fa-brain"></i> AI & Automation Engineer',
+          tabTitle: "AI & Automation Engineer",
+          tabSub: "Vibe Coding, Autonomous Agents, Prompt Engineering, LLM Workflows.",
+          tagline: 'Systems Engineer focused on <strong>AI-assisted development (Vibe Coding), autonomous agents, Model Context Protocol (MCP)</strong> and high-impact automated pipelines.',
+          bannerText: '<strong>Active View: AI & Automation Specialist.</strong> Focused on Generative AI pipelines, autonomous agents, and accelerated software delivery.',
+          highlightBlock: 'bento-ai',
+          stats: [
+            { number: "100%", label: "AI-Assisted Pair Programming (Vibe Coding)" },
+            { number: "18+", label: "AI Models & APIs Mastered" },
+            { number: "600+", label: "Days Daily Self-Taught Mandarin Chinese" },
+            { number: "10x", label: "Delivery Speedup with Agentic Workflows" }
+          ],
+          experience: [
+            {
+              title: "AI Software Engineer & Vibe Coder",
+              company: "Delta Prompt Labs",
+              date: "Sept 2025 – Present",
+              bullets: [
+                "Orchestrated autonomous AI agents and Model Context Protocol (MCP) servers to automate complex software development workflows.",
+                "Engineered robust prompt systems across multimodal foundation models (Gemini, GPT-4, Claude).",
+                "Delivered full-stack solutions at 10x traditional speed via agile Vibe Coding practices."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-youtube",
+              title: "@deltapromptlabs",
+              desc: "AI research and software experimentation lab covering agentic systems and Vibe Coding.",
+              linkText: "Visit YouTube Channel",
+              linkUrl: "https://youtube.com/@deltapromptlabs"
+            }
+          ]
+        },
+        zh: {
+          badge: '<i class="fa-solid fa-brain"></i> 人工智能与自动化系统工程师',
+          tabTitle: "AI 与自动化工程",
+          tabSub: "Vibe Coding 协同开发、自主智能体、提示词工程与 LLM 流水线。",
+          tagline: '专注于<strong>AI 协同软件工程 (Vibe Coding)、自主智能体架构、模型上下文协议 (MCP)</strong> 与高效业务自动化流程的计算机系统工程师。',
+          bannerText: '<strong>当前视图：AI 与自动化系统专家。</strong>展示生成式AI流水线、智能体编排与极速交付能力。',
+          highlightBlock: 'bento-ai',
+          stats: [
+            { number: "100%", label: "AI 协同编程 (Vibe Coding 敏捷工程)" },
+            { number: "18+", label: "大语言模型与前沿 API 部署经验" },
+            { number: "600+", label: "中文日常自学精进天数" },
+            { number: "10x", label: "智能体流水线交付效能提升" }
+          ],
+          experience: [
+            {
+              title: "AI 软件开发工程师 & Vibe Coder",
+              company: "Delta Prompt Labs",
+              date: "2025年9月 – 至今",
+              bullets: [
+                "构建并调度自主 AI 智能体与 MCP 服务端，实现复杂软件工程的全自动构建与验证。",
+                "深耕多模态大模型（Gemini、GPT-4、Claude）的高阶提示词工程设计。",
+                "通过 Vibe Coding 敏捷范式数倍缩短传统全栈工具的开发周期。"
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-youtube",
+              title: "@deltapromptlabs",
+              desc: "AI 技术前沿与智能体工程实验平台。",
+              linkText: "访问 YouTube 频道",
+              linkUrl: "https://youtube.com/@deltapromptlabs"
+            }
+          ]
+        }
+      },
+
+      media: {
+        es: {
+          badge: '<i class="fa-solid fa-clapperboard"></i> Media & Creative Technologist',
+          tabTitle: "Media & Creative Tech",
+          tabSub: "DaVinci Resolve, Pipelines de Edición, Drones (FAA) y Podcast Multicámara.",
+          tagline: 'Creador Audiovisual e Ingeniero en Sistemas especializado en <strong>DaVinci Resolve avanzado, cinematografía aérea con dron (FAA TRUST)</strong> y producción de podcasts multicámara.',
+          bannerText: '<strong>Vista activa: Media & Creative Technologist.</strong> Enfocada en producción audiovisual de alta gama, edición en DaVinci Resolve, vuelos con dron y contenidos virales.',
+          highlightBlock: 'bento-media',
+          stats: [
+            { number: "53+", label: "Episodios Semanales Podcast 'Hijos del Trago'" },
+            { number: "18+", label: "Marcas Comerciales Atendidas" },
+            { number: "FAA", label: "Piloto Certificado de Dron (TRUST)" },
+            { number: "4K HDR", label: "Pipeline Integral en DaVinci Resolve" }
+          ],
+          experience: [
+            {
+              title: "Director Audiovisual & Creador de Contenido",
+              company: "Sam Frank Media / Estudio VSM",
+              date: "Septiembre 2025 – Presente",
+              bullets: [
+                "Producción ejecutiva e ingeniería de audio y video para 'Hijos del Trago Podcast' (+53 episodios continuos).",
+                "Edición profesional, etalonaje y mezcla en <strong>DaVinci Resolve</strong> con flujos multicámara y proxies optimizados.",
+                "Vuelos cinemáticos con dron y fotogrametría bajo certificación federal FAA TRUST."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-instagram",
+              title: "@samfrankmedia",
+              desc: "Canal principal de creación de contenido audiovisual, tomas aéreas cinematográficas con dron y producciones comerciales.",
+              linkText: "Visitar Instagram",
+              linkUrl: "https://instagram.com/samfrankmedia"
+            },
+            {
+              icon: "fa-solid fa-podcast",
+              title: "Podcast Hijos del Trago",
+              desc: "Producción integral de podcast semanal de formato largo (+53 episodios continuos).",
+              linkText: "Escuchar Episodios",
+              linkUrl: "https://youtube.com/@hijosdeltrago"
+            }
+          ]
+        },
+        en: {
+          badge: '<i class="fa-solid fa-clapperboard"></i> Media & Creative Technologist',
+          tabTitle: "Media & Creative Tech",
+          tabSub: "DaVinci Resolve, Editing Pipelines, FAA Drone Pilot & Multi-Cam Podcast.",
+          tagline: 'Audiovisual Creator & Systems Engineer specialized in <strong>advanced DaVinci Resolve pipelines, aerial drone cinematography (FAA TRUST)</strong>, and multicamera podcast engineering.',
+          bannerText: '<strong>Active View: Media & Creative Technologist.</strong> Focused on broadcast-quality video workflows, DaVinci Resolve color grading, and drone cinematography.',
+          highlightBlock: 'bento-media',
+          stats: [
+            { number: "53+", label: "Weekly Episodes 'Hijos del Trago Podcast'" },
+            { number: "18+", label: "Commercial Brands Produced" },
+            { number: "FAA", label: "Certified UAS Remote Pilot (TRUST)" },
+            { number: "4K HDR", label: "DaVinci Resolve Native Color Pipeline" }
+          ],
+          experience: [
+            {
+              title: "Audiovisual Director & Executive Producer",
+              company: "Sam Frank Media / Estudio VSM",
+              date: "Sept 2025 – Present",
+              bullets: [
+                "Executive production and AV technical direction for 'Hijos del Trago Podcast' (53+ consecutive weekly releases).",
+                "Advanced editing, multicam proxy pipelines, and color grading inside <strong>DaVinci Resolve</strong>.",
+                "FAA TRUST certified aerial drone footage for commercial real estate and advertising."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-instagram",
+              title: "@samfrankmedia",
+              desc: "Cinematography, aerial drone visuals, and brand production portfolio.",
+              linkText: "Visit Instagram",
+              linkUrl: "https://instagram.com/samfrankmedia"
+            }
+          ]
+        },
+        zh: {
+          badge: '<i class="fa-solid fa-clapperboard"></i> 创意科技与多媒体制作总监',
+          tabTitle: "多媒体科技与创意制作",
+          tabSub: "达芬奇后期工作流、FAA无人机航拍、多机位播客制作。",
+          tagline: '兼具系统工程背景的多媒体制作人，专注于 <strong>DaVinci Resolve 影视级后期调色、FAA 认证无人机航拍</strong> 与多机位播客全流程制作。',
+          bannerText: '<strong>当前视图：多媒体科技与创意制作。</strong>展示影视级后期工作流、无人机航拍视效与长视频制作把控力。',
+          highlightBlock: 'bento-media',
+          stats: [
+            { number: "53+", label: "连续周更长视频播客《Hijos del Trago》" },
+            { number: "18+", label: "商业品牌影视广告与全景项目" },
+            { number: "FAA", label: "美国联邦航空局认证无人机执照" },
+            { number: "4K HDR", label: "达芬奇色彩科学与代理剪辑流" }
+          ],
+          experience: [
+            {
+              title: "影视制作总监 & 多媒体工程师",
+              company: "Sam Frank Media / Estudio VSM",
+              date: "2025年9月 – 至今",
+              bullets: [
+                "统筹并执行大型周更播客《Hijos del Trago》（连续制作发布 53+ 期）的多机位导播与音视频工程。",
+                "基于 <strong>DaVinci Resolve</strong> 构建代理文件剪辑、专业色彩科学调色与立体声音频母带流程。",
+                "执飞航拍与三维实景测量（持美国联邦航空局 FAA TRUST 证书）。"
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-instagram",
+              title: "@samfrankmedia",
+              desc: "航拍电影级视觉、商业品牌宣传片与数字化作品集。",
+              linkText: "查看 Instagram 作品",
+              linkUrl: "https://instagram.com/samfrankmedia"
+            }
+          ]
+        }
+      },
+
+      all: {
+        es: {
+          badge: '<i class="fa-solid fa-crown"></i> Full-Stack Systems, Hardware & AI Executive',
+          tabTitle: "Perfil Ejecutivo Integral",
+          tabSub: "Sistemas Computacionales + Hardware/Fab + IA + Creación de Medios.",
+          tagline: 'Ingeniero en Sistemas Computacionales • <strong>Business Systems & Hardware Developer</strong> • Especialista en <strong>Fabricación 3D/Láser, Vibe Coding con IA, DaVinci Resolve</strong> y Drones (FAA TRUST).',
+          bannerText: '<strong>Vista activa: Perfil Ejecutivo Integral.</strong> Combina todas las disciplinas: Ingeniería de Sistemas, Fabricación Digital, Inteligencia Artificial y Producción Audiovisual.',
+          highlightBlock: null,
+          stats: [
+            { number: "12+", label: "Años de Trayectoria en Sistemas (UACH)" },
+            { number: "3D/Láser", label: "Fabricación Digital (LightBurn/SLA/FDM)" },
+            { number: "C1", label: "Inglés Avanzado (90%)" },
+            { number: "600+", label: "Días de Chino Mandarín HSK 1" }
+          ],
+          experience: [
+            {
+              title: "Ingeniero de Sistemas, Fabricación Digital & Consultor de IA",
+              company: "Delta Prompt Labs / Sam Frank Media",
+              date: "Septiembre 2025 – Presente",
+              bullets: [
+                "Desarrollo de micro-servicios, integraciones de APIs y automatizaciones con Python y Vibe Coding.",
+                "Operación de corte láser en LightBurn y manufactura aditiva en FDM y Resina SLA/MSLA.",
+                "Producción ejecutiva de 'Hijos del Trago Podcast' (+53 episodios) y cinematografía aérea con dron (FAA TRUST)."
+              ]
+            },
+            {
+              title: "Líder de Sistemas, Procesos & Plataforma CRM",
+              company: "4Arrow Servicios Inmobiliarios",
+              date: "Agosto 2021 – Mayo 2025",
+              bullets: [
+                "Dirección, reclutamiento y capacitación comercial de equipo de más de 12 asesores.",
+                "Programación y puesta en marcha de CRM corporativo sobre Google Workspace APIs."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-youtube",
+              title: "@deltapromptlabs (AI & Dev Lab)",
+              desc: "Investigación aplicada en IA, Prompt Engineering y desarrollo asistido por agentes.",
+              linkText: "Ver Laboratorio",
+              linkUrl: "https://youtube.com/@deltapromptlabs"
+            },
+            {
+              icon: "fa-solid fa-cube",
+              title: "Digital Fabrication & Prototyping",
+              desc: "Corte láser de precisión y manufactura 3D aditiva.",
+              linkText: "Consultar Fabricación",
+              linkUrl: "mailto:samf3212@gmail.com"
+            }
+          ]
+        },
+        en: {
+          badge: '<i class="fa-solid fa-crown"></i> Full-Stack Systems, Hardware & AI Executive',
+          tabTitle: "Full Executive Profile",
+          tabSub: "Systems Engineering + Hardware/Fab + AI + Media Production.",
+          tagline: 'Computer Systems Engineer • <strong>Business Systems & Hardware Developer</strong> • Expert in <strong>3D/Laser Fabrication, AI Vibe Coding, DaVinci Resolve</strong>, and FAA UAS Operations.',
+          bannerText: '<strong>Active View: Full Executive Profile.</strong> Bringing together Computer Systems Engineering, Digital Fabrication, Artificial Intelligence, and Media Technology.',
+          highlightBlock: null,
+          stats: [
+            { number: "12+", label: "Years Systems Foundation (UACH)" },
+            { number: "3D/Laser", label: "Digital Fabrication (LightBurn/SLA/FDM)" },
+            { number: "C1", label: "Advanced English Proficiency (90%)" },
+            { number: "600+", label: "Days Mandarin Chinese Study (HSK 1)" }
+          ],
+          experience: [
+            {
+              title: "Systems Engineer, Digital Fabrication & AI Consultant",
+              company: "Delta Prompt Labs / Sam Frank Media",
+              date: "Sept 2025 – Present",
+              bullets: [
+                "Engineered Python microservices, API integrations, and AI agent workflows.",
+                "Operated diode laser cutters (LightBurn) and high-precision FDM/SLA 3D printers.",
+                "Directed multicam broadcast podcast (+53 episodes) and FAA certified drone flights."
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-youtube",
+              title: "@deltapromptlabs (AI Lab)",
+              desc: "AI research and autonomous agent software engineering.",
+              linkText: "Visit Lab",
+              linkUrl: "https://youtube.com/@deltapromptlabs"
+            }
+          ]
+        },
+        zh: {
+          badge: '<i class="fa-solid fa-crown"></i> 全栈计算机系统、硬件工程与AI总监',
+          tabTitle: "全方位领军档案",
+          tabSub: "计算机系统 + 硬件/激光制造 + 人工智能 + 影视科技。",
+          tagline: '计算机系统工程师 • <strong>业务系统与硬件研发专家</strong> • 精通 <strong>3D/激光数字制造、AI 协同开发 (Vibe Coding)、达芬奇影视后期</strong> 与无人机航拍。',
+          bannerText: '<strong>当前视图：全方位领军档案。</strong>融合计算机科学、数字制造、AI智能体与多媒体影视技术。',
+          highlightBlock: null,
+          stats: [
+            { number: "12+", label: "计算机系统工程专业底蕴 (UACH)" },
+            { number: "3D/激光", label: "数字制造全流程 (LightBurn/SLA/FDM)" },
+            { number: "C1", label: "高级商务英语 (90%)" },
+            { number: "600+", label: "中文普通话持续自学天数" }
+          ],
+          experience: [
+            {
+              title: "系统工程、数字制造与人工智能顾问",
+              company: "Delta Prompt Labs / Sam Frank Media",
+              date: "2025年9月 – 至今",
+              bullets: [
+                "研发 Python 微服务架构、API 接口调度与 AI 智能体流水线。",
+                "熟练操作 LightBurn 激光智造设备与 FDM/光固化 SLA 3D 打印系统。",
+                "负责大型周更播客全流程制作与 FAA 认证无人机航拍。"
+              ]
+            }
+          ],
+          projects: [
+            {
+              icon: "fa-brands fa-youtube",
+              title: "@deltapromptlabs (AI 实验室)",
+              desc: "前沿人工智能与智能体软件开发科研频道。",
+              linkText: "访问实验室",
+              linkUrl: "https://youtube.com/@deltapromptlabs"
+            }
+          ]
+        }
+      }
+    };
+
+    // CURRENT APP STATE
+    let currentRole = 'systems';
+    let currentLang = 'es';
+
+    // LANGUAGE SWITCHER FUNCTION
+    function setLanguage(langKey, updateUrl = true) {
+      if (!['es', 'en', 'zh'].includes(langKey)) langKey = 'es';
+      currentLang = langKey;
+
+      // Update Language Switcher UI
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`lang-${langKey}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const dict = DICTIONARY[langKey];
+
+      // Update Static Navigation & UI texts
+      document.getElementById('nav-skills').innerText = dict.nav.skills;
+      document.getElementById('nav-exp').innerText = dict.nav.exp;
+      document.getElementById('nav-projects').innerText = dict.nav.projects;
+      document.getElementById('nav-certs').innerText = dict.nav.certs;
+      document.getElementById('nav-print-text').innerText = dict.nav.print;
+      document.getElementById('role-switcher-heading').innerHTML = `<i class="fa-solid fa-sliders"></i> ${dict.roleSwitcherTitle}`;
+      document.getElementById('role-share-text').innerText = dict.roleShareBtn;
+
+      document.getElementById('skills-heading').innerHTML = `<i class="fa-solid fa-microchip"></i> ${dict.headings.skills}`;
+      document.getElementById('exp-heading').innerHTML = `<i class="fa-solid fa-briefcase"></i> ${dict.headings.exp}`;
+      document.getElementById('projects-heading').innerHTML = `<i class="fa-solid fa-laptop-code"></i> ${dict.headings.projects}`;
+      document.getElementById('skill-search').setAttribute('placeholder', dict.headings.searchPlaceholder);
+
+      document.getElementById('hero-cta-email').querySelector('span').innerText = dict.ctas.email;
+      document.getElementById('hero-cta-print').querySelector('span').innerText = dict.ctas.print;
+
+      document.getElementById('pill-loc').innerText = dict.pills.loc;
+      document.getElementById('pill-eng').innerText = dict.pills.eng;
+      document.getElementById('pill-zh').innerText = dict.pills.zh;
+
+      document.getElementById('footer-text').innerText = dict.footer.text;
+      document.getElementById('footer-sub').innerHTML = dict.footer.sub;
+
+      // Render Bento Blocks for language
+      renderBentoGrid(dict.bento);
+
+      // Render Education & Certifications for language
+      renderEducationCerts(dict.education, dict.headings);
+
+      // Render Role Tab Titles for language
+      ['systems', 'hardware', 'ai', 'media', 'all'].forEach(r => {
+        const rData = ROLE_DATA[r][langKey];
+        const titleEl = document.getElementById(`tab-title-${r}`);
+        const subEl = document.getElementById(`tab-sub-${r}`);
+        if (titleEl) titleEl.innerText = rData.tabTitle;
+        if (subEl) subEl.innerText = rData.tabSub;
+      });
+
+      // Re-render active role with new language
+      setRole(currentRole, updateUrl);
+    }
+
+    // RENDER BENTO BLOCKS
+    function renderBentoGrid(bentoList) {
+      const grid = document.getElementById('bento-grid');
+      grid.innerHTML = bentoList.map(b => `
+        <div class="bento-block" id="${b.id}">
+          <div class="bento-header">
+            <span>${b.title}</span>
+            <span class="bento-badge-tag">${b.tag}</span>
+          </div>
+          <div class="bento-image-wrapper">
+            <img src="${b.img}" alt="${b.title}" class="bento-img">
+          </div>
+          <div class="badge-list">
+            ${b.badges.map(bg => `<span class="badge ${bg.cls}">${bg.text}</span>`).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // RENDER EDUCATION & CERTS
+    function renderEducationCerts(eduData, headings) {
+      const container = document.getElementById('education-certifications-container');
+      container.innerHTML = `
+        <div>
+          <h2 class="section-title">
+            <i class="fa-solid fa-graduation-cap"></i> ${headings.eduTitle}
+          </h2>
+          <div class="info-item">
+            <div class="info-title">${eduData.degreeTitle}</div>
+            <div class="info-subtitle">${eduData.degreeSub}</div>
+            <div class="info-desc">${eduData.degreeDesc}</div>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <div class="info-title">${eduData.langTitle}</div>
+            ${eduData.langs.map(l => `<div class="info-desc">${l}</div>`).join('')}
+          </div>
+        </div>
+        <div>
+          <h2 class="section-title">
+            <i class="fa-solid fa-award"></i> ${headings.certsTitle}
+          </h2>
+          ${eduData.certs.map(c => `
+            <div class="info-item">
+              <div class="info-title">${c.title}</div>
+              <div class="info-subtitle">${c.sub}</div>
+              <div class="info-desc">${c.desc}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // RENDER ACTIVE ROLE CONTENT
     function setRole(roleKey, updateUrl = true) {
-      if (!CV_PROFILES[roleKey]) roleKey = 'systems';
+      if (!ROLE_DATA[roleKey]) roleKey = 'systems';
       currentRole = roleKey;
-      const data = CV_PROFILES[roleKey];
+      const data = ROLE_DATA[roleKey][currentLang];
 
       // 1. Update Tabs Active State
       document.querySelectorAll('.role-tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -1700,9 +2474,7 @@
       if (activeTab) activeTab.classList.add('active');
 
       // 2. Update Header & Meta
-      document.title = data.pageTitle;
-      const metaEl = document.getElementById('page-meta-desc');
-      if (metaEl) metaEl.setAttribute('content', data.metaDesc);
+      document.title = `Gibran Villa | ${data.tabTitle}`;
 
       // 3. Update Hero
       document.getElementById('hero-badge').innerHTML = data.badge;
@@ -1755,30 +2527,25 @@
 
       // 8. Update URL Query Param without page reload
       if (updateUrl && window.history && window.history.replaceState) {
-        const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?role=' + roleKey;
+        const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?role=' + roleKey + '&lang=' + currentLang;
         window.history.replaceState({ path: newUrl }, '', newUrl);
       }
     }
 
     // COPY SHARE LINK
     function copyRoleLink() {
-      const shareUrl = window.location.origin + window.location.pathname + '?role=' + currentRole;
-      copyToClipboard(shareUrl, `¡Enlace copiado para perfil: ${currentRole.toUpperCase()}!`);
+      const shareUrl = window.location.origin + window.location.pathname + '?role=' + currentRole + '&lang=' + currentLang;
+      copyToClipboard(shareUrl, DICTIONARY[currentLang].toastLinkCopied);
     }
 
     // TOAST NOTIFICATION
     function copyToClipboard(text, customMessage) {
       navigator.clipboard.writeText(text).then(() => {
         const toast = document.getElementById('toast');
-        toast.innerText = customMessage || "¡Copiado al portapapeles!";
+        toast.innerText = customMessage || DICTIONARY[currentLang].toastCopied;
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 2800);
       });
-    }
-
-    // PRINT / EXPORT ATS RESUME
-    function exportATSResume() {
-      window.print();
     }
 
     // LIVE SKILL SEARCH & FILTER
@@ -1798,20 +2565,25 @@
     // INITIALIZE FROM URL PARAMETERS
     window.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(window.location.search);
+      const langParam = urlParams.get('lang');
       const roleParam = urlParams.get('role');
+
+      const initialLang = (langParam && ['es', 'en', 'zh'].includes(langParam.toLowerCase())) ? langParam.toLowerCase() : 'es';
+      
+      let initialRole = 'systems';
       if (roleParam) {
-        if (roleParam.includes('sys') || roleParam.includes('gkn') || roleParam.includes('dev')) setRole('systems', false);
-        else if (roleParam.includes('ai') || roleParam.includes('auto')) setRole('ai', false);
-        else if (roleParam.includes('media') || roleParam.includes('content')) setRole('media', false);
-        else if (roleParam.includes('all')) setRole('all', false);
-        else setRole(roleParam, false);
-      } else {
-        // Default to systems developer
-        setRole('systems', false);
+        if (roleParam.includes('sys') || roleParam.includes('gkn') || roleParam.includes('dev')) initialRole = 'systems';
+        else if (roleParam.includes('hard') || roleParam.includes('fab') || roleParam.includes('laser') || roleParam.includes('3d')) initialRole = 'hardware';
+        else if (roleParam.includes('ai') || roleParam.includes('auto')) initialRole = 'ai';
+        else if (roleParam.includes('media') || roleParam.includes('content')) initialRole = 'media';
+        else if (roleParam.includes('all')) initialRole = 'all';
       }
+
+      currentRole = initialRole;
+      setLanguage(initialLang, false);
     });
 
-    // High-End Interactive Background: Volumetric 3D Waves & Neural Constellation
+    // High-End Interactive Background Canvas
     (function initBackgroundCanvas() {
       const canvas = document.getElementById('bg-canvas');
       if (!canvas) return;
@@ -1860,39 +2632,9 @@
       }
 
       const ribbons = [
-        {
-          name: 'gold-primary',
-          yRatio: 0.38,
-          lines: 20,
-          spread: 4.5,
-          amp: 65,
-          freq: 0.0015,
-          speed: 0.013,
-          r: 212, g: 175, b: 55,
-          maxAlpha: 0.26
-        },
-        {
-          name: 'cobalt-secondary',
-          yRatio: 0.62,
-          lines: 16,
-          spread: 5.0,
-          amp: 75,
-          freq: 0.0012,
-          speed: -0.010,
-          r: 56, g: 189, b: 248,
-          maxAlpha: 0.20
-        },
-        {
-          name: 'gold-accent',
-          yRatio: 0.82,
-          lines: 12,
-          spread: 3.5,
-          amp: 50,
-          freq: 0.0020,
-          speed: 0.016,
-          r: 245, g: 231, b: 178,
-          maxAlpha: 0.15
-        }
+        { name: 'gold-primary', yRatio: 0.38, lines: 20, spread: 4.5, amp: 65, freq: 0.0015, speed: 0.013, r: 212, g: 175, b: 55, maxAlpha: 0.26 },
+        { name: 'cobalt-secondary', yRatio: 0.62, lines: 16, spread: 5.0, amp: 75, freq: 0.0012, speed: -0.010, r: 56, g: 189, b: 248, maxAlpha: 0.20 },
+        { name: 'gold-accent', yRatio: 0.82, lines: 12, spread: 3.5, amp: 50, freq: 0.0020, speed: 0.016, r: 245, g: 231, b: 178, maxAlpha: 0.15 }
       ];
 
       let time = 0;
