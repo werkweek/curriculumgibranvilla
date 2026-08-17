@@ -735,28 +735,10 @@
         justify-content: center !important;
       }
     }
-
-    /* Interactive Background Canvas */
-    #bg-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .container, .navbar, footer {
-      position: relative;
-      z-index: 2;
-    }
   </style>
 
 </head>
 <body>
-
-  <!-- Background Animated Canvas (Neural Nodes & Fluid Energy Waves) -->
-  <canvas id="bg-canvas"></canvas>
 
   <!-- Executive Navigation -->
   <nav class="navbar">
@@ -1102,145 +1084,6 @@
         setTimeout(() => toast.classList.remove('show'), 2500);
       });
     }
-
-    // Interactive Animated Background: Fluid Energy Waves & Neural Constellation
-    (function initBackgroundCanvas() {
-      const canvas = document.getElementById('bg-canvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let width, height;
-      let mouse = { x: null, y: null, maxDist: 180 };
-
-      function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      window.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-      });
-
-      window.addEventListener('mouseleave', () => {
-        mouse.x = null;
-        mouse.y = null;
-      });
-
-      // Neural Particles
-      const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 16000), 70);
-      const particles = [];
-      const colors = ['#d4af37', '#f3e5ab', '#38bdf8', '#0284c7'];
-
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.45,
-          vy: (Math.random() - 0.5) * 0.45,
-          radius: Math.random() * 1.8 + 1,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          baseAlpha: Math.random() * 0.4 + 0.3
-        });
-      }
-
-      // Fluid Energy Waves
-      const waves = [
-        { yRatio: 0.30, amp: 40, freq: 0.0016, speed: 0.012, color: 'rgba(212, 175, 55, 0.14)', width: 1.5 },
-        { yRatio: 0.52, amp: 55, freq: 0.0012, speed: -0.010, color: 'rgba(56, 189, 248, 0.12)', width: 2.0 },
-        { yRatio: 0.78, amp: 45, freq: 0.0019, speed: 0.015, color: 'rgba(243, 229, 171, 0.09)', width: 1.2 }
-      ];
-
-      let time = 0;
-
-      function animate() {
-        time += 1;
-        ctx.clearRect(0, 0, width, height);
-
-        // 1. Draw Fluid Wave Ribbons
-        waves.forEach(w => {
-          ctx.beginPath();
-          ctx.lineWidth = w.width;
-          ctx.strokeStyle = w.color;
-          const baseY = height * w.yRatio;
-
-          for (let x = 0; x <= width; x += 12) {
-            let mouseOffset = 0;
-            if (mouse.x !== null) {
-              const dx = x - mouse.x;
-              const dy = baseY - mouse.y;
-              const dist = Math.sqrt(dx * dx + dy * dy);
-              if (dist < 220) {
-                mouseOffset = Math.sin((dist / 220) * Math.PI) * 22 * (dy > 0 ? 1 : -1);
-              }
-            }
-            const y = baseY + Math.sin(x * w.freq + time * w.speed) * w.amp + Math.cos(x * w.freq * 0.6 + time * 0.008) * (w.amp * 0.35) + mouseOffset;
-            if (x === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        });
-
-        // 2. Update and Draw Neural Nodes & Constellation Connections
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          p.x += p.vx;
-          p.y += p.vy;
-
-          if (p.x < 0) p.x = width;
-          if (p.x > width) p.x = 0;
-          if (p.y < 0) p.y = height;
-          if (p.y > height) p.y = 0;
-
-          // Mouse Attraction / Interaction
-          if (mouse.x !== null) {
-            const dx = mouse.x - p.x;
-            const dy = mouse.y - p.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < mouse.maxDist) {
-              const alpha = (1 - dist / mouse.maxDist) * 0.45;
-              ctx.beginPath();
-              ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
-              ctx.lineWidth = 0.8;
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(mouse.x, mouse.y);
-              ctx.stroke();
-            }
-          }
-
-          // Draw Particle Node
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
-          ctx.globalAlpha = p.baseAlpha;
-          ctx.fill();
-          ctx.globalAlpha = 1;
-
-          // Draw Inter-node Neural Connections
-          for (let j = i + 1; j < particles.length; j++) {
-            const p2 = particles[j];
-            const dx = p.x - p2.x;
-            const dy = p.y - p2.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-
-            if (dist < 130) {
-              const alpha = (1 - dist / 130) * 0.22;
-              ctx.beginPath();
-              ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
-              ctx.lineWidth = 0.6;
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.stroke();
-            }
-          }
-        }
-
-        requestAnimationFrame(animate);
-      }
-
-      animate();
-    })();
   </script>
 </body>
 </html>
