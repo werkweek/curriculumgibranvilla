@@ -87,7 +87,7 @@
     }
 
     .container {
-      max-width: 1160px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
@@ -99,7 +99,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: calc(100% - 3rem);
-      max-width: 1140px;
+      max-width: 1160px;
       background: rgba(10, 13, 20, 0.92);
       backdrop-filter: blur(24px);
       border: 1px solid rgba(212, 175, 55, 0.25);
@@ -596,10 +596,10 @@
       color: var(--text-dim);
     }
 
-    /* Bento Grid */
+    /* Bento Grid (3 columns on Desktop, 2 on Tablet, 1 on Mobile) */
     .bento-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
@@ -647,11 +647,12 @@
 
     .bento-image-wrapper {
       width: 100%;
-      height: 140px;
+      height: 150px;
       border-radius: 12px;
       overflow: hidden;
       margin-bottom: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0d111a;
     }
 
     .bento-img {
@@ -1053,7 +1054,7 @@
       </div>
     </section>
 
-    <!-- Bento Skills Matrix -->
+    <!-- Bento Skills Matrix (6 Balanced Distinct Modules) -->
     <section id="especialidades" class="card">
       <div class="section-title-wrapper">
         <h2 class="section-title" id="skills-heading">
@@ -1061,12 +1062,12 @@
         </h2>
         <div class="skill-search-box">
           <i class="fa-solid fa-magnifying-glass" style="color: var(--gold-light);"></i>
-          <input type="text" id="skill-search" class="skill-search-input" placeholder="Buscar (Python, Láser, 3D, SLA...)" oninput="filterSkills(this.value)">
+          <input type="text" id="skill-search" class="skill-search-input" placeholder="Buscar (Python, Láser, 3D, SLA, LightBurn, Dron...)" oninput="filterSkills(this.value)">
         </div>
       </div>
 
       <div class="bento-grid" id="bento-grid">
-        <!-- Dynamic Bento Blocks rendered via JS for multilingual support -->
+        <!-- Dynamic 6 Bento Blocks rendered via JS for multilingual support -->
       </div>
     </section>
 
@@ -1126,7 +1127,7 @@
           projects: "Proyectos Relevantes & Casos de Éxito",
           eduTitle: "Educación e Idiomas",
           certsTitle: "Certificaciones Profesionales",
-          searchPlaceholder: "Buscar (Python, Láser, 3D, SLA, LightBurn...)"
+          searchPlaceholder: "Buscar (Python, Láser, 3D, SLA, LightBurn, Dron...)"
         },
         pills: {
           loc: "Chihuahua, Chih., México",
@@ -1147,7 +1148,7 @@
         bento: [
           {
             id: "bento-software",
-            title: "Desarrollo de Sistemas & APIs",
+            title: "Desarrollo de Software & APIs",
             tag: "Core IT",
             img: "img/coding.jpg",
             badges: [
@@ -1156,57 +1157,81 @@
               { text: "Application Lifecycle Management (ALM)", cls: "badge-gold" },
               { text: "Testing Unitario & de Integración", cls: "" },
               { text: "Google Workspace API & Webhooks", cls: "" },
-              { text: "JavaScript / HTML5 / CSS3", cls: "" },
               { text: "Arquitectura de Software & CRM", cls: "badge-cobalt" },
               { text: "Bases de Datos & ETL Pipelines", cls: "" },
               { text: "Soporte Nivel 2/3 & SLAs", cls: "" }
             ]
           },
           {
-            id: "bento-hardware",
-            title: "Hardware, Prototipado 3D & Láser",
-            tag: "Fabricación Digital",
-            img: "img/drone.jpg",
-            badges: [
-              { text: "Corte & Grabado Láser (LightBurn)", cls: "badge-gold" },
-              { text: "Impresión 3D FDM / Filamento", cls: "badge-amber" },
-              { text: "Impresión 3D Resina (SLA / MSLA)", cls: "badge-amber" },
-              { text: "Slicing (Cura / PrusaSlicer / Chitubox)", cls: "badge-gold" },
-              { text: "Calibración de Parámetros & E-steps", cls: "" },
-              { text: "Post-procesamiento Químico & Curado UV", cls: "" },
-              { text: "Diseño CAD/CAM & Tolerancias Mecánicas", cls: "badge-cobalt" },
-              { text: "Mantenimiento & Nivelación Mecánica", cls: "" },
-              { text: "Seguridad Operativa & Extracción de Humos", cls: "" }
-            ]
-          },
-          {
             id: "bento-ai",
-            title: "IA Generativa & Automatización",
+            title: "IA Generativa & Agentes",
             tag: "Innovación",
             img: "img/ai_lab.jpg",
             badges: [
               { text: "Vibe Coding & Pair Programming", cls: "badge-gold" },
               { text: "Prompt Engineering Avanzado", cls: "badge-gold" },
-              { text: "Desarrollo con Agentes Autónomos", cls: "" },
-              { text: "Model Context Protocol (MCP)", cls: "" },
-              { text: "Gemini Pro / GPT-4 / Claude", cls: "badge-cobalt" },
-              { text: "Automatización de Tareas Repetitivas", cls: "" },
-              { text: "Procesamiento de Documentos & Datos", cls: "" }
+              { text: "Agentes Autónomos de IA", cls: "" },
+              { text: "Model Context Protocol (MCP)", cls: "badge-cobalt" },
+              { text: "Gemini Pro / GPT-4 / Claude", cls: "" },
+              { text: "Automatización de Flujos & Bots", cls: "" },
+              { text: "Extracción y Análisis de Documentos", cls: "" }
+            ]
+          },
+          {
+            id: "bento-3d",
+            title: "Impresión 3D Resina (Elegoo) & FDM",
+            tag: "Fabricación 3D",
+            img: "img/3d_print.jpg",
+            badges: [
+              { text: "Elegoo Saturn (Resina SLA/MSLA)", cls: "badge-amber" },
+              { text: "Impresión 3D Filamento (FDM)", cls: "badge-amber" },
+              { text: "Slicing en Chitubox & PrusaSlicer", cls: "badge-gold" },
+              { text: "Calibración de E-steps y Exposición", cls: "" },
+              { text: "Post-procesado Químico & Curado UV", cls: "" },
+              { text: "Diseño CAD y Tolerancias de Ensamble", cls: "badge-cobalt" },
+              { text: "Mantenimiento Mecánico de Impresoras", cls: "" }
+            ]
+          },
+          {
+            id: "bento-laser",
+            title: "Corte & Grabado Láser de Precisión",
+            tag: "Corte Láser",
+            img: "img/laser.jpg",
+            badges: [
+              { text: "Control & Setup en LightBurn", cls: "badge-gold" },
+              { text: "Corte & Grabado en Diodo / CO2", cls: "badge-gold" },
+              { text: "Curvas de Potencia & Aceleración", cls: "" },
+              { text: "Compensación de Kerf & Vectorizado", cls: "badge-cobalt" },
+              { text: "Acrílico, Madera & Materiales Técnicos", cls: "" },
+              { text: "Seguridad y Extracción de Humos", cls: "" }
+            ]
+          },
+          {
+            id: "bento-drone",
+            title: "Cinematografía Aérea & Drones FAA",
+            tag: "Operaciones UAS",
+            img: "img/drone.jpg",
+            badges: [
+              { text: "Piloto Certificado FAA (TRUST)", cls: "badge-cobalt" },
+              { text: "Cinematografía Aérea & Grabación 4K", cls: "badge-gold" },
+              { text: "Fotogrametría 3D & Mapeo Aéreo", cls: "badge-cobalt" },
+              { text: "Recorridos Virtuales 360°", cls: "" },
+              { text: "Inspección Visual & Vuelos Comerciales", cls: "" },
+              { text: "Planificación de Vuelo y Seguridad", cls: "" }
             ]
           },
           {
             id: "bento-media",
-            title: "Media Tech, Drones & Gestión",
-            tag: "Creativo",
-            img: "img/wedding.jpg",
+            title: "Producción & DaVinci Resolve",
+            tag: "Media Tech",
+            img: "img/podcast.jpg",
             badges: [
-              { text: "DaVinci Resolve (Pipelines y Scripting)", cls: "badge-gold" },
-              { text: "Piloto Dron Certificado (FAA TRUST)", cls: "badge-cobalt" },
-              { text: "Producción Multicámara & Streaming", cls: "" },
-              { text: "Documentación Técnica & Capacitación", cls: "" },
-              { text: "Liderazgo de Equipos Comerciales (+12)", cls: "" },
-              { text: "Fotogrametría 3D & Fotografía 360°", cls: "" },
-              { text: "Inglés C1 / Chino Mandarín HSK 1", cls: "badge-emerald" }
+              { text: "DaVinci Resolve (Edición y Scripting)", cls: "badge-gold" },
+              { text: "Flujos Multicámara & Proxies", cls: "badge-gold" },
+              { text: "Etalonaje & Color Grading", cls: "" },
+              { text: "Ingeniería de Audio de Podcasts", cls: "" },
+              { text: "Podcast Hijos del Trago (+53 eps)", cls: "badge-emerald" },
+              { text: "Streaming & Distribución Multiplataforma", cls: "" }
             ]
           }
         ],
@@ -1217,7 +1242,7 @@
             date: "Septiembre 2025 – Presente",
             bullets: [
               "Diseño e implementación de micro-servicios, integraciones de APIs y agentes autónomos mediante Vibe Coding y Python.",
-              "Operación de corte y grabado láser con LightBurn y manufactura aditiva 3D (FDM y resina SLA) con tolerancias mecánicas.",
+              "Operación de corte y grabado láser con LightBurn y manufactura aditiva 3D (FDM y resina SLA en Elegoo Saturn) con tolerancias mecánicas.",
               "Producción ejecutiva e ingeniería audiovisual para 'Hijos del Trago Podcast' (+53 episodios) y cinematografía aérea con dron (FAA TRUST)."
             ]
           },
@@ -1266,7 +1291,7 @@
           {
             icon: "fa-solid fa-cube",
             title: "Digital Fabrication & Prototyping",
-            desc: "Diseño CAD/CAM, corte láser en LightBurn y manufactura 3D aditiva (FDM / Resina SLA) con tolerancias mecánicas.",
+            desc: "Diseño CAD/CAM, corte láser en LightBurn y manufactura 3D aditiva (Elegoo Saturn SLA / FDM) con tolerancias mecánicas.",
             linkText: "Consultar Fabricación",
             linkUrl: "mailto:samf3212@gmail.com"
           }
@@ -1302,7 +1327,7 @@
           projects: "Featured Projects & Case Studies",
           eduTitle: "Education & Languages",
           certsTitle: "Professional Certifications",
-          searchPlaceholder: "Search (Python, Laser, 3D, SLA, LightBurn...)"
+          searchPlaceholder: "Search (Python, Laser, 3D, SLA, LightBurn, Drone...)"
         },
         pills: {
           loc: "Chihuahua, Chih., Mexico",
@@ -1323,7 +1348,7 @@
         bento: [
           {
             id: "bento-software",
-            title: "Systems Development & APIs",
+            title: "Software & Systems Architecture",
             tag: "Core IT",
             img: "img/coding.jpg",
             badges: [
@@ -1332,57 +1357,81 @@
               { text: "Application Lifecycle Management (ALM)", cls: "badge-gold" },
               { text: "Unit & Integration Testing", cls: "" },
               { text: "Google Workspace API & Webhooks", cls: "" },
-              { text: "JavaScript / HTML5 / CSS3", cls: "" },
               { text: "Software Architecture & Custom CRM", cls: "badge-cobalt" },
               { text: "Databases & ETL Pipelines", cls: "" },
               { text: "Level 2/3 Technical Support & SLAs", cls: "" }
             ]
           },
           {
-            id: "bento-hardware",
-            title: "Hardware, 3D Fabrication & Laser",
-            tag: "Digital Fab",
-            img: "img/drone.jpg",
-            badges: [
-              { text: "Diode Laser Cutting & Engraving (LightBurn)", cls: "badge-gold" },
-              { text: "3D Printing FDM (Filament)", cls: "badge-amber" },
-              { text: "3D Printing SLA / MSLA (Resin)", cls: "badge-amber" },
-              { text: "Slicing (Cura / PrusaSlicer / Chitubox)", cls: "badge-gold" },
-              { text: "Thermal Parameters & E-step Calibration", cls: "" },
-              { text: "Chemical Post-Processing & UV Curing", cls: "" },
-              { text: "CAD/CAM Design & Mechanical Tolerances", cls: "badge-cobalt" },
-              { text: "Hardware Maintenance & Bed Leveling", cls: "" },
-              { text: "Operational Safety & Fume Extraction", cls: "" }
-            ]
-          },
-          {
             id: "bento-ai",
-            title: "Generative AI & Automation",
+            title: "Generative AI & Agent Engineering",
             tag: "Innovation",
             img: "img/ai_lab.jpg",
             badges: [
               { text: "Vibe Coding & Pair Programming", cls: "badge-gold" },
               { text: "Advanced Prompt Engineering", cls: "badge-gold" },
               { text: "Autonomous Agent Tooling", cls: "" },
-              { text: "Model Context Protocol (MCP)", cls: "" },
-              { text: "Gemini Pro / GPT-4 / Claude", cls: "badge-cobalt" },
+              { text: "Model Context Protocol (MCP)", cls: "badge-cobalt" },
+              { text: "Gemini Pro / GPT-4 / Claude", cls: "" },
               { text: "Workflow & Process Automation", cls: "" },
               { text: "Document & Data Extraction", cls: "" }
             ]
           },
           {
-            id: "bento-media",
-            title: "Media Tech, Drones & Leadership",
-            tag: "Creative",
-            img: "img/wedding.jpg",
+            id: "bento-3d",
+            title: "Resin SLA (Elegoo Saturn) & FDM 3D Printing",
+            tag: "3D Fabrication",
+            img: "img/3d_print.jpg",
             badges: [
-              { text: "DaVinci Resolve (Pipelines & Scripting)", cls: "badge-gold" },
-              { text: "Certified Drone Pilot (FAA TRUST)", cls: "badge-cobalt" },
-              { text: "Multi-Camera Production & Streaming", cls: "" },
-              { text: "Technical Documentation & Training", cls: "" },
-              { text: "Commercial Sales Team Leadership (+12)", cls: "" },
-              { text: "3D Photogrammetry & 360° Tours", cls: "" },
-              { text: "English C1 / Mandarin Chinese HSK 1", cls: "badge-emerald" }
+              { text: "Elegoo Saturn (Resin SLA/MSLA)", cls: "badge-amber" },
+              { text: "FDM Filament 3D Printing", cls: "badge-amber" },
+              { text: "Chitubox & PrusaSlicer Workflow", cls: "badge-gold" },
+              { text: "E-step & Exposure Calibration", cls: "" },
+              { text: "IPA Post-Processing & UV Curing", cls: "" },
+              { text: "CAD Design & Mechanical Assembly", cls: "badge-cobalt" },
+              { text: "Hardware Maintenance & Bed Leveling", cls: "" }
+            ]
+          },
+          {
+            id: "bento-laser",
+            title: "Precision Laser Cutting & Engraving",
+            tag: "Laser Cutting",
+            img: "img/laser.jpg",
+            badges: [
+              { text: "LightBurn Control & Calibration", cls: "badge-gold" },
+              { text: "Diode / CO2 Cutting & Engraving", cls: "badge-gold" },
+              { text: "Speed & Power Acceleration Curves", cls: "" },
+              { text: "Kerf Compensation & Vectorization", cls: "badge-cobalt" },
+              { text: "Acrylic, Wood & Technical Media", cls: "" },
+              { text: "Operational Safety & Fume Extraction", cls: "" }
+            ]
+          },
+          {
+            id: "bento-drone",
+            title: "Aerial Cinematography & FAA Drones",
+            tag: "UAS Operations",
+            img: "img/drone.jpg",
+            badges: [
+              { text: "FAA Certified Drone Pilot (TRUST)", cls: "badge-cobalt" },
+              { text: "Aerial Cinematography & 4K Capture", cls: "badge-gold" },
+              { text: "3D Photogrammetry & Aerial Mapping", cls: "badge-cobalt" },
+              { text: "360° Virtual Tours", cls: "" },
+              { text: "Commercial Flight Planning", cls: "" },
+              { text: "Airspace Safety & Compliance", cls: "" }
+            ]
+          },
+          {
+            id: "bento-media",
+            title: "Media Production & DaVinci Resolve",
+            tag: "Media Tech",
+            img: "img/podcast.jpg",
+            badges: [
+              { text: "DaVinci Resolve (Editing & Scripting)", cls: "badge-gold" },
+              { text: "Multicam & Proxy Workflows", cls: "badge-gold" },
+              { text: "Cinematic Color Grading", cls: "" },
+              { text: "Podcast Audio Engineering", cls: "" },
+              { text: "Hijos del Trago Podcast (53+ eps)", cls: "badge-emerald" },
+              { text: "Streaming & Multi-Platform Delivery", cls: "" }
             ]
           }
         ],
@@ -1393,7 +1442,7 @@
             date: "Sept 2025 – Present",
             bullets: [
               "Engineered Python microservices, API integrations, and autonomous AI agents using agile Vibe Coding.",
-              "Operated diode laser systems via LightBurn and precision 3D printing (FDM & SLA resin) with tight mechanical tolerances.",
+              "Operated diode laser systems via LightBurn and precision 3D printing (Elegoo Saturn SLA resin & FDM) with tight mechanical tolerances.",
               "Executive producer and AV technical director for 'Hijos del Trago Podcast' (53+ weekly releases) with DaVinci Resolve workflows."
             ]
           },
@@ -1442,7 +1491,7 @@
           {
             icon: "fa-solid fa-cube",
             title: "Digital Fabrication & Prototyping",
-            desc: "CAD/CAM mechanical enclosures, diode laser cutting, and additive 3D printing (FDM / SLA).",
+            desc: "CAD/CAM mechanical enclosures, diode laser cutting, and additive 3D printing (Elegoo Saturn SLA / FDM).",
             linkText: "Request Details",
             linkUrl: "mailto:samf3212@gmail.com"
           }
@@ -1478,7 +1527,7 @@
           projects: "代表性工程与实践案例",
           eduTitle: "教育背景与语言能力",
           certsTitle: "专业资质认证",
-          searchPlaceholder: "搜索技能 (Python, 激光雕刻, 3D打印, SLA...)"
+          searchPlaceholder: "搜索技能 (Python, 激光雕刻, 3D打印, SLA, 无人机...)"
         },
         pills: {
           loc: "墨西哥奇瓦瓦州 (Chihuahua, MX)",
@@ -1508,57 +1557,81 @@
               { text: "软件生命周期管理 (ALM)", cls: "badge-gold" },
               { text: "单元与集成测试", cls: "" },
               { text: "Google Workspace API 与 Webhooks", cls: "" },
-              { text: "JavaScript / HTML5 / CSS3", cls: "" },
               { text: "软件架构与企业定制 CRM", cls: "badge-cobalt" },
               { text: "数据库与 ETL 流水线", cls: "" },
               { text: "L2/L3 技术支持与 SLA 标准", cls: "" }
             ]
           },
           {
-            id: "bento-hardware",
-            title: "硬件工程、3D制造与激光雕刻",
-            tag: "数字智造",
-            img: "img/drone.jpg",
-            badges: [
-              { text: "二极管激光切割 (LightBurn)", cls: "badge-gold" },
-              { text: "FDM 熔融沉积 3D 打印", cls: "badge-amber" },
-              { text: "SLA 光固化树脂 3D 打印", cls: "badge-amber" },
-              { text: "切片算法 (Cura / Prusa / Chitubox)", cls: "badge-gold" },
-              { text: "挤出步进 (E-steps) 与热力学校准", cls: "" },
-              { text: "化学后处理 (IPA) 与紫外固化", cls: "" },
-              { text: "CAD/CAM 设计与装配公差标定", cls: "badge-cobalt" },
-              { text: "机电设备日常维护与调平", cls: "" },
-              { text: "车间安全规程与排烟治理", cls: "" }
-            ]
-          },
-          {
             id: "bento-ai",
-            title: "生成式人工智能与自动化",
+            title: "生成式人工智能与智能体工程",
             tag: "科技创新",
             img: "img/ai_lab.jpg",
             badges: [
               { text: "Vibe Coding 敏捷协同开发", cls: "badge-gold" },
               { text: "高阶提示词工程", cls: "badge-gold" },
               { text: "自主 AI 智能体流水线", cls: "" },
-              { text: "模型上下文协议 (MCP)", cls: "" },
-              { text: "Gemini Pro / GPT-4 / Claude", cls: "badge-cobalt" },
+              { text: "模型上下文协议 (MCP)", cls: "badge-cobalt" },
+              { text: "Gemini Pro / GPT-4 / Claude", cls: "" },
               { text: "复杂工作流全自动调度", cls: "" },
               { text: "文档解析与数据提取", cls: "" }
             ]
           },
           {
-            id: "bento-media",
-            title: "影视科技、航拍与商务管理",
-            tag: "创意制作",
-            img: "img/wedding.jpg",
+            id: "bento-3d",
+            title: "光固化树脂 (Elegoo Saturn) 与 FDM 3D 智造",
+            tag: "3D智造",
+            img: "img/3d_print.jpg",
             badges: [
-              { text: "达芬奇影视调色与后期工作流", cls: "badge-gold" },
-              { text: "美国 FAA 认证无人机航拍执照", cls: "badge-cobalt" },
-              { text: "多机位长视频导播与录制", cls: "" },
-              { text: "技术文档编撰与团队赋能", cls: "" },
-              { text: "12+ 人商务销售团队管理", cls: "" },
-              { text: "三维实景实测与 360° 全景漫游", cls: "" },
-              { text: "英语 C1 高级 / 中文 HSK 1", cls: "badge-emerald" }
+              { text: "Elegoo Saturn (SLA/MSLA 光固化)", cls: "badge-amber" },
+              { text: "FDM 熔融沉积 3D 打印", cls: "badge-amber" },
+              { text: "Chitubox 与 Prusa 切片调优", cls: "badge-gold" },
+              { text: "挤出步进 (E-steps) 与曝光校准", cls: "" },
+              { text: "化学后处理 (IPA) 与紫外固化", cls: "" },
+              { text: "CAD/CAM 设计与机械公差装配", cls: "badge-cobalt" },
+              { text: "机电设备日常维护与调平", cls: "" }
+            ]
+          },
+          {
+            id: "bento-laser",
+            title: "高精度激光切割与雕刻",
+            tag: "激光工艺",
+            img: "img/laser.jpg",
+            badges: [
+              { text: "LightBurn 激光数控标定", cls: "badge-gold" },
+              { text: "二极管 / CO2 激光精密切割", cls: "badge-gold" },
+              { text: "功率与加速度曲线优化", cls: "" },
+              { text: "切缝补偿 (Kerf) 与矢量绘图", cls: "badge-cobalt" },
+              { text: "亚克力、木材与工程板材加工", cls: "" },
+              { text: "车间安全规程与排烟治理", cls: "" }
+            ]
+          },
+          {
+            id: "bento-drone",
+            title: "航拍影视与美国 FAA 认证无人机",
+            tag: "无人机航拍",
+            img: "img/drone.jpg",
+            badges: [
+              { text: "美国 FAA 无人机执照 (TRUST)", cls: "badge-cobalt" },
+              { text: "4K HDR 电影级航拍取景", cls: "badge-gold" },
+              { text: "三维实景建模与航测正射影像", cls: "badge-cobalt" },
+              { text: "360° 全景空间漫游", cls: "" },
+              { text: "商业航线规划与外业踏勘", cls: "" },
+              { text: "空域安全法规与合规飞行", cls: "" }
+            ]
+          },
+          {
+            id: "bento-media",
+            title: "影视制作与达芬奇后期工作流",
+            tag: "影视科技",
+            img: "img/podcast.jpg",
+            badges: [
+              { text: "达芬奇 (DaVinci Resolve) 调色与后期", cls: "badge-gold" },
+              { text: "多机位导播与高性能代理流水线", cls: "badge-gold" },
+              { text: "电影级色彩科学与 Etalonaje", cls: "" },
+              { text: "播客音响工程与降噪响度控制", cls: "" },
+              { text: "播客《Hijos del Trago》(53+期)", cls: "badge-emerald" },
+              { text: "全网分发与多平台流媒体输出", cls: "" }
             ]
           }
         ],
@@ -1569,7 +1642,7 @@
             date: "2025年9月 – 至今",
             bullets: [
               "研发 Python 微服务架构、API 接口调度与 AI 智能体流水线，实现敏捷极速交付。",
-              "熟练操作 LightBurn 激光智造设备与 FDM/光固化 SLA 3D 打印系统，完成高精度机械装配。",
+              "熟练操作 LightBurn 激光智造设备与 Elegoo Saturn SLA 光固化 / FDM 3D 打印系统，完成高精度机械装配。",
               "统筹大型周更播客《Hijos del Trago》（连续制作 53+ 期）的多机位导播与 FAA 认证无人机航拍。"
             ]
           },
@@ -1618,7 +1691,7 @@
           {
             icon: "fa-solid fa-cube",
             title: "数字智造与 3D 快速成型",
-            desc: "CAD 结构件设计、LightBurn 激光精密加工与 3D 增材制造方案。",
+            desc: "CAD 结构件设计、LightBurn 激光精密加工与 Elegoo Saturn 3D 增材制造方案。",
             linkText: "咨询制造项目",
             linkUrl: "mailto:samf3212@gmail.com"
           }
