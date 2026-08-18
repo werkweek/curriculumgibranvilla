@@ -623,26 +623,11 @@
     }
 
     .bento-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: var(--gold-light);
-    }
-
-    .bento-badge-tag {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.25rem 0.65rem;
-      border-radius: 50px;
-      background: rgba(2, 132, 199, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: var(--cobalt-light);
     }
 
     .bento-image-wrapper {
@@ -1795,7 +1780,6 @@
         <div class="bento-block" id="${b.id}">
           <div class="bento-header">
             <span>${b.title}</span>
-            <span class="bento-badge-tag">${b.tag}</span>
           </div>
           <div class="bento-image-wrapper">
             <img src="${b.img}" alt="${b.title}" class="bento-img">
