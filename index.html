@@ -1183,9 +1183,9 @@
         <button class="lang-btn" id="lang-zh" onclick="setLanguage('zh')">🇨🇳 中文</button>
       </div>
 
-      <button onclick="window.print()" class="nav-btn" id="nav-print-btn" title="Imprimir o guardar en PDF / Print to PDF">
-        <i class="fa-solid fa-print"></i> <span id="nav-print-text">Imprimir CV</span>
-      </button>
+      <a href="curriculum_gibran_villa.pdf" download="curriculum_gibran_villa.pdf" class="nav-btn" id="nav-print-btn" title="Descargar CV en PDF / Download PDF">
+        <i class="fa-solid fa-file-pdf"></i> <span id="nav-print-text">Descargar CV</span>
+      </a>
     </div>
   </nav>
 
@@ -1276,9 +1276,9 @@
             <a href="https://www.linkedin.com/in/gibran-villa/" target="_blank" class="btn-lg btn-outline-gold">
               <i class="fa-brands fa-linkedin"></i> LinkedIn
             </a>
-            <button onclick="window.print()" class="btn-lg btn-cobalt" id="hero-cta-print">
-              <i class="fa-solid fa-print"></i> <span>Imprimir CV</span>
-            </button>
+            <a href="curriculum_gibran_villa.pdf" download="curriculum_gibran_villa.pdf" class="btn-lg btn-cobalt" id="hero-cta-print">
+              <i class="fa-solid fa-file-pdf"></i> <span>Descargar CV</span>
+            </a>
           </div>
 
           <div class="contact-pills" id="contact-pills-container">
@@ -1374,7 +1374,7 @@
     // COMPLETE TRILINGUAL DATA MATRIX (ES, EN, ZH)
     const DICTIONARY = {
       es: {
-        nav: { skills: "Habilidades", exp: "Experiencia", projects: "Proyectos", certs: "Educación", print: "Imprimir CV" },
+        nav: { skills: "Habilidades", exp: "Experiencia", projects: "Proyectos", certs: "Educación", print: "Descargar CV" },
         roleSwitcherTitle: "Modo Reclutador / Enfoque del Perfil",
         roleShareBtn: "Copiar enlace de este perfil",
         toastCopied: "¡Copiado al portapapeles!",
@@ -1392,7 +1392,7 @@
           eng: "Inglés C1 Advanced (90%)",
           zh: "Chino Mandarín (HSK 1 - +600 días)"
         },
-        ctas: { email: "Contactar por Email", print: "Imprimir CV" },
+        ctas: { email: "Contactar por Email", print: "Descargar CV" },
         footer: {
           text: "© 2026 Gibran Samuel Villa Franco — Ingeniero en Sistemas Computacionales",
           sub: "Desarrollado con ⚡ <strong>Vibe Coding</strong> en Obsidian Dark & Champagne Gold."
@@ -1483,7 +1483,7 @@
       },
 
       en: {
-        nav: { skills: "Skills", exp: "Experience", projects: "Projects", certs: "Education", print: "Print CV" },
+        nav: { skills: "Skills", exp: "Experience", projects: "Projects", certs: "Education", print: "Download CV" },
         roleSwitcherTitle: "Recruiter Mode / Profile Focus",
         roleShareBtn: "Copy Link for this Profile",
         toastCopied: "Copied to clipboard!",
@@ -1501,7 +1501,7 @@
           eng: "English C1 Advanced (90%)",
           zh: "Mandarin Chinese (HSK 1 - +600 days)"
         },
-        ctas: { email: "Contact via Email", print: "Print CV" },
+        ctas: { email: "Contact via Email", print: "Download CV" },
         footer: {
           text: "© 2026 Gibran Samuel Villa Franco — Computer Systems Engineer",
           sub: "Built with ⚡ <strong>Vibe Coding</strong> in Obsidian Dark & Champagne Gold."
@@ -1592,7 +1592,7 @@
       },
 
       zh: {
-        nav: { skills: "专业技能", exp: "工作经验", projects: "重点项目", certs: "教育背景", print: "打印简历" },
+        nav: { skills: "专业技能", exp: "工作经验", projects: "重点项目", certs: "教育背景", print: "下载简历 (PDF)" },
         roleSwitcherTitle: "招聘官模式 / 简历视角切换",
         roleShareBtn: "复制此配置专属链接",
         toastCopied: "已成功复制到剪贴板！",
@@ -1610,7 +1610,7 @@
           eng: "英语 C1 高级流利 (90%)",
           zh: "中文普通话 (HSK 1 - 连续自学600余天)"
         },
-        ctas: { email: "发送邮件联系", print: "打印简历 (PDF)" },
+        ctas: { email: "发送邮件联系", print: "下载简历 (PDF)" },
         footer: {
           text: "© 2026 Gibran Samuel Villa Franco — 计算机系统与硬件工程师",
           sub: "基于 ⚡ <strong>Vibe Coding</strong> 敏捷构建 | 黑曜金奢华视觉系统"
