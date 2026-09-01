@@ -973,7 +973,13 @@
       width: 100vw;
       height: 100vh;
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
+    }
+
+    .page-content-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
     }
 
     /* Toast Notification */
@@ -1003,13 +1009,14 @@
     }
   </style>
 </head>
-<body>
+<body style="background-color: #07090e; color: #f8fafc;">
 
   <!-- 60FPS High-End Dynamic Interactive Canvas Background -->
   <canvas id="bg-canvas"></canvas>
 
-  <!-- Floating Executive Navigation Bar -->
-  <nav class="navbar">
+  <div class="page-content-wrapper">
+    <!-- Floating Executive Navigation Bar -->
+    <nav class="navbar">
     <a href="#" class="nav-brand">
       <i class="fa-solid fa-code-merge" style="color: var(--gold-primary);"></i> GIBRAN VILLA
     </a>
@@ -1157,6 +1164,7 @@
       </p>
     </footer>
 
+  </div>
   </div>
 
   <div id="toast" class="toast">¡Copiado al portapapeles!</div>
