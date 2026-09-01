@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gibran Samuel Villa Franco | Executive Full-Stack AI & Media Creator</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portafolio Ejecutivo de Gibran Samuel Villa Franco. Ingeniero en Sistemas, Creador de Contenido, Experto en DaVinci Resolve, Canva IA, Vibe Coding y Piloto de Dron FAA.">
+  <meta name="author" content="Gibran Samuel Villa Franco">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      /* Luxury Dark Tech Palette */
+      --bg-dark: #090b10;
+      --bg-card: rgba(15, 19, 28, 0.82);
+      --bg-card-hover: rgba(22, 28, 42, 0.92);
+      --border-subtle: rgba(255, 255, 255, 0.07);
+      
+      /* Accent Colors: Champagne Gold, Cobalt Blue, Platinum Silver */
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-dark: #aa7c11;
+      --gradient-gold: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+      --gradient-gold-subtle: linear-gradient(135deg, rgba(243, 229, 171, 0.12) 0%, rgba(212, 175, 55, 0.05) 100%);
+
+      --cobalt-primary: #0284c7;
+      --cobalt-deep: #1e40af;
+      --gradient-cobalt: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #1e40af 100%);
+
+      --silver-platinum: #e2e8f0;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+
+      --shadow-luxury: 0 25px 60px rgba(0, 0, 0, 0.6);
+      --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 50%, rgba(2, 132, 199, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(30, 64, 175, 0.04) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(212, 175, 55, 0.3);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-primary);
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Floating Executive Header Nav */
+    .navbar {
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 3rem);
+      max-width: 1100px;
+      background: rgba(11, 14, 22, 0.88);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 60px;
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-brand {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-btn {
+      background: var(--gradient-gold);
+      color: #080a0f;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.55rem 1.4rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 9.5rem;
+      padding-bottom: 4.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-light);
+      padding: 0.45rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-name {
+      font-family: 'Cinzel', serif;
+      font-size: 3.6rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (max-width: 768px) {
+      .hero-name { font-size: 2.3rem; }
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 840px;
+      margin: 0 auto 2.75rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-tagline strong {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.25rem;
+    }
+
+    .btn-lg {
+      padding: 0.9rem 2.2rem;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      background: var(--gradient-gold);
+      color: #080a0f;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-outline-gold {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      color: var(--gold-light);
+    }
+
+    .btn-outline-gold:hover {
+      background: rgba(212, 175, 55, 0.08);
+      border-color: var(--gold-primary);
+      transform: translateY(-3px);
+    }
+
+    /* Contact Pills */
+    .contact-pills {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      padding: 0.55rem 1.15rem;
+      border-radius: 12px;
+      color: #f1f5f9;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .pill:hover {
+      background: rgba(212, 175, 55, 0.15);
+      color: #ffffff;
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+    }
+
+    .pill i {
+      color: var(--gold-light);
+    }
+
+    /* Executive Stat Cards */
+    .stats-section {
+      padding: 2.5rem 0 3.5rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-gold);
+      opacity: 0.7;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .stat-number {
+      font-family: 'Cinzel', serif;
+      font-size: 2.75rem;
+      font-weight: 700;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* Common Luxury Card */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-luxury);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .section-title i {
+      color: var(--gold-primary);
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Bento Grid Matrix */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .bento-block {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .bento-block:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .bento-header {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .badge-gold {
+      background: rgba(212, 175, 55, 0.12) !important;
+      border-color: rgba(212, 175, 55, 0.35) !important;
+      color: var(--gold-light) !important;
+      font-weight: 600 !important;
+    }
+
+    .badge-cobalt {
+      background: rgba(2, 132, 199, 0.12) !important;
+      border-color: rgba(2, 132, 199, 0.35) !important;
+      color: #38bdf8 !important;
+      font-weight: 600 !important;
+    }
+
+    /* Showcase Cards */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .showcase-card {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.35);
+      background: var(--bg-card-hover);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .showcase-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: var(--gradient-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #080a0f;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+    }
+
+    .showcase-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .showcase-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .showcase-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: gap 0.25s ease;
+    }
+
+    .showcase-link:hover {
+      gap: 0.8rem;
+    }
+
+    /* Executive Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2.25rem;
+      border-left: 2px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+      box-shadow: 0 0 12px var(--gold-primary);
+    }
+
+    .role-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .company-name {
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .role-date {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .role-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .role-bullets li {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .role-bullets li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--gold-primary);
+      font-size: 0.65rem;
+      top: 3px;
+    }
+
+    /* 2 Columns Grid */
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .info-item {
+      margin-bottom: 1.35rem;
+    }
+
+    .info-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    .info-subtitle {
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .info-desc {
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3.5rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    /* Notification Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--gradient-gold);
+      color: #080a0f;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      padding: 0.85rem 1.6rem;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 2000;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Split Hero Styles */
+    .hero-content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3.5rem;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+    .hero-image-col {
+      flex: 0 0 280px;
+    }
+    .profile-frame {
+      width: 280px;
+      height: 360px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-luxury), var(--shadow-gold);
+      background: var(--bg-card);
+      position: relative;
+    }
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .profile-frame:hover .profile-img {
+      transform: scale(1.05);
+    }
+    .hero-text-col {
+      flex: 1;
+    }
+    
+    /* Bento & Showcase Image Styles */
+    .bento-image-wrapper {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .bento-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .bento-block:hover .bento-img {
+      transform: scale(1.05);
+    }
+    
+    .showcase-image-wrapper {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .showcase-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .showcase-card:hover .showcase-img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 900px) {
+      .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .hero-image-col {
+        flex: 0 0 auto;
+        margin: 0 auto;
+      }
+      .cta-group, .contact-pills {
+        justify-content: center !important;
+      }
+    }
+
+    /* Interactive Background Canvas */
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container, .navbar, footer {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Background Animated Canvas (Neural Nodes & Fluid Energy Waves) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Executive Navigation -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">GIBRAN VILLA</a>
+    <ul class="nav-links">
+      <li><a href="#especialidades">Habilidades</a></li>
+      <li><a href="#proyectos">Canales & Proyectos</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#certificaciones">Certificaciones</a></li>
+    </ul>
+    <a href="curriculum_gibran_villa.pdf" download class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fa-solid fa-file-pdf"></i> Descargar PDF CV
+    </a>
+
+  </nav>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content-wrapper">
+        <div class="hero-image-col">
+          <div class="profile-frame">
+            <img src="img/profile.jpg" alt="Gibran Samuel Villa Franco" class="profile-img">
+          </div>
+        </div>
+        <div class="hero-text-col">
+          <div class="hero-badge">
+            <i class="fa-solid fa-crown"></i> Full-Stack AI & Media Content Creator
+          </div>
+          <h1 class="hero-name">GIBRAN SAMUEL VILLA FRANCO</h1>
+          <p class="hero-tagline">
+            Ingeniero en Sistemas Computacionales • Creador de Contenido Multimedia • 
+            <strong>Vibe Coder & AI Software Developer</strong> • Especialista en <strong>DaVinci Resolve</strong> y <strong>Canva Pro con IA</strong>.
+          </p>
+
+          <div class="cta-group" style="justify-content: flex-start;">
+            <a href="mailto:samf3212@gmail.com" class="btn-lg btn-gold">
+              <i class="fa-solid fa-paper-plane"></i> Contactar por Email
+            </a>
+            <a href="https://www.linkedin.com/in/gibran-villa/" target="_blank" class="btn-lg btn-outline-gold">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://instagram.com/samfrankmedia" target="_blank" class="btn-lg btn-outline-gold">
+              <i class="fa-brands fa-instagram"></i> @samfrankmedia
+            </a>
+          </div>
+
+          <div class="contact-pills" style="justify-content: flex-start;">
+            <a href="tel:6143042608" class="pill">
+              <i class="fa-solid fa-phone"></i> 614-304-2608
+            </a>
+            <a href="https://www.linkedin.com/in/gibran-villa/" target="_blank" class="pill">
+              <i class="fa-brands fa-linkedin"></i> linkedin.com/in/gibran-villa
+            </a>
+            <a href="mailto:samf3212@gmail.com" class="pill" onclick="copyToClipboard('samf3212@gmail.com'); return false;">
+              <i class="fa-solid fa-copy"></i> samf3212@gmail.com
+            </a>
+            <span class="pill">
+              <i class="fa-solid fa-location-dot"></i> Chihuahua, Chihuahua, México
+            </span>
+            <span class="pill">
+              <i class="fa-solid fa-globe"></i> Inglés C1 Advanced (90%)
+            </span>
+            <span class="pill">
+              🇨🇳 Chino Mandarín (HSK 1 - +600 días autodidacta)
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Executive Stats Grid -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">600+</div>
+          <div class="stat-label">Días de Estudio Autodidacta en Chino Mandarín</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">53+</div>
+          <div class="stat-label">Episodios Semanales Podcast "Hijos del Trago"</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">18+</div>
+          <div class="stat-label">Marcas Comerciales e Inmobiliarias Atendidas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Desarrollo Ágil con IA & Vibe Coding</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Skills Matrix -->
+    <section id="especialidades" class="card">
+      <h2 class="section-title">
+        <i class="fa-solid fa-microchip"></i> Habilidades Técnicas y Especialidades
+      </h2>
+
+      <div class="bento-grid">
+
+        <div class="bento-block">
+          <div class="bento-header">
+            <i class="fa-solid fa-code"></i> Software, IA & Vibe Coding
+          </div>
+          <div class="bento-image-wrapper">
+            <img src="img/coding.jpg" alt="Software, IA & Vibe Coding" class="bento-img">
+          </div>
+          <div class="badge-list">
+            <span class="badge badge-gold">Vibe Coding & Pair Programming</span>
+            <span class="badge badge-gold">Desarrollo Web con IA</span>
+            <span class="badge">HTML5 / CSS3 / JavaScript</span>
+            <span class="badge">Python & Node.js</span>
+            <span class="badge badge-cobalt">Prompt Engineering Avanzado</span>
+            <span class="badge">Gemini / GPT-4 / Qwen / Civitai</span>
+            <span class="badge">Automatización de Flujos & Bots</span>
+            <span class="badge">Google Workspace API & CRM</span>
+          </div>
+        </div>
+
+        <div class="bento-block">
+          <div class="bento-header">
+            <i class="fa-solid fa-film"></i> Producción, Diseño & Drones
+          </div>
+          <div class="bento-image-wrapper">
+            <img src="img/drone.jpg" alt="Producción, Diseño & Drones" class="bento-img">
+          </div>
+          <div class="badge-list">
+            <span class="badge badge-gold">DaVinci Resolve (Nivel Avanzado)</span>
+            <span class="badge badge-gold">Canva Pro con IA Avanzado</span>
+            <span class="badge">Adobe After Effects & Premiere Pro</span>
+            <span class="badge">Avid Media Composer</span>
+            <span class="badge badge-cobalt">Piloto Dron Certificado (FAA TRUST)</span>
+            <span class="badge">Fotografía 360° & Fotogrametría 3D</span>
+            <span class="badge">Producción de Podcasts</span>
+          </div>
+        </div>
+
+
+        <div class="bento-block">
+          <div class="bento-header">
+            <i class="fa-solid fa-chart-line"></i> Estrategia, Ventas & Idiomas
+          </div>
+          <div class="bento-image-wrapper">
+            <img src="img/strategy.jpg" alt="Estrategia, Ventas & Idiomas" class="bento-img">
+          </div>
+          <div class="badge-list">
+            <span class="badge badge-gold">Contenido TikTok / Reels / Shorts</span>
+            <span class="badge">Estrategia de Crecimiento Orgánico</span>
+            <span class="badge">Liderazgo de Equipos de Ventas (+12)</span>
+            <span class="badge">Negociación & Captación Inmobiliaria</span>
+            <span class="badge">Copywriting & Storytelling</span>
+            <span class="badge badge-cobalt">Chino Mandarín (HSK 1 - Autodidacta)</span>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Showcase Projects -->
+    <section id="proyectos" class="card">
+      <h2 class="section-title">
+        <i class="fa-solid fa-photo-film"></i> Canales de Contenido & Proyectos Destacados
+      </h2>
+
+      <div class="showcase-grid">
+
+        <div class="showcase-card">
+          <div>
+            <div class="showcase-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="showcase-image-wrapper">
+              <img src="img/wedding.jpg" alt="Sam Frank Media" class="showcase-img">
+            </div>
+            <h3 class="showcase-title">@samfrankmedia</h3>
+            <p class="showcase-desc">
+              Canal principal de creación de contenido audiovisual, tomas aéreas cinematográficas con dron, producciones comerciales y desarrollo digital.
+            </p>
+          </div>
+          <a href="https://instagram.com/samfrankmedia" target="_blank" class="showcase-link">
+            Visitar Instagram <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+
+        <div class="showcase-card">
+          <div>
+            <div class="showcase-icon"><i class="fa-brands fa-youtube"></i></div>
+            <div class="showcase-image-wrapper">
+              <img src="img/ai_lab.jpg" alt="Delta Prompt Labs AI" class="showcase-img">
+            </div>
+            <h3 class="showcase-title">@deltapromptlabs</h3>
+            <p class="showcase-desc">
+              Canal enfocado en Inteligencia Artificial, Vibe Coding, experimentos de Prompt Engineering y desarrollo de software asistido por agentes.
+            </p>
+          </div>
+          <a href="https://youtube.com/@deltapromptlabs" target="_blank" class="showcase-link">
+            Ver Canal YouTube <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+
+        <div class="showcase-card">
+          <div>
+            <div class="showcase-icon"><i class="fa-solid fa-podcast"></i></div>
+            <div class="showcase-image-wrapper">
+              <img src="img/podcast.jpg" alt="Podcast Hijos del Trago" class="showcase-img">
+            </div>
+            <h3 class="showcase-title">Podcast Hijos del Trago</h3>
+            <p class="showcase-desc">
+              Producción ejecutiva e integral de podcast semanal de formato largo (+53 episodios continuos), mezcla de audio, multicámara y distribución.
+            </p>
+          </div>
+          <a href="https://youtube.com/@hijosdeltrago" target="_blank" class="showcase-link">
+            Escuchar Episodios <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experiencia" class="card">
+      <h2 class="section-title">
+        <i class="fa-solid fa-briefcase"></i> Experiencia Profesional
+      </h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="role-title">Creador de Contenido & Desarrollador de Software con IA</div>
+          <div class="company-name">Estudio VSM / Sam Frank Media / Delta Prompt Labs</div>
+          <div class="role-date">Septiembre 2025 – Presente</div>
+          <ul class="role-bullets">
+            <li>Producción audiovisual integral para plataformas digitales (TikTok, Instagram, YouTube) impulsando alcance orgánico y engagement.</li>
+            <li>Desarrollo de soluciones web y automatización de flujos de trabajo creativos apoyado en **Vibe Coding** y agentes de IA.</li>
+            <li>Edición en **DaVinci Resolve**, diseño en **Canva Pro con IA** y cinematografía aérea con dron (acreditación FAA TRUST).</li>
+            <li>Producción ejecutiva de "Hijos del Trago Podcast" (+53 episodios semanales continuos).</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="role-title">Ventas & Marketing Digital</div>
+          <div class="company-name">SIP Servicios Independientes Profesionales</div>
+          <div class="role-date">Agosto 2025 – Mayo 2026</div>
+          <ul class="role-bullets">
+            <li>Estrategias de posicionamiento inmobiliario con video con dron, fotogrametría 3D y recorridos 360°.</li>
+            <li>Asesoría, captación y cierre exitoso de transacciones comerciales y notariales (Infonavit, Fovissste).</li>
+            <li>Elaboración de identidades publicitarias físicas y digitales (lonas, tarjetas, gafetes y formatos contractuales).</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="role-title">Líder de Ventas, Marketing & Sistemas</div>
+          <div class="company-name">4Arrow Servicios Inmobiliarios</div>
+          <div class="role-date">Agosto 2021 – Mayo 2025</div>
+          <ul class="role-bullets">
+            <li>Dirección, reclutamiento y capacitación comercial de equipo de más de 12 asesores inmobiliarios.</li>
+            <li>Programación e implementación de CRM personalizado en Google Workspace con integración de IA.</li>
+            <li>Dirección de sesiones multimediales para catálogo comercial de bienes raíces.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="certificaciones" class="card">
+      <div class="two-col">
+
+        <div>
+          <h2 class="section-title">
+            <i class="fa-solid fa-graduation-cap"></i> Educación e Idiomas
+          </h2>
+
+          <div class="info-item">
+            <div class="info-title">Ingeniería en Sistemas Computacionales</div>
+            <div class="info-subtitle">Opción Hardware</div>
+            <div class="info-desc">Universidad Autónoma de Chihuahua (UACH) – 2012</div>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <div class="info-title">Idiomas</div>
+            <div class="info-desc">🇲🇽 <strong>Español:</strong> Nativo</div>
+            <div class="info-desc">🇺🇸 <strong>Inglés:</strong> C1 Advanced (90% / Proficiency)</div>
+            <div class="info-desc">🇨🇳 <strong>Chino Mandarín:</strong> Nivel Inicial (HSK 1 - Estudio activo +600 días autodidacta)</div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title">
+            <i class="fa-solid fa-award"></i> Certificaciones
+          </h2>
+
+          <div class="info-item">
+            <div class="info-title">Prompting for Generative AI</div>
+            <div class="info-subtitle">Adobe</div>
+            <div class="info-desc">Generación de imágenes, video y vectores.</div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-title">Google AI Essentials Specialization</div>
+            <div class="info-subtitle">Google</div>
+            <div class="info-desc">IA generativa para creación de contenido y storytelling.</div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-title">Introduction to Artificial Intelligence</div>
+            <div class="info-subtitle">IBM</div>
+            <div class="info-desc">Fundamentos de IA, Machine Learning, Deep Learning y NLP.</div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-title">The Recreational UAS Safety Test (TRUST)</div>
+            <div class="info-subtitle">FAA (Federal Aviation Administration)</div>
+            <div class="info-desc">Acreditación federal estadounidense para operación de drones.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Gibran Samuel Villa Franco — Full-Stack AI & Media Content Creator</p>
+      <p style="margin-top: 0.5rem;">
+        Diseño Ejecutivo en Obsidian & Champagne Gold. Desarrollado con ⚡ <strong>Vibe Coding</strong>.
+      </p>
+    </footer>
+
+  </div>
+
+  <div id="toast" class="toast">¡Copiado al portapapeles!</div>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+      });
+    }
+
+    // High-End Interactive Background: Volumetric 3D Waves, Atmospheric Glow & Glowing Neural Constellation
+    (function initBackgroundCanvas() {
+      const canvas = document.getElementById('bg-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let mouse = { x: null, y: null, maxDist: 200 };
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      // 1. Glowing Stardust & Constellation Nodes
+      const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 9500), 125);
+      const particles = [];
+      const goldColors = ['#f3e5ab', '#d4af37', '#e6c66e', '#ffffff'];
+      const blueColors = ['#38bdf8', '#0284c7', '#7dd3fc', '#60a5fa'];
+
+      for (let i = 0; i < particleCount; i++) {
+        const isGold = Math.random() > 0.35;
+        const isMajor = Math.random() < 0.30; // Star nodes with halo/bloom
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.38,
+          vy: (Math.random() - 0.5) * 0.38,
+          radius: isMajor ? Math.random() * 2.2 + 1.8 : Math.random() * 1.4 + 0.8,
+          color: isGold ? goldColors[Math.floor(Math.random() * goldColors.length)] : blueColors[Math.floor(Math.random() * blueColors.length)],
+          glowColor: isGold ? 'rgba(212, 175, 55, 0.9)' : 'rgba(56, 189, 248, 0.9)',
+          isMajor: isMajor,
+          phase: Math.random() * Math.PI * 2,
+          speed: Math.random() * 0.03 + 0.02,
+          baseAlpha: Math.random() * 0.45 + 0.35
+        });
+      }
+
+      // 2. Multi-Ribbon Wave Configuration (Volumetric Splines)
+      const ribbons = [
+        {
+          name: 'gold-primary',
+          yRatio: 0.38,
+          lines: 20,
+          spread: 4.5,
+          amp: 65,
+          freq: 0.0015,
+          speed: 0.013,
+          r: 212, g: 175, b: 55,
+          maxAlpha: 0.28
+        },
+        {
+          name: 'cobalt-secondary',
+          yRatio: 0.62,
+          lines: 16,
+          spread: 5.0,
+          amp: 75,
+          freq: 0.0012,
+          speed: -0.010,
+          r: 56, g: 189, b: 248,
+          maxAlpha: 0.22
+        },
+        {
+          name: 'gold-accent',
+          yRatio: 0.82,
+          lines: 12,
+          spread: 3.5,
+          amp: 50,
+          freq: 0.0020,
+          speed: 0.016,
+          r: 243, g: 229, b: 171,
+          maxAlpha: 0.16
+        }
+      ];
+
+      let time = 0;
+
+      function animate() {
+        time += 1;
+        ctx.clearRect(0, 0, width, height);
+
+        // A. Atmospheric Ambient Nebulae / Radial Lighting
+        const g1 = ctx.createRadialGradient(width * 0.75, height * 0.28, 20, width * 0.75, height * 0.28, width * 0.45);
+        g1.addColorStop(0, 'rgba(212, 175, 55, 0.09)');
+        g1.addColorStop(0.5, 'rgba(212, 175, 55, 0.025)');
+        g1.addColorStop(1, 'transparent');
+        ctx.fillStyle = g1;
+        ctx.fillRect(0, 0, width, height);
+
+        const g2 = ctx.createRadialGradient(width * 0.2, height * 0.65, 20, width * 0.2, height * 0.65, width * 0.4);
+        g2.addColorStop(0, 'rgba(2, 132, 199, 0.07)');
+        g2.addColorStop(0.6, 'rgba(30, 64, 175, 0.018)');
+        g2.addColorStop(1, 'transparent');
+        ctx.fillStyle = g2;
+        ctx.fillRect(0, 0, width, height);
+
+        // B. Volumetric 3D Wave Ribbons
+        ribbons.forEach(r => {
+          const baseY = height * r.yRatio;
+          for (let i = 0; i < r.lines; i++) {
+            const lineProgress = i / r.lines;
+            const alphaCurve = Math.sin(lineProgress * Math.PI);
+            const lineAlpha = (alphaCurve * r.maxAlpha + 0.03).toFixed(3);
+            const lineOffset = (i - r.lines / 2) * r.spread;
+
+            ctx.beginPath();
+            ctx.lineWidth = i === Math.floor(r.lines / 2) ? 1.8 : 1.0;
+            ctx.strokeStyle = `rgba(${r.r}, ${r.g}, ${r.b}, ${lineAlpha})`;
+
+            for (let x = 0; x <= width; x += 10) {
+              let mouseInfluence = 0;
+              if (mouse.x !== null) {
+                const dx = x - mouse.x;
+                const dy = baseY - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 260) {
+                  mouseInfluence = Math.sin((dist / 260) * Math.PI) * 35 * (dy > 0 ? 1 : -1);
+                }
+              }
+
+              const w1 = Math.sin(x * r.freq + time * r.speed + i * 0.14) * r.amp;
+              const w2 = Math.cos(x * r.freq * 0.55 + time * (r.speed * 0.8) + i * 0.09) * (r.amp * 0.45);
+              const w3 = Math.sin(x * r.freq * 1.6 + time * 0.015) * (r.amp * 0.2);
+              const y = baseY + lineOffset + w1 + w2 + w3 + mouseInfluence;
+
+              if (x === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+          }
+        });
+
+        // C. Interactive Neural Nodes & Glowing Constellation Links
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < -10) p.x = width + 10;
+          if (p.x > width + 10) p.x = -10;
+          if (p.y < -10) p.y = height + 10;
+          if (p.y > height + 10) p.y = -10;
+
+          // Twinkle pulse
+          const twinkle = Math.sin(time * p.speed + p.phase) * 0.35 + 0.65;
+          const currentAlpha = p.baseAlpha * twinkle;
+
+          // Mouse Attraction / Laser Connection
+          if (mouse.x !== null) {
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < mouse.maxDist) {
+              const alpha = (1 - dist / mouse.maxDist) * 0.55;
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
+              ctx.lineWidth = 0.9;
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.stroke();
+            }
+          }
+
+          // Draw Star / Particle
+          if (p.isMajor) {
+            ctx.save();
+            ctx.shadowBlur = 14;
+            ctx.shadowColor = p.glowColor;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = currentAlpha;
+            ctx.fill();
+            ctx.restore();
+          } else {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = currentAlpha;
+            ctx.fill();
+          }
+
+          // Inter-node Constellation Filaments
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 135) {
+              const alpha = (1 - dist / 135) * 0.28;
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
+              ctx.lineWidth = 0.7;
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    })();
+  </script>
+</body>
+</html>
