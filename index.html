@@ -722,17 +722,222 @@
       gap: 0.45rem;
     }
 
+    
+    /* Interactive Bento Badges & Clickable Indicators */
     .badge {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.38rem 0.8rem;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 50px;
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       font-weight: 500;
       color: var(--text-main);
-      transition: all 0.2s ease;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      user-select: none;
     }
+
+    .badge::after {
+      content: '05a';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 0.68rem;
+      opacity: 0.4;
+      transition: all 0.25s ease;
+    }
+
+    .badge:hover {
+      transform: translateY(-2px) scale(1.03);
+      border-color: var(--gold-primary);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      color: #ffffff;
+    }
+
+    .badge:hover::after {
+      opacity: 1;
+      color: var(--gold-light);
+      transform: scale(1.15);
+    }
+
+    .badge:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .badge.match-search {
+      background: var(--gold-primary) !important;
+      color: #080a0f !important;
+      font-weight: 700;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      transform: scale(1.05);
+    }
+
+    /* Modal / Popover Detail Window (Luxury Obsidian & Gold) */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(4, 6, 10, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 3000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+      padding: 1.25rem;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .skill-modal {
+      background: linear-gradient(145deg, rgba(16, 21, 33, 0.96) 0%, rgba(10, 13, 20, 0.98) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 24px;
+      padding: 2.2rem 2rem;
+      max-width: 580px;
+      width: 100%;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 55, 0.22);
+      transform: translateY(24px) scale(0.95);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      color: var(--text-main);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.active .skill-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      line-height: 1;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(212, 175, 55, 0.2);
+      color: #ffffff;
+      border-color: var(--gold-primary);
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    .modal-category-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      color: var(--gold-light);
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.85rem;
+    }
+
+    .modal-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+      line-height: 1.3;
+      padding-right: 2rem;
+    }
+
+    .modal-divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.6) 0%, rgba(2, 132, 199, 0.4) 60%, transparent 100%);
+      margin-bottom: 1.2rem;
+    }
+
+    .modal-desc {
+      font-size: 0.95rem;
+      color: var(--silver-platinum);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-section-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .modal-bullets {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.35rem;
+    }
+
+    .modal-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.45rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .modal-bullets li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold-primary);
+      font-size: 0.75rem;
+      top: 1px;
+    }
+
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .modal-tag-pill {
+      background: rgba(2, 132, 199, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--cobalt-light);
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+    }
+
 
     .badge.match-search {
       background: var(--gold-primary) !important;
@@ -1168,620 +1373,2581 @@
   </div>
   </div>
 
+  
+  <!-- Interactive Skill Detail Popover / Modal -->
+  <div id="skill-modal-backdrop" class="modal-backdrop" onclick="closeSkillModal(event)">
+    <div class="skill-modal" id="skill-modal" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeSkillModal()" aria-label="Cerrar">&times;</button>
+      <div class="modal-category-tag" id="modal-category-tag"></div>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <div class="modal-divider"></div>
+      <p class="modal-desc" id="modal-desc"></p>
+      
+      <div class="modal-section-label" id="modal-app-label">
+        <i class="fa-solid fa-screwdriver-wrench"></i> <span id="modal-app-label-text">Experiencia &amp; Aplicación Práctica:</span>
+      </div>
+      <ul class="modal-bullets" id="modal-bullets"></ul>
+
+      <div class="modal-section-label" id="modal-tools-label">
+        <i class="fa-solid fa-microchip"></i> <span id="modal-tools-label-text">Tecnologías &amp; Herramientas:</span>
+      </div>
+      <div class="modal-tags" id="modal-tags"></div>
+    </div>
+  </div>
+
   <div id="toast" class="toast">¡Copiado al portapapeles!</div>
 
   <script>
     // COMPLETE TRILINGUAL DATA MATRIX (ES, EN, ZH)
     const DICTIONARY = {
-      es: {
-        compositeTitle: "SISTEMAS & HARDWARE • SERVICIO TÉCNICO A COMPUTADORAS • ATENCIÓN AL CLIENTE • IA & MEDIOS",
-        heroBadge: '<i class="fa-solid fa-crown"></i> Ingeniero en Sistemas Computacionales • Servicio Técnico & Hardware',
-        heroTagline: 'Ingeniero en Sistemas Computacionales (UACH, Opción Hardware). Especialista en: <strong>1) Servicio técnico a computadoras</strong> (ensamble, desensamble, diagnóstico de hardware y mantenimiento preventivo/correctivo); <strong>2) Atención directa y personalizada al cliente</strong> (asesoría técnica y resolución ágil de requerimientos); y <strong>3) Desarrollo de aplicaciones y optimización de procesos utilizando Inteligencia Artificial</strong>.',
-        nav: { skills: "Habilidades", exp: "Experiencia", projects: "Proyectos", certs: "Educación", print: "Descargar CV" },
-        toastCopied: "¡Copiado al portapapeles!",
-        headings: {
-          skills: "Matriz de Competencias, Soporte Técnico & Tecnologías",
-          exp: "Experiencia Profesional & Trayectoria",
-          projects: "Proyectos Relevantes & Casos de Éxito",
-          eduTitle: "Educación e Idiomas",
-          certsTitle: "Certificaciones Profesionales",
-          searchPlaceholder: "Buscar (Soporte, Hardware, PC, Ensamble, Python, Láser, 3D, Dron...)"
-        },
-        pills: {
-          loc: "Chihuahua, Chih., México",
-          eng: "Inglés C1 Advanced (90%)",
-          zh: "Chino Mandarín (HSK 1 - +600 días)"
-        },
-        ctas: { email: "Contactar por Email", print: "Descargar CV" },
-        footer: {
-          text: "© 2026 Gibran Samuel Villa Franco — Ingeniero en Sistemas Computacionales",
-          sub: "Desarrollado con ⚡ <strong>Vibe Coding</strong> en Obsidian Dark & Champagne Gold."
-        },
-        stats: [
-          { number: "12+", label: "Años en Sistemas, Hardware & TI (UACH)" },
-          { number: "1 a 1", label: "Atención y Asesoría Técnica Personalizada" },
-          { number: "PC/Laptop", label: "Diagnóstico, Ensamble & Mantenimiento" },
-          { number: "3D/Láser", label: "Fabricación Digital, Automatización & Drones" }
-        ],
-        bento: [
-          {
-            id: "bento-software",
-            title: "Sistemas, Soporte Técnico & Hardware",
-            tag: "Core IT & Soporte",
-            img: "img/coding.jpg",
-            badges: [
-              { text: "Servicio Técnico a Computadoras (PC/Laptop)", cls: "badge-gold" },
-              { text: "Diagnóstico de Hardware, Ensamble & Desensamble", cls: "badge-gold" },
-              { text: "Mantenimiento Preventivo & Correctivo", cls: "badge-cobalt" },
-              { text: "Atención Directa & Personalizada (1 a 1)", cls: "badge-gold" },
-              { text: "Desarrollo de Apps & Optimización con IA", cls: "badge-gold" },
-              { text: "Optimización de SO (Windows/Linux) & Redes", cls: "" },
-              { text: "Integración de Sistemas & Python APIs", cls: "" },
-              { text: "Respaldo y Seguridad de Información", cls: "" }
-            ]
-          },
-          {
-            id: "bento-ai",
-            title: "IA Generativa & Automatización",
-            tag: "Innovación",
-            img: "img/ai_lab.jpg",
-            badges: [
-              { text: "Vibe Coding & Pair Programming", cls: "badge-gold" },
-              { text: "Prompt Engineering Avanzado", cls: "badge-gold" },
-              { text: "Agentes Autónomos de IA", cls: "" },
-              { text: "Model Context Protocol (MCP)", cls: "badge-cobalt" },
-              { text: "Gemini Pro / GPT-4 / Claude", cls: "" },
-              { text: "Automatización de Flujos & Bots", cls: "" },
-              { text: "Extracción y Análisis de Documentos", cls: "" }
-            ]
-          },
-          {
-            id: "bento-3d",
-            title: "Impresión 3D Resina (Elegoo) & FDM",
-            tag: "Fabricación 3D",
-            img: "img/3d_print.jpg",
-            badges: [
-              { text: "Elegoo Saturn (Resina SLA/MSLA)", cls: "badge-amber" },
-              { text: "Impresión 3D Filamento (FDM)", cls: "badge-amber" },
-              { text: "Slicing en Chitubox & PrusaSlicer", cls: "badge-gold" },
-              { text: "Calibración de E-steps y Exposición", cls: "" },
-              { text: "Post-procesado Químico & Curado UV", cls: "" },
-              { text: "Diseño CAD y Tolerancias de Ensamble", cls: "badge-cobalt" },
-              { text: "Mantenimiento Mecánico de Impresoras", cls: "" }
-            ]
-          },
-          {
-            id: "bento-laser",
-            title: "Corte & Grabado Láser de Precisión",
-            tag: "Corte Láser",
-            img: "img/laser.jpg",
-            badges: [
-              { text: "Control & Setup en LightBurn", cls: "badge-gold" },
-              { text: "Corte & Grabado en Diodo / CO2", cls: "badge-gold" },
-              { text: "Curvas de Potencia & Aceleración", cls: "" },
-              { text: "Compensación de Kerf & Vectorizado", cls: "badge-cobalt" },
-              { text: "Acrílico, Madera & Materiales Técnicos", cls: "" },
-              { text: "Seguridad y Extracción de Humos", cls: "" }
-            ]
-          },
-          {
-            id: "bento-drone",
-            title: "Cinematografía Aérea & Drones FAA",
-            tag: "Operaciones UAS",
-            img: "img/drone.jpg",
-            badges: [
-              { text: "Piloto Certificado FAA (TRUST)", cls: "badge-cobalt" },
-              { text: "Cinematografía Aérea & Grabación 4K", cls: "badge-gold" },
-              { text: "Fotogrametría 3D & Mapeo Aéreo", cls: "badge-cobalt" },
-              { text: "Recorridos Virtuales 360°", cls: "" },
-              { text: "Inspección Visual & Vuelos Comerciales", cls: "" },
-              { text: "Planificación de Vuelo y Seguridad", cls: "" }
-            ]
-          },
-          {
-            id: "bento-media",
-            title: "Producción & DaVinci Resolve",
-            tag: "Media Tech",
-            img: "img/podcast.jpg",
-            badges: [
-              { text: "DaVinci Resolve (Edición y Scripting)", cls: "badge-gold" },
-              { text: "Flujos Multicámara & Proxies", cls: "badge-gold" },
-              { text: "Etalonaje & Color Grading", cls: "" },
-              { text: "Ingeniería de Audio de Podcasts", cls: "" },
-              { text: "Podcast Hijos del Trago (+53 eps)", cls: "badge-emerald" },
-              { text: "Streaming & Distribución Multiplataforma", cls: "" }
-            ]
-          }
-        ],
-        experience: [
-          {
-            title: "Creador de Contenido & Capacitador en Inteligencia Artificial",
-            company: "Delta Prompt Labs (Iniciativa Educativa Digital)",
-            date: "Junio 2025 – Presente",
-            bullets: [
-              "Dirección de iniciativa educativa y canal técnico para enseñar a profesionistas, empresas y estudiantes a utilizar herramientas de Inteligencia Artificial aplicada.",
-              "Desarrollo de tutoriales prácticos, guías de optimización de flujos de trabajo, automatización de tareas y desarrollo de aplicaciones web ágiles (Vibe Coding).",
-              "Producción audiovisual completa y dirección técnica del podcast semanal 'Hijos del Trago' (+53 episodios continuos).",
-              "Prototipado rápido y fabricación digital: corte y grabado láser con LightBurn y manufactura aditiva 3D de precisión (FDM y resina SLA)."
-            ]
-          },
-          {
-            title: "Líder de Sistemas, Soporte Técnico & Plataforma CRM",
-            company: "4Arrow Servicios Corporativos",
-            date: "Agosto 2021 – Mayo 2025",
-            bullets: [
-              "Atención directa, asesoría personalizada y soporte técnico integral a asesores y directivos, asegurando la óptima operación de equipos de cómputo y redes locales.",
-              "Diseño, programación e implementación integral de CRM corporativo sobre Google Workspace APIs, reduciendo un 40% el tiempo de seguimiento comercial.",
-              "Capacitación técnica y comercial a un equipo de más de 12 asesores, estructurando tableros de KPIs y automatización de expedientes/contratos.",
-              "Implementación de tecnologías de captación digital: recorridos virtuales 360°, fotogrametría 3D y cinematografía aérea con dron (FAA TRUST)."
-            ]
-          },
-          {
-            title: "Practicante de Ingeniería de Calidad & Soporte Operativo",
-            company: "Visteon de México (Altec)",
-            date: "2012 (8 meses)",
-            bullets: [
-              "Supervisión y soporte operativo a estaciones de ensamble y pruebas electrónicas de módulos ECUs y tableros automotrices.",
-              "Aplicación de metodologías sistemáticas de causa raíz (Ishikawa / 5 Porqués) para resolución de discrepancias en equipo y software de prueba.",
-              "Actualización de manuales de operación, hojas de instrucción estándar (SOPs/WIs) y bitácoras de control."
-            ]
-          }
-        ],
-        projects: [
-          {
-            icon: "fa-brands fa-youtube",
-            title: "@deltapromptlabs (AI & Dev Lab)",
-            desc: "Canal y laboratorio enfocado en Inteligencia Artificial, Vibe Coding, experimentos de Prompt Engineering y agentes autónomos.",
-            linkText: "Ver Laboratorio",
-            linkUrl: "https://youtube.com/@deltapromptlabs"
-          },
-          {
-            icon: "fa-brands fa-instagram",
-            title: "@samfrankmedia (Media & Drones)",
-            desc: "Producción audiovisual comercial, cinematografía aérea con dron bajo certificación FAA y creación de marcas.",
-            linkText: "Visitar Instagram",
-            linkUrl: "https://instagram.com/samfrankmedia"
-          },
-          {
-            icon: "fa-solid fa-podcast",
-            title: "Podcast Hijos del Trago",
-            desc: "Producción integral de podcast semanal de formato largo (+53 episodios continuos y distribución multiplataforma).",
-            linkText: "Escuchar Episodios",
-            linkUrl: "https://youtube.com/@hijosdeltrago"
-          },
-          {
-            icon: "fa-solid fa-cube",
-            title: "Digital Fabrication & Prototyping",
-            desc: "Diseño CAD/CAM, corte láser en LightBurn y manufactura 3D aditiva (Elegoo Saturn SLA / FDM) con tolerancias mecánicas.",
-            linkText: "Consultar Fabricación",
-            linkUrl: "mailto:samf3212@gmail.com"
-          }
-        ],
-        education: {
-          degreeTitle: "Ingeniería en Sistemas Computacionales",
-          degreeSub: "Opción Hardware / Arquitectura de Sistemas",
-          degreeDesc: "Universidad Autónoma de Chihuahua (UACH) – 2012",
-          langTitle: "Competencia Lingüística",
-          langs: [
-            "🇲🇽 <strong>Español:</strong> Nativo",
-            "🇺🇸 <strong>Inglés:</strong> C1 Advanced (90% / Negociación y Documentación Técnica)",
-            "🇨🇳 <strong>Chino Mandarín:</strong> HSK 1 (+600 días de estudio diario autodidacta)"
-          ],
-          certs: [
-            { title: "Google AI Essentials Specialization", sub: "Google", desc: "IA generativa para optimización de procesos y storytelling técnico." },
-            { title: "Prompting for Generative AI", sub: "Adobe", desc: "Ingeniería de prompts y generación digital de activos." },
-            { title: "Introduction to Artificial Intelligence", sub: "IBM", desc: "Arquitectura de IA, Machine Learning, Deep Learning y NLP." },
-            { title: "The Recreational UAS Safety Test (TRUST)", sub: "FAA (Federal Aviation Administration)", desc: "Acreditación federal estadounidense para operaciones de dron." }
-          ]
-        }
+  "es": {
+    "compositeTitle": "SISTEMAS & HARDWARE • SERVICIO TÉCNICO A COMPUTADORAS • ATENCIÓN AL CLIENTE • IA & MEDIOS",
+    "heroBadge": "<i class=\"fa-solid fa-crown\"></i> Ingeniero en Sistemas Computacionales • Servicio Técnico & Hardware",
+    "heroTagline": "Ingeniero en Sistemas Computacionales (UACH, Opción Hardware). Especialista en: <strong>1) Servicio técnico a computadoras</strong> (ensamble, desensamble, diagnóstico de hardware y mantenimiento preventivo/correctivo); <strong>2) Atención directa y personalizada al cliente</strong> (asesoría técnica y resolución ágil de requerimientos); y <strong>3) Desarrollo de aplicaciones y optimización de procesos utilizando Inteligencia Artificial</strong>.",
+    "nav": {
+      "skills": "Habilidades",
+      "exp": "Experiencia",
+      "projects": "Proyectos",
+      "certs": "Educación",
+      "print": "Descargar CV"
+    },
+    "toastCopied": "¡Copiado al portapapeles!",
+    "headings": {
+      "skills": "Matriz de Competencias, Soporte Técnico & Tecnologías",
+      "exp": "Experiencia Profesional & Trayectoria",
+      "projects": "Proyectos Relevantes & Casos de Éxito",
+      "eduTitle": "Educación e Idiomas",
+      "certsTitle": "Certificaciones Profesionales",
+      "searchPlaceholder": "Buscar (Soporte, Hardware, PC, Ensamble, Python, Láser, 3D, Dron...)"
+    },
+    "pills": {
+      "loc": "Chihuahua, Chih., México",
+      "eng": "Inglés C1 Advanced (90%)",
+      "zh": "Chino Mandarín (HSK 1 - +600 días)"
+    },
+    "ctas": {
+      "email": "Contactar por Email",
+      "print": "Descargar CV"
+    },
+    "footer": {
+      "text": "© 2026 Gibran Samuel Villa Franco — Ingeniero en Sistemas Computacionales",
+      "sub": "Desarrollado con ⚡ <strong>Vibe Coding</strong> en Obsidian Dark & Champagne Gold."
+    },
+    "stats": [
+      {
+        "number": "12+",
+        "label": "Años en Sistemas, Hardware & TI (UACH)"
       },
-
-      en: {
-        compositeTitle: "SYSTEMS & HARDWARE • COMPUTER TECH SUPPORT • PERSONALIZED CUSTOMER CARE • AI & MEDIA",
-        heroBadge: '<i class="fa-solid fa-crown"></i> Computer Systems Engineer • Tech Support & Hardware',
-        heroTagline: 'Computer Systems Engineer (B.S., UACH - Hardware Option). Core expertise in: <strong>1) Hands-on computer tech support</strong> (hardware diagnostics, PC assembly/disassembly, preventative & corrective maintenance); <strong>2) Direct, personalized customer service</strong>; and <strong>3) Application development & process optimization leveraging Artificial Intelligence</strong>.',
-        nav: { skills: "Skills", exp: "Experience", projects: "Projects", certs: "Education", print: "Download CV" },
-        toastCopied: "Copied to clipboard!",
-        headings: {
-          skills: "Skills, Technical Support & Technologies Matrix",
-          exp: "Professional Experience & Career Path",
-          projects: "Featured Projects & Case Studies",
-          eduTitle: "Education & Languages",
-          certsTitle: "Professional Certifications",
-          searchPlaceholder: "Search (Support, Hardware, PC, Assembly, Python, Laser, 3D, Drone...)"
-        },
-        pills: {
-          loc: "Chihuahua, Chih., Mexico",
-          eng: "English C1 Advanced (90%)",
-          zh: "Mandarin Chinese (HSK 1 - +600 days)"
-        },
-        ctas: { email: "Contact via Email", print: "Download CV" },
-        footer: {
-          text: "© 2026 Gibran Samuel Villa Franco — Computer Systems Engineer",
-          sub: "Built with ⚡ <strong>Vibe Coding</strong> in Obsidian Dark & Champagne Gold."
-        },
-        stats: [
-          { number: "12+", label: "Years in Systems, Hardware & IT (UACH)" },
-          { number: "1 on 1", label: "Direct & Personalized Technical Support" },
-          { number: "PC/Laptop", label: "Hardware Diagnostics, Assembly & Maintenance" },
-          { number: "3D/Laser", label: "Digital Fabrication, Automation & Drones" }
-        ],
-        bento: [
-          {
-            id: "bento-software",
-            title: "Systems, Tech Support & Hardware",
-            tag: "Core IT & Support",
-            img: "img/coding.jpg",
-            badges: [
-              { text: "Computer Technical Support (PC/Laptop)", cls: "badge-gold" },
-              { text: "Hardware Diagnostics, Assembly & Disassembly", cls: "badge-gold" },
-              { text: "Preventative & Corrective Maintenance", cls: "badge-cobalt" },
-              { text: "Direct & Personalized Customer Care (1-on-1)", cls: "badge-gold" },
-              { text: "App Development & AI Optimization", cls: "badge-gold" },
-              { text: "OS Optimization (Windows/Linux) & LAN", cls: "" },
-              { text: "Systems Integration & Python APIs", cls: "" },
-              { text: "Data Backup & Infrastructure Security", cls: "" }
-            ]
-          },
-          {
-            id: "bento-ai",
-            title: "Generative AI & Automation",
-            tag: "Innovation",
-            img: "img/ai_lab.jpg",
-            badges: [
-              { text: "Vibe Coding & Pair Programming", cls: "badge-gold" },
-              { text: "Advanced Prompt Engineering", cls: "badge-gold" },
-              { text: "Autonomous Agent Tooling", cls: "" },
-              { text: "Model Context Protocol (MCP)", cls: "badge-cobalt" },
-              { text: "Gemini Pro / GPT-4 / Claude", cls: "" },
-              { text: "Workflow & Process Automation", cls: "" },
-              { text: "Document & Data Extraction", cls: "" }
-            ]
-          },
-          {
-            id: "bento-3d",
-            title: "Resin SLA (Elegoo Saturn) & FDM 3D Printing",
-            tag: "3D Fabrication",
-            img: "img/3d_print.jpg",
-            badges: [
-              { text: "Elegoo Saturn (Resin SLA/MSLA)", cls: "badge-amber" },
-              { text: "FDM Filament 3D Printing", cls: "badge-amber" },
-              { text: "Chitubox & PrusaSlicer Workflow", cls: "badge-gold" },
-              { text: "E-step & Exposure Calibration", cls: "" },
-              { text: "IPA Post-Processing & UV Curing", cls: "" },
-              { text: "CAD Design & Mechanical Assembly", cls: "badge-cobalt" },
-              { text: "Hardware Maintenance & Bed Leveling", cls: "" }
-            ]
-          },
-          {
-            id: "bento-laser",
-            title: "Precision Laser Cutting & Engraving",
-            tag: "Laser Cutting",
-            img: "img/laser.jpg",
-            badges: [
-              { text: "LightBurn Control & Calibration", cls: "badge-gold" },
-              { text: "Diode / CO2 Cutting & Engraving", cls: "badge-gold" },
-              { text: "Speed & Power Acceleration Curves", cls: "" },
-              { text: "Kerf Compensation & Vectorization", cls: "badge-cobalt" },
-              { text: "Acrylic, Wood & Technical Media", cls: "" },
-              { text: "Operational Safety & Fume Extraction", cls: "" }
-            ]
-          },
-          {
-            id: "bento-drone",
-            title: "Aerial Cinematography & FAA Drones",
-            tag: "UAS Operations",
-            img: "img/drone.jpg",
-            badges: [
-              { text: "FAA Certified Drone Pilot (TRUST)", cls: "badge-cobalt" },
-              { text: "Aerial Cinematography & 4K Capture", cls: "badge-gold" },
-              { text: "3D Photogrammetry & Aerial Mapping", cls: "badge-cobalt" },
-              { text: "360° Virtual Tours", cls: "" },
-              { text: "Commercial Flight Planning", cls: "" },
-              { text: "Airspace Safety & Compliance", cls: "" }
-            ]
-          },
-          {
-            id: "bento-media",
-            title: "Media Production & DaVinci Resolve",
-            tag: "Media Tech",
-            img: "img/podcast.jpg",
-            badges: [
-              { text: "DaVinci Resolve (Editing & Scripting)", cls: "badge-gold" },
-              { text: "Multicam & Proxy Workflows", cls: "badge-gold" },
-              { text: "Cinematic Color Grading", cls: "" },
-              { text: "Podcast Audio Engineering", cls: "" },
-              { text: "Hijos del Trago Podcast (53+ eps)", cls: "badge-emerald" },
-              { text: "Streaming & Multi-Platform Delivery", cls: "" }
-            ]
-          }
-        ],
-        experience: [
-          {
-            title: "AI Content Creator & Technical Trainer",
-            company: "Delta Prompt Labs (Educational Digital Initiative)",
-            date: "June 2025 – Present",
-            bullets: [
-              "Lead educational initiative and digital channel dedicated to teaching professionals, companies, and students how to leverage applied AI tools and assisted programming.",
-              "Create hands-on tutorials, workflow optimization guides, task automation solutions, and rapid web application development (Vibe Coding).",
-              "Direct full audio/video production and technical engineering for weekly 'Hijos del Trago Podcast' (53+ consecutive releases).",
-              "Manage digital fabrication & rapid prototyping: LightBurn precision laser cutting and additive 3D printing (FDM & SLA resin)."
-            ]
-          },
-          {
-            title: "Lead Systems, Technical Support & Enterprise CRM",
-            company: "4Arrow Corporate Services",
-            date: "August 2021 – May 2025",
-            bullets: [
-              "Provided direct customer support and comprehensive IT assistance to team members and executives, ensuring continuous workstation and local network uptime.",
-              "Designed, programmed, and deployed custom enterprise CRM on Google Workspace APIs, cutting prospect follow-up time by 40%.",
-              "Delivered 1-on-1 technical coaching and training to a 12+ advisor team, structuring KPI monitoring and automated contract workflows.",
-              "Implemented high-converting digital assets: 360° virtual tours, 3D photogrammetry, and aerial drone cinematography (FAA TRUST certified)."
-            ]
-          },
-          {
-            title: "Quality Engineering & Systems Support Intern",
-            company: "Visteon of Mexico (Altec)",
-            date: "2012 (8 months)",
-            bullets: [
-              "Provided operational support and testing verification across assembly lines and electronic test fixtures for automotive instrument clusters and ECUs.",
-              "Applied structured root cause problem-solving methodologies (Ishikawa / 5 Whys) to resolve test equipment and software discrepancies.",
-              "Updated Standard Operating Procedures (SOPs/WIs), operational documentation, and shift logging traceability."
-            ]
-          }
-        ],
-        projects: [
-          {
-            icon: "fa-brands fa-youtube",
-            title: "@deltapromptlabs (AI Lab)",
-            desc: "AI research and autonomous agent software engineering laboratory covering prompt architectures and Vibe Coding.",
-            linkText: "Visit Lab",
-            linkUrl: "https://youtube.com/@deltapromptlabs"
-          },
-          {
-            icon: "fa-brands fa-instagram",
-            title: "@samfrankmedia (Media & Drones)",
-            desc: "Cinematography, aerial drone visuals under FAA certification, and high-impact commercial media production.",
-            linkText: "Visit Instagram",
-            linkUrl: "https://instagram.com/samfrankmedia"
-          },
-          {
-            icon: "fa-solid fa-podcast",
-            title: "Podcast Hijos del Trago",
-            desc: "Full production and technical audio/video direction for weekly long-form podcast (53+ continuous episodes).",
-            linkText: "Listen Episodes",
-            linkUrl: "https://youtube.com/@hijosdeltrago"
-          },
-          {
-            icon: "fa-solid fa-cube",
-            title: "Digital Fabrication & Prototyping",
-            desc: "CAD/CAM mechanical enclosures, diode laser cutting, and additive 3D printing (Elegoo Saturn SLA / FDM).",
-            linkText: "Request Details",
-            linkUrl: "mailto:samf3212@gmail.com"
-          }
-        ],
-        education: {
-          degreeTitle: "B.S. in Computer Systems Engineering",
-          degreeSub: "Hardware Architecture Option",
-          degreeDesc: "Autonomous University of Chihuahua (UACH) – 2012",
-          langTitle: "Language Proficiency",
-          langs: [
-            "🇲🇽 <strong>Spanish:</strong> Native",
-            "🇺🇸 <strong>English:</strong> C1 Advanced (90% / Technical & Business Fluency)",
-            "🇨🇳 <strong>Mandarin Chinese:</strong> HSK 1 (+600 days of daily self-taught study)"
-          ],
-          certs: [
-            { title: "Google AI Essentials Specialization", sub: "Google", desc: "Generative AI for workflow efficiency and technical storytelling." },
-            { title: "Prompting for Generative AI", sub: "Adobe", desc: "Prompt engineering and digital asset generation." },
-            { title: "Introduction to Artificial Intelligence", sub: "IBM", desc: "AI architecture, Machine Learning, Deep Learning, and NLP." },
-            { title: "The Recreational UAS Safety Test (TRUST)", sub: "FAA (Federal Aviation Administration)", desc: "Acreditación federal estadounidense para operaciones de dron." }
-          ]
-        }
+      {
+        "number": "1 a 1",
+        "label": "Atención y Asesoría Técnica Personalizada"
       },
-
-      zh: {
-        compositeTitle: "计算机系统与硬件 • 电脑技术支持与维护 • 一对一定制化客户服务 • 人工智能与影视",
-        heroBadge: '<i class="fa-solid fa-crown"></i> 计算机系统工程师 • 硬件运维与技术支持',
-        heroTagline: '奇瓦瓦自治大学（UACH）计算机系统工程学士（硬件方向）。核心专长：<strong>1) 计算机硬件技术支持与维护</strong>（硬件故障诊断、整机组装与拆卸、软硬件预防性与纠正性维护）；<strong>2) 一对一深度定制化客户服务</strong>；以及 <strong>3) 基于人工智能的应用开发与业务流程自动化优化</strong>。',
-        nav: { skills: "专业技能", exp: "工作经验", projects: "重点项目", certs: "教育背景", print: "下载简历 (PDF)" },
-        toastCopied: "已成功复制到剪贴板！",
-        headings: {
-          skills: "专业技术、技术支持与核心能力矩阵",
-          exp: "职业经历与项目履历",
-          projects: "代表性工程与实践案例",
-          eduTitle: "教育背景与语言能力",
-          certsTitle: "专业资质认证",
-          searchPlaceholder: "搜索技能 (技术支持, 硬件, 电脑装机, 拆装, Python, 激光, 3D打印...)"
-        },
-        pills: {
-          loc: "墨西哥奇瓦瓦州 (Chihuahua, MX)",
-          eng: "英语 C1 高级流利 (90%)",
-          zh: "中文普通话 (HSK 1 - 连续自学600余天)"
-        },
-        ctas: { email: "发送邮件联系", print: "下载简历 (PDF)" },
-        footer: {
-          text: "© 2026 Gibran Samuel Villa Franco — 计算机系统与硬件工程师",
-          sub: "基于 ⚡ <strong>Vibe Coding</strong> 敏捷构建 | 黑曜金奢华视觉系统"
-        },
-        stats: [
-          { number: "12+", label: "计算机系统、硬件与IT专业底蕴 (UACH)" },
-          { number: "1对1", label: "深度一对一定制化技术服务与咨询" },
-          { number: "PC/笔记本", label: "硬件故障诊断、装机拆卸与维护" },
-          { number: "3D/激光", label: "数字制造、全流程自动化与无人机" }
-        ],
-        bento: [
-          {
-            id: "bento-software",
-            title: "计算机系统、硬件运维与技术支持",
-            tag: "核心IT与支持",
-            img: "img/coding.jpg",
-            badges: [
-              { text: "电脑硬件技术支持 (PC/笔记本)", cls: "badge-gold" },
-              { text: "硬件故障诊断、装机与拆卸", cls: "badge-gold" },
-              { text: "软硬件预防性与纠正性维护", cls: "badge-cobalt" },
-              { text: "一对一深度定制化客户服务", cls: "badge-gold" },
-              { text: "应用系统开发与 AI 流程优化", cls: "badge-gold" },
-              { text: "操作系统调优 (Win/Linux) 与局域网", cls: "" },
-              { text: "系统集成与 Python API 开发", cls: "" },
-              { text: "数据安全备份与基础架构运维", cls: "" }
-            ]
-          },
-          {
-            id: "bento-ai",
-            title: "生成式人工智能与自动化",
-            tag: "科技创新",
-            img: "img/ai_lab.jpg",
-            badges: [
-              { text: "Vibe Coding 敏捷协同开发", cls: "badge-gold" },
-              { text: "高阶提示词工程", cls: "badge-gold" },
-              { text: "自主 AI 智能体流水线", cls: "" },
-              { text: "模型上下文协议 (MCP)", cls: "badge-cobalt" },
-              { text: "Gemini Pro / GPT-4 / Claude", cls: "" },
-              { text: "复杂工作流全自动调度", cls: "" },
-              { text: "文档解析与数据提取", cls: "" }
-            ]
-          },
-          {
-            id: "bento-3d",
-            title: "光固化树脂 (Elegoo Saturn) 与 FDM 3D 智造",
-            tag: "3D智造",
-            img: "img/3d_print.jpg",
-            badges: [
-              { text: "Elegoo Saturn (SLA/MSLA 光固化)", cls: "badge-amber" },
-              { text: "FDM 熔融沉积 3D 打印", cls: "badge-amber" },
-              { text: "Chitubox 与 Prusa 切片调优", cls: "badge-gold" },
-              { text: "挤出步进 (E-steps) 与曝光校准", cls: "" },
-              { text: "化学后处理 (IPA) 与紫外固化", cls: "" },
-              { text: "CAD/CAM 设计与机械公差装配", cls: "badge-cobalt" },
-              { text: "机电设备日常维护与调平", cls: "" }
-            ]
-          },
-          {
-            id: "bento-laser",
-            title: "高精度激光切割与雕刻",
-            tag: "激光工艺",
-            img: "img/laser.jpg",
-            badges: [
-              { text: "LightBurn 激光数控标定", cls: "badge-gold" },
-              { text: "二极管 / CO2 激光精密切割", cls: "badge-gold" },
-              { text: "功率与加速度曲线优化", cls: "" },
-              { text: "切缝补偿 (Kerf) 与矢量绘图", cls: "badge-cobalt" },
-              { text: "亚克力、木材与工程板材加工", cls: "" },
-              { text: "车间安全规程与排烟治理", cls: "" }
-            ]
-          },
-          {
-            id: "bento-drone",
-            title: "航拍影视与美国 FAA 认证无人机",
-            tag: "无人机航拍",
-            img: "img/drone.jpg",
-            badges: [
-              { text: "美国 FAA 无人机执照 (TRUST)", cls: "badge-cobalt" },
-              { text: "4K HDR 电影级航拍取景", cls: "badge-gold" },
-              { text: "三维实景建模与航测正射影像", cls: "badge-cobalt" },
-              { text: "360° 全景空间漫游", cls: "" },
-              { text: "商业航线规划与外业踏勘", cls: "" },
-              { text: "空域安全法规与合规飞行", cls: "" }
-            ]
-          },
-          {
-            id: "bento-media",
-            title: "影视制作与达芬奇后期工作流",
-            tag: "影视科技",
-            img: "img/podcast.jpg",
-            badges: [
-              { text: "达芬奇 (DaVinci Resolve) 调色与后期", cls: "badge-gold" },
-              { text: "多机位导播与高性能代理流水线", cls: "badge-gold" },
-              { text: "电影级色彩科学与 Etalonaje", cls: "" },
-              { text: "播客音响工程与降噪响度控制", cls: "" },
-              { text: "播客《Hijos del Trago》(53+期)", cls: "badge-emerald" },
-              { text: "全网分发与多平台流媒体输出", cls: "" }
-            ]
-          }
-        ],
-        experience: [
-          {
-            title: "人工智能内容创作者与技术讲师",
-            company: "Delta Prompt Labs (教育科普项目)",
-            date: "2025年6月 – 至今",
-            bullets: [
-              "主导 AI 教育科普项目与自媒体频道，致力于帮助专业人士、企业及学生掌握前沿人工智能工具与辅助编程技能。",
-              "制作实践教程、业务工作流优化指南、任务自动化脚本及敏捷 Web 应用开发（Vibe Coding）。",
-              "统筹大型周更多机位长视频播客《Hijos del Trago》（连续制作 53+ 期）全流程音视频工程与制作。",
-              "硬件快速原型开发与数字智造：LightBurn 激光加工与 FDM/SLA 高精度 3D 打印。"
-            ]
-          },
-          {
-            title: "系统主管、IT 技术支持与企业 CRM 平台负责人",
-            company: "4Arrow 商务投资集团",
-            date: "2021年8月 – 2025年5月",
-            bullets: [
-              "为企业管理层及顾问团队提供面对面、全方位的 IT 技术支持与计算机维护，保障业务设备与网络高效稳定运行。",
-              "基于 Google Workspace APIs 全栈研发定制 CRM 系统，将业务跟进周期缩短 40%。",
-              "对 12+ 人业务团队进行定制化技术培训，搭建 KPI 数据看板与合同自动化流转体系。",
-              "主导数字化商业资产建设：360° 全景漫游、三维实景建模与 FAA 认证无人机航拍。"
-            ]
-          },
-          {
-            title: "质量工程与系统支持实习工程师",
-            company: "墨西哥伟世通 (Visteon / Altec)",
-            date: "2012年 (8个月)",
-            bullets: [
-              "负责汽车仪表盘及电子控制单元 (ECU) 组装与测试工位的现场技术与运行支持。",
-              "运用因果图 (Ishikawa) 及 5Why 根本原因分析法，解决测试设备与测试软件出现的偏差。",
-              "维护并更新标准作业指导书 (SOPs/WIs)，确保班次运行记录的完整追溯。"
-            ]
-          }
-        ],
-        projects: [
-          {
-            icon: "fa-brands fa-youtube",
-            title: "@deltapromptlabs (AI 实验室)",
-            desc: "前沿人工智能、提示词工程、自主智能体流水线与敏捷开发科研频道。",
-            linkText: "访问实验室",
-            linkUrl: "https://youtube.com/@deltapromptlabs"
-          },
-          {
-            icon: "fa-brands fa-instagram",
-            title: "@samfrankmedia (影视与航拍)",
-            desc: "航拍电影级视觉、商业品牌宣传片与数字化全景作品集。",
-            linkText: "查看 Instagram 作品",
-            linkUrl: "https://instagram.com/samfrankmedia"
-          },
-          {
-            icon: "fa-solid fa-podcast",
-            title: "播客《Hijos del Trago》",
-            desc: "大型周更长视频播客全流程制作与音视频工程（连续发布 53+ 期）。",
-            linkText: "收听播客",
-            linkUrl: "https://youtube.com/@hijosdeltrago"
-          },
-          {
-            icon: "fa-solid fa-cube",
-            title: "数字智造与 3D 快速成型",
-            desc: "CAD 结构件设计、LightBurn 激光精密加工与 Elegoo Saturn 3D 增材制造方案。",
-            linkText: "咨询制造项目",
-            linkUrl: "mailto:samf3212@gmail.com"
-          }
-        ],
-        education: {
-          degreeTitle: "计算机系统工程学士",
-          degreeSub: "硬件架构 / 计算机系统方向",
-          degreeDesc: "奇瓦瓦自治大学 (UACH) – 2012",
-          langTitle: "语言能力",
-          langs: [
-            "🇲🇽 <strong>西班牙语:</strong> 母语",
-            "🇺🇸 <strong>英语:</strong> C1 高级流利 (90% / 商务谈判与技术文档)",
-            "🇨🇳 <strong>中文普通话:</strong> HSK 1 (+600 天日常自学精进)"
-          ],
-          certs: [
-            { title: "Google AI 核心专项认证", sub: "Google", desc: "生成式 AI 优化与技术叙事专项认证。" },
-            { title: "Adobe 生成式 AI 提示词认证", sub: "Adobe", desc: "高阶提示词工程与数字化资产生成。" },
-            { title: "IBM 人工智能基础认证", sub: "IBM", desc: "机器学习、深度学习与 NLP 系统架构。" },
-            { title: "美国 FAA 无人机飞行员认证 (TRUST)", sub: "FAA", desc: "美国联邦航空局无人机操作资质。" }
-          ]
-        }
+      {
+        "number": "PC/Laptop",
+        "label": "Diagnóstico, Ensamble & Mantenimiento"
+      },
+      {
+        "number": "3D/Láser",
+        "label": "Fabricación Digital, Automatización & Drones"
       }
-    };
+    ],
+    "modalLabels": {
+      "appTitle": "Experiencia & Aplicación Práctica:",
+      "toolsTitle": "Tecnologías & Herramientas:",
+      "hint": "Haz clic en cualquier habilidad para ver detalles",
+      "close": "Cerrar"
+    },
+    "bento": [
+      {
+        "id": "bento-software",
+        "title": "Sistemas, Soporte Técnico & Hardware",
+        "tag": "Core IT & Soporte",
+        "img": "img/coding.jpg",
+        "badges": [
+          {
+            "text": "Servicio Técnico a Computadoras (PC/Laptop)",
+            "cls": "badge-gold",
+            "desc": "Servicio y mantenimiento profesional integral para computadoras de escritorio, estaciones de trabajo y portátiles de todas las marcas.",
+            "bullets": [
+              "Diagnóstico integral de fallas de encendido, cuellos de botella térmicos y pantallas azules (BSOD).",
+              "Reemplazo de componentes: procesadores, tarjetas gráficas, memoria RAM, unidades NVMe SSD y fuentes de poder.",
+              "Instalación limpia de sistemas operativos, configuración de drivers y optimización de rendimiento."
+            ],
+            "tools": [
+              "Hardware PC",
+              "Laptops",
+              "NVMe/SATA",
+              "Reparación",
+              "Pruebas de Estrés"
+            ]
+          },
+          {
+            "text": "Diagnóstico de Hardware, Ensamble & Desensamble",
+            "cls": "badge-gold",
+            "desc": "Ensamble a medida de equipos para gaming, ingeniería y oficina, junto con desensamble minucioso para mantenimiento físico.",
+            "bullets": [
+              "Ensamble personalizado calculando balances de potencia energética y flujo de aire positivo.",
+              "Desensamble cuidadoso de laptops para limpieza ultrasónica y reemplazo de pasta térmica de alta conductividad.",
+              "Verificación bajo carga extrema con MemTest86, FurMark, Cinebench y HWMonitor."
+            ],
+            "tools": [
+              "Ensamble a Medida",
+              "Pasta Térmica",
+              "MemTest86",
+              "Cinebench",
+              "FurMark"
+            ]
+          },
+          {
+            "text": "Mantenimiento Preventivo & Correctivo",
+            "cls": "badge-cobalt",
+            "desc": "Estrategias de mantenimiento programado para extender la vida útil del hardware y solucionar emergencias operativas.",
+            "bullets": [
+              "Limpieza profunda libre de estática, lubricación de ventiladores y cambio de thermal pads.",
+              "Actualización de BIOS/firmware y corrección de incompatibilidades de hardware.",
+              "Eliminación de malware persistente y optimización de registros del sistema."
+            ],
+            "tools": [
+              "Limpieza Antiestática",
+              "Actualización BIOS",
+              "Thermal Pads",
+              "Optimización"
+            ]
+          },
+          {
+            "text": "Atención Directa & Personalizada (1 a 1)",
+            "cls": "badge-gold",
+            "desc": "Enfoque empático y consultivo de atención al cliente, asesorando de forma personalizada y sin tecnicismos innecesarios.",
+            "bullets": [
+              "Diagnóstico transparente explicando al cliente la causa raíz y las mejores alternativas de solución.",
+              "Atención directa a directivos, profesionistas y usuarios garantizando tiempos de respuesta ágiles.",
+              "Seguimiento post-servicio para asegurar 100% de satisfacción y continuidad operativa."
+            ],
+            "tools": [
+              "Atención al Cliente",
+              "Asesoría Técnica",
+              "Comunicación Empática",
+              "SLA Ágil"
+            ]
+          },
+          {
+            "text": "Desarrollo de Apps & Optimización con IA",
+            "cls": "badge-gold",
+            "desc": "Creación rápida de herramientas web, tableros y flujos automatizados apoyándose en agentes de IA y Vibe Coding.",
+            "bullets": [
+              "Desarrollo de landing pages de alta conversión, CRMs ligeros y aplicaciones a medida.",
+              "Integración de modelos LLM para resolver cuellos de botella en operaciones cotidianas.",
+              "Despliegues automatizados en Vercel, Netlify y GitHub Pages."
+            ],
+            "tools": [
+              "Vibe Coding",
+              "JavaScript",
+              "Python",
+              "Vercel",
+              "GitHub Pages"
+            ]
+          },
+          {
+            "text": "Optimización de SO (Windows/Linux) & Redes",
+            "cls": "badge-cobalt",
+            "desc": "Configuración y ajuste fino de sistemas operativos para máximo rendimiento y seguridad en entornos locales.",
+            "bullets": [
+              "Depuración de telemetría y procesos en segundo plano para arranque instantáneo.",
+              "Configuración de redes locales (LAN/Wi-Fi), switches, routers y cableado estructurado.",
+              "Políticas de permisos, cortafuegos y acceso remoto seguro."
+            ],
+            "tools": [
+              "Windows 11/10",
+              "Ubuntu Linux",
+              "LAN / Wi-Fi",
+              "Routers & Switches"
+            ]
+          },
+          {
+            "text": "Integración de Sistemas & Python APIs",
+            "cls": "badge-cobalt",
+            "desc": "Conexión de bases de datos, servicios en la nube y aplicaciones mediante scripts y endpoints RESTful.",
+            "bullets": [
+              "Automatización de sincronización de datos con Google Sheets y Google Workspace APIs.",
+              "Creación de microservicios con FastAPI y Flask para procesamiento en segundo plano.",
+              "Consumo seguro de APIs externas con autenticación OAuth2 y tokens."
+            ],
+            "tools": [
+              "Python",
+              "FastAPI",
+              "Google APIs",
+              "REST API",
+              "JSON Webhooks"
+            ]
+          },
+          {
+            "text": "Respaldo y Seguridad de Información",
+            "cls": "badge-gold",
+            "desc": "Implementación de protocolos de copia de seguridad redundante y prevención de pérdida de datos.",
+            "bullets": [
+              "Estrategia de respaldo 3-2-1 combinando almacenamiento local (NAS/RAID) y nubes seguras.",
+              "Creación de imágenes de disco e imágenes clonadas para restauración inmediata ante fallas.",
+              "Cifrado de volúmenes con BitLocker y gestión segura de credenciales."
+            ],
+            "tools": [
+              "Estrategia 3-2-1",
+              "NAS / RAID",
+              "Imágenes de Disco",
+              "BitLocker"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-ai",
+        "title": "IA Generativa & Automatización",
+        "tag": "Innovación",
+        "img": "img/ai_lab.jpg",
+        "badges": [
+          {
+            "text": "Vibe Coding & Pair Programming",
+            "cls": "badge-gold",
+            "desc": "Programación colaborativa asistida por IA para conceptualizar, construir y desplegar software en horas.",
+            "bullets": [
+              "Dirección de agentes autónomos para generación y refactorización continua de código.",
+              "Iteración rápida de interfaces interactivas con cero fricción técnica.",
+              "Validación automatizada de sintaxis, accesibilidad y rendimiento web."
+            ],
+            "tools": [
+              "Vibe Coding",
+              "AI Pair Programming",
+              "Cursor",
+              "Antigravity"
+            ]
+          },
+          {
+            "text": "Prompt Engineering Avanzado",
+            "cls": "badge-gold",
+            "desc": "Diseño de instrucciones estructuradas para obtener respuestas deterministas y de alta calidad de los LLMs.",
+            "bullets": [
+              "Arquitecturas de prompts: Few-Shot, Chain-of-Thought y meta-prompts para tareas complejas.",
+              "Control estricto de esquemas de salida en formatos JSON estructurados.",
+              "Optimización de tokens y reducción de costos operativos en llamadas a APIs de IA."
+            ],
+            "tools": [
+              "Chain-of-Thought",
+              "Few-Shot",
+              "JSON Schema",
+              "Meta-Prompting"
+            ]
+          },
+          {
+            "text": "Agentes Autónomos de IA",
+            "cls": "badge-cobalt",
+            "desc": "Construcción de agentes inteligentes capaces de planificar, usar herramientas externas y completar metas complejas.",
+            "bullets": [
+              "Diseño de ciclos de razonamiento-acción (ReAct) y manejo de memoria a largo plazo.",
+              "Integración de herramientas del sistema (subprocesos, terminal, navegador headless).",
+              "Monitoreo de tareas asíncronas y recuperación automática ante fallos."
+            ],
+            "tools": [
+              "Agentes ReAct",
+              "Memoria Vectorial",
+              "Herramientas de Agente",
+              "Automatización"
+            ]
+          },
+          {
+            "text": "Model Context Protocol (MCP)",
+            "cls": "badge-cobalt",
+            "desc": "Protocolo estándar abierto para conectar modelos de IA con fuentes de datos externas, archivos y herramientas.",
+            "bullets": [
+              "Desarrollo de servidores MCP personalizados en Python para conectar bases de datos y software local.",
+              "Integración de conectores MCP de DaVinci Resolve, Google Drive, Sheets y Gmail.",
+              "Estandarización de herramientas interoperables para agentes de inteligencia artificial."
+            ],
+            "tools": [
+              "MCP Protocol",
+              "FastMCP",
+              "JSON-RPC",
+              "Integración de APIs"
+            ]
+          },
+          {
+            "text": "Gemini Pro / GPT-4 / Claude",
+            "cls": "badge-gold",
+            "desc": "Dominio práctico de los principales modelos de lenguaje fundacionales del mercado internacional.",
+            "bullets": [
+              "Selección precisa del modelo adecuado según ventana de contexto, latencia y costo.",
+              "Procesamiento multimodal de documentos extensos, audio, video y código.",
+              "Fine-tuning ligero y configuración de system prompts avanzados."
+            ],
+            "tools": [
+              "Gemini 1.5/2.0",
+              "GPT-4o",
+              "Claude 3.5 Sonnet",
+              "Modelos Multimodales"
+            ]
+          },
+          {
+            "text": "Automatización de Flujos & Bots",
+            "cls": "badge-cobalt",
+            "desc": "Orquestación de flujos de trabajo automatizados para eliminar tareas manuales repetitivas en negocios.",
+            "bullets": [
+              "Conexión de herramientas con n8n, Make y scripts en Python.",
+              "Bots de notificación en tiempo real para eventos comerciales y alertas de servidores.",
+              "Automatización de prospección y filtrado inteligente de datos."
+            ],
+            "tools": [
+              "n8n",
+              "Webhooks",
+              "Bots Automatizados",
+              "Python RPA"
+            ]
+          },
+          {
+            "text": "Extracción y Análisis de Documentos",
+            "cls": "badge-emerald",
+            "desc": "Procesamiento inteligente de PDFs, contratos, imágenes y bases de datos con modelos de visión y OCR.",
+            "bullets": [
+              "Conversión de documentos no estructurados a tablas estructuradas listas para análisis.",
+              "Extracción automática de cláusulas, fechas clave y montos financieros.",
+              "Generación de resúmenes ejecutivos y reportes automáticos."
+            ],
+            "tools": [
+              "Vision OCR",
+              "Extracción PDF",
+              "Document AI",
+              "Data Wrangling"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-3d",
+        "title": "Impresión 3D Resina (Elegoo) & FDM",
+        "tag": "Fabricación 3D",
+        "img": "img/3d_print.jpg",
+        "badges": [
+          {
+            "text": "Elegoo Saturn (Resina SLA/MSLA)",
+            "cls": "badge-amber",
+            "desc": "Manufactura aditiva por fotopolimerización UV de ultra alta resolución (8K/12K) para prototipos de máxima precisión.",
+            "bullets": [
+              "Producción de piezas con acabado superficial ultra liso y detalles microscópicos.",
+              "Calibración de resinas estándar, lavables al agua y de ingeniería tipo ABS.",
+              "Control de tiempos de exposición por capa para evitar fallas de adherencia."
+            ],
+            "tools": [
+              "Elegoo Saturn",
+              "Resina 8K/12K",
+              "SLA/MSLA",
+              "Fotopolímeros"
+            ]
+          },
+          {
+            "text": "Impresión 3D Filamento (FDM)",
+            "cls": "badge-amber",
+            "desc": "Fabricación de piezas mecánicas resistentes y funcionales mediante deposición de filamento fundido.",
+            "bullets": [
+              "Impresión en PLA+, PETG, TPU flexible y ABS para carcasas y soportes estructurales.",
+              "Ajuste de retracción, temperatura de boquilla y flujo para evitar hilos (stringing).",
+              "Optimización de densidad de relleno y orientación de capas para máxima resistencia a tensión."
+            ],
+            "tools": [
+              "Impresoras FDM",
+              "PETG / PLA+ / TPU",
+              "Resistencia Mecánica",
+              "Boquillas 0.4/0.6mm"
+            ]
+          },
+          {
+            "text": "Slicing en Chitubox & PrusaSlicer",
+            "cls": "badge-gold",
+            "desc": "Dominio de software de laminación para preparar modelos 3D con máxima eficiencia de material y tiempo.",
+            "bullets": [
+              "Colocación manual y paramétrica de soportes para evitar marcas superficiales.",
+              "Ahuecado (hollowing) de piezas y creación de orificios de drenaje y escape de presión.",
+              "Configuración de capas adaptativas y patrones de relleno giroidal."
+            ],
+            "tools": [
+              "Chitubox Pro",
+              "PrusaSlicer",
+              "Soportes Personalizados",
+              "Hollowing"
+            ]
+          },
+          {
+            "text": "Calibración de E-steps y Exposición",
+            "cls": "badge-cobalt",
+            "desc": "Metrología y calibración dimensional rigurosa para garantizar piezas con tolerancias exactas.",
+            "bullets": [
+              "Uso de matrices de prueba de exposición (Validation Matrix y Cones of Calibration).",
+              "Calibración precisa de pasos de motor extrusor (E-steps) y PID de temperatura.",
+              "Compensación de contracción del material en ejes X, Y y Z."
+            ],
+            "tools": [
+              "Validation Matrix",
+              "PID Tuning",
+              "Calibrador Digital",
+              "Tolerancias ±0.1mm"
+            ]
+          },
+          {
+            "text": "Post-procesado Químico & Curado UV",
+            "cls": "badge-cobalt",
+            "desc": "Protocolos seguros de limpieza química y curado UV para alcanzar las propiedades mecánicas óptimas del material.",
+            "bullets": [
+              "Lavado escalonado en alcohol isopropílico (IPA) de alta pureza.",
+              "Curado en cámara UV rotatoria a temperatura controlada.",
+              "Lijado al agua, pulido fino y sellado con acabados profesionales."
+            ],
+            "tools": [
+              "Estación Wash & Cure",
+              "Alcohol Isopropílico",
+              "Curado UV 405nm",
+              "Acabado"
+            ]
+          },
+          {
+            "text": "Diseño CAD y Tolerancias de Ensamble",
+            "cls": "badge-gold",
+            "desc": "Modelado paramétrico en 3D orientado a la manufactura y ensamble funcional de piezas mecánicas.",
+            "bullets": [
+              "Diseño considerando tolerancias de ajuste por fricción, holguras de tornillería e insertos roscados.",
+              "Modelado de carcasas electrónicas personalizadas para placas de desarrollo y componentes.",
+              "Exportación limpia en formatos STEP, STL y OBJ optimizados."
+            ],
+            "tools": [
+              "CAD Paramétrico",
+              "Insertos Roscados",
+              "Modelado de Carcasas",
+              "Archivos STEP/STL"
+            ]
+          },
+          {
+            "text": "Mantenimiento Mecánico de Impresoras",
+            "cls": "badge-emerald",
+            "desc": "Servicio técnico preventivo y correctivo a la maquinaria de impresión 3D.",
+            "bullets": [
+              "Nivelación micrométrica de cama de impresión y ajuste de sensor óptico/inductivo.",
+              "Reemplazo y tensado de láminas FEP/PFA/NFEP en tanques de resina.",
+              "Lubricación de varillas roscadas y guías lineales para evitar atascos y 'layer shifting'."
+            ],
+            "tools": [
+              "Mantenimiento 3D",
+              "Láminas FEP/PFA",
+              "Guías Lineales",
+              "Nivelación"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-laser",
+        "title": "Corte & Grabado Láser de Precisión",
+        "tag": "Corte Láser",
+        "img": "img/laser.jpg",
+        "badges": [
+          {
+            "text": "Control & Setup en LightBurn",
+            "cls": "badge-gold",
+            "desc": "Manejo experto del software líder mundial para corte y grabado láser por control numérico.",
+            "bullets": [
+              "Configuración de origen de coordenadas, límites de máquina y comunicación USB/Ethernet.",
+              "Organización por capas con asignación independiente de potencia, velocidad y pasadas.",
+              "Optimización de rutas de corte para minimizar tiempos y deformaciones térmicas."
+            ],
+            "tools": [
+              "LightBurn Software",
+              "GRBL / Ruida",
+              "Capas de Potencia",
+              "Control CNC"
+            ]
+          },
+          {
+            "text": "Corte & Grabado en Diodo / CO2",
+            "cls": "badge-gold",
+            "desc": "Operación de láseres de diodo de alta potencia y equipos CO2 para una amplia gama de materiales.",
+            "bullets": [
+              "Corte limpio de madera contrachapada, MDF, acrílico fundido y cuero genuino.",
+              "Grabado de alta definición en aluminio anodizado, acero inoxidable con agente de marcado y vidrio.",
+              "Ajuste de punto focal microscópico para bordes nítidos y sin quemaduras."
+            ],
+            "tools": [
+              "Láser Diodo",
+              "Láser CO2",
+              "Madera & Acrílico",
+              "Metal Anodizado"
+            ]
+          },
+          {
+            "text": "Curvas de Potencia & Aceleración",
+            "cls": "badge-cobalt",
+            "desc": "Calibración científica de parámetros de velocidad y aceleración para grabados en escala de grises y cortes perfectos.",
+            "bullets": [
+              "Creación de matrices de prueba de potencia vs. velocidad específicas para cada material.",
+              "Ajuste de aceleración en esquinas para evitar sobrecalentamiento y sombras.",
+              "Configuración de grabado por tramado (dithering) para fotografías de alta definición."
+            ],
+            "tools": [
+              "Matrices de Corte",
+              "Dithering",
+              "Calibración de Potencia",
+              "Gradación de Tonos"
+            ]
+          },
+          {
+            "text": "Compensación de Kerf & Vectorizado",
+            "cls": "badge-cobalt",
+            "desc": "Cálculo milimétrico del ancho del haz de corte para uniones mecánicas y ensambles a presión.",
+            "bullets": [
+              "Compensación de corte (Kerf) para cajas y ensambles tipo 'finger joint' que encajan sin pegamento.",
+              "Vectorización limpia de logotipos e ilustraciones rasterizadas en formato SVG/DXF.",
+              "Nesting automático de piezas para aprovechar al 100% el área del material."
+            ],
+            "tools": [
+              "Compensación Kerf",
+              "Ensambles Finger Joint",
+              "Vectorizado SVG/DXF",
+              "Nesting"
+            ]
+          },
+          {
+            "text": "Acrílico, Madera & Materiales Técnicos",
+            "cls": "badge-amber",
+            "desc": "Selección de sustratos y técnicas especializadas según los requerimientos estéticos y mecánicos del proyecto.",
+            "bullets": [
+              "Corte de acrílico con bordes pulidos a la llama directamente por el láser.",
+              "Grabado inverso en acrílico transparente para señalética y placas iluminadas con LED.",
+              "Tratamientos de acabado superficial: tintas, selladores y enmascarado para evitar manchas de humo."
+            ],
+            "tools": [
+              "Acrílico Fundido",
+              "MDF / Triplay",
+              "Señalética LED",
+              "Acabados"
+            ]
+          },
+          {
+            "text": "Seguridad y Extracción de Humos",
+            "cls": "badge-emerald",
+            "desc": "Protocolos estrictos de seguridad industrial para operación láser Clase 4 y protección ambiental.",
+            "bullets": [
+              "Uso de gafas de protección óptica certificadas con densidad óptica (OD) acorde a la longitud de onda.",
+              "Instalación de sistemas de extracción asistida por aire (Air Assist) y extracción forzada de humos.",
+              "Protocolos contra incendios y monitoreo continuo durante la operación."
+            ],
+            "tools": [
+              "Seguridad Clase 4",
+              "Air Assist",
+              "Extracción Forzada",
+              "Gafas Certificadas"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-drone",
+        "title": "Cinematografía Aérea & Drones FAA",
+        "tag": "Operaciones UAS",
+        "img": "img/drone.jpg",
+        "badges": [
+          {
+            "text": "Piloto Certificado FAA (TRUST)",
+            "cls": "badge-cobalt",
+            "desc": "Acreditación oficial por la Administración Federal de Aviación (FAA de EE.UU.) para operación reglamentada de drones.",
+            "bullets": [
+              "Conocimiento riguroso de normativas del espacio aéreo, altitudes máximas y zonas restringidas.",
+              "Gestión de autorizaciones de vuelo y protocolos de operación segura.",
+              "Mantenimiento de bitácoras de vuelo y estado de las aeronaves."
+            ],
+            "tools": [
+              "Certificación FAA TRUST",
+              "Regulaciones UAS",
+              "Espacio Aéreo",
+              "Seguridad de Vuelo"
+            ]
+          },
+          {
+            "text": "Cinematografía Aérea & Grabación 4K",
+            "cls": "badge-gold",
+            "desc": "Captura de tomas aéreas cinemáticas en ultra alta definición para producciones comerciales y documentales.",
+            "bullets": [
+              "Ejecución de movimientos complejos: órbitas dinámicas, tomas cenitales y paneos reveladores.",
+              "Grabación en perfiles planos (D-Log/Cinetone) para máxima latitud y rango dinámico en postproducción.",
+              "Uso de filtros de densidad neutra (ND/PL) para mantener la regla de los 180° en velocidad de obturación."
+            ],
+            "tools": [
+              "Grabación 4K HDR",
+              "Perfiles D-Log",
+              "Filtros ND/PL",
+              "Movimientos Cinemáticos"
+            ]
+          },
+          {
+            "text": "Fotogrametría 3D & Mapeo Aéreo",
+            "cls": "badge-cobalt",
+            "desc": "Vuelos automáticos con traslape ortogonal para generación de modelos 3D y ortofotomapas de alta resolución.",
+            "bullets": [
+              "Planificación de mallas de vuelo programadas con traslape longitudinal y lateral del 75%+.",
+              "Generación de nubes de puntos densas, modelos digitales de elevación (DEM) y ortomosaicos.",
+              "Aplicación en levantamientos topográficos y visualización de terrenos inmobiliarios."
+            ],
+            "tools": [
+              "Fotogrametría Aérea",
+              "Mallas de Vuelo",
+              "Ortomosaicos",
+              "Modelos 3D DEM"
+            ]
+          },
+          {
+            "text": "Recorridos Virtuales 360°",
+            "cls": "badge-amber",
+            "desc": "Captura y ensamblado de fotografías esféricas de 360 grados para experiencias interactivas inmersivas.",
+            "bullets": [
+              "Tomas esféricas aéreas e interiores con horquillado de exposición (HDR de múltiples disparos).",
+              "Cosido de panoramas de alta resolución eliminando distorsiones y reflejos.",
+              "Integración en motores de recorridos web interactivos con puntos de interés y navegación fluida."
+            ],
+            "tools": [
+              "Panoramas 360°",
+              "HDR Bracketed",
+              "Recorridos Virtuales",
+              "Stitching"
+            ]
+          },
+          {
+            "text": "Inspección Visual & Vuelos Comerciales",
+            "cls": "badge-gold",
+            "desc": "Inspección técnica aérea no destructiva para infraestructuras, paneles solares y techumbres.",
+            "bullets": [
+              "Revisión de zonas de difícil acceso reduciendo riesgos humanos y tiempos operativos.",
+              "Captura de imágenes detalladas con geo-etiquetado para reportes técnicos de mantenimiento.",
+              "Cobertura aérea para eventos comerciales, corporativos y publicidad digital."
+            ],
+            "tools": [
+              "Inspección Técnica",
+              "Geo-etiquetado GPS",
+              "Monitoreo Aéreo",
+              "Reportes de Obra"
+            ]
+          },
+          {
+            "text": "Planificación de Vuelo y Seguridad",
+            "cls": "badge-emerald",
+            "desc": "Evaluación preventiva previa al despegue para garantizar misiones con 0% de incidentes.",
+            "bullets": [
+              "Análisis de condiciones meteorológicas: ráfagas de viento, visibilidad y tormentas solares (índice Kp).",
+              "Configuración de altitud segura de retorno a casa (RTH) y zonas de aterrizaje de emergencia.",
+              "Gestión de baterías LiPo con control de temperatura, ciclos de carga y voltajes por celda."
+            ],
+            "tools": [
+              "Pre-flight Checklist",
+              "Gestión de Baterías LiPo",
+              "Failsafe RTH",
+              "Análisis Meteorológico"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-media",
+        "title": "Producción & DaVinci Resolve",
+        "tag": "Media Tech",
+        "img": "img/podcast.jpg",
+        "badges": [
+          {
+            "text": "DaVinci Resolve (Edición y Scripting)",
+            "cls": "badge-gold",
+            "desc": "Edición profesional no lineal en DaVinci Resolve Studio con automatización y flujos de trabajo avanzados.",
+            "bullets": [
+              "Edición rápida de episodios de formato largo mediante atajos personalizados y teclados de edición.",
+              "Automatización de importación de medios, creación de líneas de tiempo y renders con scripts en Python.",
+              "Gestión eficiente de bases de datos PostgreSQL para proyectos colaborativos."
+            ],
+            "tools": [
+              "DaVinci Resolve Studio",
+              "Python Scripting",
+              "Edición No Lineal",
+              "Gestión de Medios"
+            ]
+          },
+          {
+            "text": "Flujos Multicámara & Proxies",
+            "cls": "badge-gold",
+            "desc": "Sincronización y montaje en tiempo real de múltiples tomas de cámara para podcasts y eventos.",
+            "bullets": [
+              "Sincronización instantánea de 3+ cámaras utilizando formas de onda de audio o código de tiempo (timecode).",
+              "Generación automática de proxies ligeros ProRes/DNxHR para edición fluida a 60 fps sin lag.",
+              "Conmutación de cámaras en vivo durante la reproducción para ritmo dinámico de edición."
+            ],
+            "tools": [
+              "Edición Multicámara",
+              "Proxies ProRes/DNxHR",
+              "Sincronización Audio",
+              "Líneas de Tiempo"
+            ]
+          },
+          {
+            "text": "Etalonaje & Color Grading",
+            "cls": "badge-cobalt",
+            "desc": "Corrección de color cinematográfica para igualar cámaras distintas y establecer un estilo visual único.",
+            "bullets": [
+              "Balance de blancos, exposición y correspondencia de tonos de piel entre diferentes marcas de cámaras.",
+              "Uso del espacio de color DaVinci YRGB Color Managed y perfiles ACES.",
+              "Creación de 'looks' personalizados con curvas, calificadores HSL y LUTs de emulación de película."
+            ],
+            "tools": [
+              "Color Grading",
+              "DaVinci Color Managed",
+              "Calificadores HSL",
+              "Film LUTs"
+            ]
+          },
+          {
+            "text": "Ingeniería de Audio de Podcasts",
+            "cls": "badge-cobalt",
+            "desc": "Tratamiento acústico digital y masterización en el módulo Fairlight para voces limpias y profesionales.",
+            "bullets": [
+              "Reducción de ruido de fondo, eliminación de resonancias y control de reverberación ambiental.",
+              "Cadena de procesamiento vocal: ecualización sustractiva, de-esser, compresión y limitación.",
+              "Masterización a estándares internacionales de sonoridad (-16 LUFS para podcast / -14 LUFS para YouTube)."
+            ],
+            "tools": [
+              "Fairlight Audio",
+              "Ecualización & Compresión",
+              "De-Esser & De-Noise",
+              "Estándares LUFS"
+            ]
+          },
+          {
+            "text": "Podcast Hijos del Trago (+53 eps)",
+            "cls": "badge-emerald",
+            "desc": "Producción técnica y dirección continua de un exitoso podcast semanal de larga duración (+53 episodios).",
+            "bullets": [
+              "Dirección técnica completa: iluminación de estudio, microfonía dinámica y monitoreo en vivo.",
+              "Flujo de trabajo de postproducción cerrado entregando episodios completos en menos de 48 horas.",
+              "Creación de fragmentos cortos de alto impacto (Shorts / Reels / TikTok) con subtitulado sincronizado."
+            ],
+            "tools": [
+              "Producción de Podcast",
+              "Iluminación 3 Puntos",
+              "Micrófonos Dinámicos",
+              "Shorts & Reels"
+            ]
+          },
+          {
+            "text": "Streaming & Distribución Multiplataforma",
+            "cls": "badge-amber",
+            "desc": "Configuración de transmisión y publicación optimizada para los principales canales digitales.",
+            "bullets": [
+              "Configuración de OBS Studio / switches de video para transmisiones estables y sin pérdida de cuadros.",
+              "Exportación multiformato con codificación por hardware optimizada (H.264/H.265/AV1).",
+              "Estrategia de metadatos, miniaturas y optimización SEO para YouTube, Spotify y Apple Podcasts."
+            ],
+            "tools": [
+              "OBS Studio",
+              "Codificación H.265/AV1",
+              "YouTube Studio",
+              "Spotify for Creators"
+            ]
+          }
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "title": "Creador de Contenido & Capacitador en Inteligencia Artificial",
+        "company": "Delta Prompt Labs (Iniciativa Educativa Digital)",
+        "date": "Junio 2025 – Presente",
+        "bullets": [
+          "Dirección de iniciativa educativa y canal técnico para enseñar a profesionistas, empresas y estudiantes a utilizar herramientas de Inteligencia Artificial aplicada.",
+          "Desarrollo de tutoriales prácticos, guías de optimización de flujos de trabajo, automatización de tareas y desarrollo de aplicaciones web ágiles (Vibe Coding).",
+          "Producción audiovisual completa y dirección técnica del podcast semanal 'Hijos del Trago' (+53 episodios continuos).",
+          "Prototipado rápido y fabricación digital: corte y grabado láser con LightBurn y manufactura aditiva 3D de precisión (FDM y resina SLA)."
+        ]
+      },
+      {
+        "title": "Líder de Sistemas, Soporte Técnico & Plataforma CRM",
+        "company": "4Arrow Servicios Corporativos",
+        "date": "Agosto 2021 – Mayo 2025",
+        "bullets": [
+          "Atención directa, asesoría personalizada y soporte técnico integral a asesores y directivos, asegurando la óptima operación de equipos de cómputo y redes locales.",
+          "Diseño, programación e implementación integral de CRM corporativo sobre Google Workspace APIs, reduciendo un 40% el tiempo de seguimiento comercial.",
+          "Capacitación técnica y comercial a un equipo de más de 12 asesores, estructurando tableros de KPIs y automatización de expedientes/contratos.",
+          "Implementación de tecnologías de captación digital: recorridos virtuales 360°, fotogrametría 3D y cinematografía aérea con dron (FAA TRUST)."
+        ]
+      },
+      {
+        "title": "Practicante de Ingeniería de Calidad & Soporte Operativo",
+        "company": "Visteon de México (Altec)",
+        "date": "2012 (8 meses)",
+        "bullets": [
+          "Supervisión y soporte operativo a estaciones de ensamble y pruebas electrónicas de módulos ECUs y tableros automotrices.",
+          "Aplicación de metodologías sistemáticas de causa raíz (Ishikawa / 5 Porqués) para resolución de discrepancias en equipo y software de prueba.",
+          "Actualización de manuales de operación, hojas de instrucción estándar (SOPs/WIs) y bitácoras de control."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "icon": "fa-brands fa-youtube",
+        "title": "@deltapromptlabs (AI & Dev Lab)",
+        "desc": "Canal y laboratorio enfocado en Inteligencia Artificial, Vibe Coding, experimentos de Prompt Engineering y agentes autónomos.",
+        "linkText": "Ver Laboratorio",
+        "linkUrl": "https://youtube.com/@deltapromptlabs"
+      },
+      {
+        "icon": "fa-brands fa-instagram",
+        "title": "@samfrankmedia (Media & Drones)",
+        "desc": "Producción audiovisual comercial, cinematografía aérea con dron bajo certificación FAA y creación de marcas.",
+        "linkText": "Visitar Instagram",
+        "linkUrl": "https://instagram.com/samfrankmedia"
+      },
+      {
+        "icon": "fa-solid fa-podcast",
+        "title": "Podcast Hijos del Trago",
+        "desc": "Producción integral de podcast semanal de formato largo (+53 episodios continuos y distribución multiplataforma).",
+        "linkText": "Escuchar Episodios",
+        "linkUrl": "https://youtube.com/@hijosdeltrago"
+      },
+      {
+        "icon": "fa-solid fa-cube",
+        "title": "Digital Fabrication & Prototyping",
+        "desc": "Diseño CAD/CAM, corte láser en LightBurn y manufactura 3D aditiva (Elegoo Saturn SLA / FDM) con tolerancias mecánicas.",
+        "linkText": "Consultar Fabricación",
+        "linkUrl": "mailto:samf3212@gmail.com"
+      }
+    ],
+    "education": {
+      "degreeTitle": "Ingeniería en Sistemas Computacionales",
+      "degreeSub": "Opción Hardware / Arquitectura de Sistemas",
+      "degreeDesc": "Universidad Autónoma de Chihuahua (UACH) – 2012",
+      "langTitle": "Competencia Lingüística",
+      "langs": [
+        "🇲🇽 <strong>Español:</strong> Nativo",
+        "🇺🇸 <strong>Inglés:</strong> C1 Advanced (90% / Negociación y Documentación Técnica)",
+        "🇨🇳 <strong>Chino Mandarín:</strong> HSK 1 (+600 días de estudio diario autodidacta)"
+      ],
+      "certs": [
+        {
+          "title": "Google AI Essentials Specialization",
+          "sub": "Google",
+          "desc": "IA generativa para optimización de procesos y storytelling técnico."
+        },
+        {
+          "title": "Prompting for Generative AI",
+          "sub": "Adobe",
+          "desc": "Ingeniería de prompts y generación digital de activos."
+        },
+        {
+          "title": "Introduction to Artificial Intelligence",
+          "sub": "IBM",
+          "desc": "Arquitectura de IA, Machine Learning, Deep Learning y NLP."
+        },
+        {
+          "title": "The Recreational UAS Safety Test (TRUST)",
+          "sub": "FAA (Federal Aviation Administration)",
+          "desc": "Acreditación federal estadounidense para operaciones de dron."
+        }
+      ]
+    }
+  },
+  "en": {
+    "compositeTitle": "SYSTEMS & HARDWARE • COMPUTER TECH SUPPORT • PERSONALIZED CUSTOMER CARE • AI & MEDIA",
+    "heroBadge": "<i class=\"fa-solid fa-crown\"></i> Computer Systems Engineer • Tech Support & Hardware",
+    "heroTagline": "Computer Systems Engineer (B.S., UACH - Hardware Option). Core expertise in: <strong>1) Hands-on computer tech support</strong> (hardware diagnostics, PC assembly/disassembly, preventative & corrective maintenance); <strong>2) Direct, personalized customer service</strong>; and <strong>3) Application development & process optimization leveraging Artificial Intelligence</strong>.",
+    "nav": {
+      "skills": "Skills",
+      "exp": "Experience",
+      "projects": "Projects",
+      "certs": "Education",
+      "print": "Download CV"
+    },
+    "toastCopied": "Copied to clipboard!",
+    "headings": {
+      "skills": "Skills, Technical Support & Technologies Matrix",
+      "exp": "Professional Experience & Career Path",
+      "projects": "Featured Projects & Case Studies",
+      "eduTitle": "Education & Languages",
+      "certsTitle": "Professional Certifications",
+      "searchPlaceholder": "Search (Support, Hardware, PC, Assembly, Python, Laser, 3D, Drone...)"
+    },
+    "pills": {
+      "loc": "Chihuahua, Chih., Mexico",
+      "eng": "English C1 Advanced (90%)",
+      "zh": "Mandarin Chinese (HSK 1 - +600 days)"
+    },
+    "ctas": {
+      "email": "Contact via Email",
+      "print": "Download CV"
+    },
+    "footer": {
+      "text": "© 2026 Gibran Samuel Villa Franco — Computer Systems Engineer",
+      "sub": "Built with ⚡ <strong>Vibe Coding</strong> in Obsidian Dark & Champagne Gold."
+    },
+    "stats": [
+      {
+        "number": "12+",
+        "label": "Years in Systems, Hardware & IT (UACH)"
+      },
+      {
+        "number": "1 on 1",
+        "label": "Direct & Personalized Technical Support"
+      },
+      {
+        "number": "PC/Laptop",
+        "label": "Hardware Diagnostics, Assembly & Maintenance"
+      },
+      {
+        "number": "3D/Laser",
+        "label": "Digital Fabrication, Automation & Drones"
+      }
+    ],
+    "modalLabels": {
+      "appTitle": "Experience & Practical Application:",
+      "toolsTitle": "Technologies & Related Tools:",
+      "hint": "Click on any skill to inspect details",
+      "close": "Close"
+    },
+    "bento": [
+      {
+        "id": "bento-software",
+        "title": "Systems, Tech Support & Hardware",
+        "tag": "Core IT & Support",
+        "img": "img/coding.jpg",
+        "badges": [
+          {
+            "text": "Computer Technical Support (PC/Laptop)",
+            "cls": "badge-gold",
+            "desc": "Comprehensive hardware and software technical support for desktops, workstations, and laptops across all brands.",
+            "bullets": [
+              "Troubleshooting boot failures, thermal throttling, and critical Blue Screens (BSOD).",
+              "Component replacements: CPUs, GPUs, RAM modules, NVMe SSDs, and power supplies.",
+              "Clean operating system installations, driver configurations, and performance tuning."
+            ],
+            "tools": [
+              "PC Hardware",
+              "Laptops",
+              "NVMe/SATA",
+              "Repairs",
+              "Stress Testing"
+            ]
+          },
+          {
+            "text": "Hardware Diagnostics, Assembly & Disassembly",
+            "cls": "badge-gold",
+            "desc": "Custom PC builds for engineering, gaming, and enterprise workloads, plus careful teardown for physical maintenance.",
+            "bullets": [
+              "Custom rig assembly calculating power efficiency curves and positive airflow dynamics.",
+              "Precision laptop disassembly for ultrasonic cleaning and high-conductivity thermal paste application.",
+              "Stress testing under extreme loads via MemTest86, FurMark, Cinebench, and HWMonitor."
+            ],
+            "tools": [
+              "Custom Builds",
+              "Thermal Paste",
+              "MemTest86",
+              "Cinebench",
+              "FurMark"
+            ]
+          },
+          {
+            "text": "Preventative & Corrective Maintenance",
+            "cls": "badge-cobalt",
+            "desc": "Proactive maintenance schedules to maximize hardware lifespan and rapid response to operational failures.",
+            "bullets": [
+              "Anti-static deep cleaning, fan bearing lubrication, and high-performance thermal pad replacement.",
+              "BIOS/firmware flashing and resolving hardware incompatibilities.",
+              "Persistent malware removal and system registry optimization."
+            ],
+            "tools": [
+              "Anti-Static Cleaning",
+              "BIOS Flashing",
+              "Thermal Pads",
+              "OS Tuning"
+            ]
+          },
+          {
+            "text": "Direct & Personalized Customer Care (1-on-1)",
+            "cls": "badge-gold",
+            "desc": "Consultative and empathetic customer support approach, explaining solutions clearly without unnecessary jargon.",
+            "bullets": [
+              "Transparent diagnostics explaining root causes and optimal cost-effective alternatives.",
+              "Dedicated 1-on-1 support for executives and team members ensuring fast resolution SLAs.",
+              "Continuous post-service follow-up to guarantee 100% operational satisfaction."
+            ],
+            "tools": [
+              "Customer Support",
+              "Technical Consulting",
+              "Clear Communication",
+              "Fast SLA"
+            ]
+          },
+          {
+            "text": "App Development & AI Optimization",
+            "cls": "badge-gold",
+            "desc": "Rapid development of lightweight web tools, internal portals, and automated workflows via Vibe Coding and LLMs.",
+            "bullets": [
+              "Building high-converting landing pages, lightweight CRMs, and customized web apps.",
+              "Integrating LLMs to eliminate repetitive operational bottlenecks in business workflows.",
+              "Continuous CI/CD deployments across Vercel, Netlify, and GitHub Pages."
+            ],
+            "tools": [
+              "Vibe Coding",
+              "JavaScript",
+              "Python",
+              "Vercel",
+              "GitHub Pages"
+            ]
+          },
+          {
+            "text": "OS Optimization (Windows/Linux) & LAN",
+            "cls": "badge-cobalt",
+            "desc": "Fine-tuning operating systems for maximum stability and speed in local business environments.",
+            "bullets": [
+              "De-bloating telemetry and background processes for near-instant boot and load times.",
+              "Configuring local networks (LAN/Wi-Fi), switches, routers, and structured cabling.",
+              "Enforcing access permissions, firewall rules, and encrypted remote desktop tunnels."
+            ],
+            "tools": [
+              "Windows 11/10",
+              "Ubuntu Linux",
+              "LAN / Wi-Fi",
+              "Routers & Switches"
+            ]
+          },
+          {
+            "text": "Systems Integration & Python APIs",
+            "cls": "badge-cobalt",
+            "desc": "Connecting local systems, cloud databases, and SaaS tools via Python scripts and RESTful endpoints.",
+            "bullets": [
+              "Automating bi-directional data pipelines with Google Sheets and Google Workspace APIs.",
+              "Developing lightweight background services and microservices using FastAPI and Flask.",
+              "Securely consuming external APIs with OAuth2 authentication and token refreshes."
+            ],
+            "tools": [
+              "Python",
+              "FastAPI",
+              "Google APIs",
+              "REST APIs",
+              "JSON Webhooks"
+            ]
+          },
+          {
+            "text": "Data Backup & Infrastructure Security",
+            "cls": "badge-gold",
+            "desc": "Designing bulletproof backup redundancy strategies and preventing catastrophic data loss.",
+            "bullets": [
+              "Implementing 3-2-1 backup architectures across local NAS/RAID arrays and secure cloud vaults.",
+              "Creating scheduled drive image snapshots for rapid disaster recovery.",
+              "Full volume encryption using BitLocker and strict credential vault management."
+            ],
+            "tools": [
+              "3-2-1 Strategy",
+              "NAS / RAID",
+              "Disk Imaging",
+              "BitLocker"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-ai",
+        "title": "Generative AI & Automation",
+        "tag": "Innovation",
+        "img": "img/ai_lab.jpg",
+        "badges": [
+          {
+            "text": "Vibe Coding & Pair Programming",
+            "cls": "badge-gold",
+            "desc": "Next-generation AI-assisted programming methodology to build, test, and deploy software architectures in hours.",
+            "bullets": [
+              "Guiding autonomous coding agents through iterative generation, linting, and refactoring.",
+              "Rapid creation of responsive, luxury interactive web components with zero friction.",
+              "Automated verification of syntax, performance benchmarks, and accessibility."
+            ],
+            "tools": [
+              "Vibe Coding",
+              "AI Pair Programming",
+              "Cursor",
+              "Antigravity"
+            ]
+          },
+          {
+            "text": "Advanced Prompt Engineering",
+            "cls": "badge-gold",
+            "desc": "Structuring robust, deterministic prompt architectures to elicit high-precision reasoning from LLMs.",
+            "bullets": [
+              "Architecting Few-Shot, Chain-of-Thought, and dynamic meta-prompt pipelines.",
+              "Enforcing strict output schemas conforming to verifiable JSON specifications.",
+              "Optimizing token economics and latency overhead on production API calls."
+            ],
+            "tools": [
+              "Chain-of-Thought",
+              "Few-Shot",
+              "JSON Schema",
+              "Meta-Prompting"
+            ]
+          },
+          {
+            "text": "Autonomous Agent Tooling",
+            "cls": "badge-cobalt",
+            "desc": "Developing autonomous agent frameworks capable of multi-step reasoning, external tool execution, and self-correction.",
+            "bullets": [
+              "Designing Reason-Action (ReAct) execution loops with long-term memory retrieval.",
+              "Equipping agents with OS-level tool integration (subprocesses, CLI tools, headless browsers).",
+              "Automated task supervision and resilient fallback error handling."
+            ],
+            "tools": [
+              "ReAct Agents",
+              "Vector Memory",
+              "Agent Tooling",
+              "Automation Loops"
+            ]
+          },
+          {
+            "text": "Model Context Protocol (MCP)",
+            "cls": "badge-cobalt",
+            "desc": "Open standard protocol enabling AI models to directly access external databases, file systems, and productivity suites.",
+            "bullets": [
+              "Building custom Python FastMCP servers to bridge local business logic with AI agents.",
+              "Connecting native MCP servers for DaVinci Resolve, Google Drive, Sheets, and Gmail.",
+              "Standardizing secure, interoperable toolchains for enterprise AI workflows."
+            ],
+            "tools": [
+              "MCP Protocol",
+              "FastMCP",
+              "JSON-RPC",
+              "API Integration"
+            ]
+          },
+          {
+            "text": "Gemini Pro / GPT-4 / Claude",
+            "cls": "badge-gold",
+            "desc": "Practical mastery of cutting-edge foundational models to select the right engine for every technical challenge.",
+            "bullets": [
+              "Benchmarking models for context window size, multimodal reasoning, and inference speed.",
+              "Multimodal processing of massive PDFs, audio tracks, 4K video, and full codebases.",
+              "System-level persona configuration and few-shot alignment."
+            ],
+            "tools": [
+              "Gemini 1.5/2.0",
+              "GPT-4o",
+              "Claude 3.5 Sonnet",
+              "Multimodal AI"
+            ]
+          },
+          {
+            "text": "Workflow & Process Automation",
+            "cls": "badge-cobalt",
+            "desc": "Orchestrating end-to-end automated pipelines to remove repetitive manual bottlenecks across business operations.",
+            "bullets": [
+              "Connecting disparate SaaS tools using n8n, Make, and standalone Python automation engines.",
+              "Real-time alert bots for incoming business leads, CRM updates, and server events.",
+              "Automating data extraction, document generation, and multi-channel posting."
+            ],
+            "tools": [
+              "n8n",
+              "Webhooks",
+              "Automated Bots",
+              "Python RPA"
+            ]
+          },
+          {
+            "text": "Document & Data Extraction",
+            "cls": "badge-emerald",
+            "desc": "Extracting structured datasets from unstructured documents, contracts, and scans using Vision AI and OCR.",
+            "bullets": [
+              "Transforming messy PDFs and paper scans into clean, validated tabular datasets.",
+              "Automated recognition of legal clauses, milestone dates, and financial figures.",
+              "Generating executive executive summaries and audit-ready data logs."
+            ],
+            "tools": [
+              "Vision OCR",
+              "PDF Extraction",
+              "Document AI",
+              "Data Wrangling"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-3d",
+        "title": "Resin SLA (Elegoo Saturn) & FDM 3D Printing",
+        "tag": "3D Fabrication",
+        "img": "img/3d_print.jpg",
+        "badges": [
+          {
+            "text": "Elegoo Saturn (Resin SLA/MSLA)",
+            "cls": "badge-amber",
+            "desc": "Ultra-high resolution (8K/12K) UV resin photopolymerization additive manufacturing for micro-detail prototypes.",
+            "bullets": [
+              "Fabricating smooth-surface parts with zero visible layer lines and intricate details.",
+              "Fine-tuning exposure profiles for standard, water-washable, and tough ABS-like engineering resins.",
+              "Calibrating bottom layer cure times and lift speeds to prevent build-plate detachment."
+            ],
+            "tools": [
+              "Elegoo Saturn",
+              "8K/12K Resin",
+              "SLA/MSLA",
+              "Photopolymers"
+            ]
+          },
+          {
+            "text": "FDM Filament 3D Printing",
+            "cls": "badge-amber",
+            "desc": "Manufacturing robust, functional structural parts using fused deposition modeling filament technology.",
+            "bullets": [
+              "Printing in PLA+, PETG, flexible TPU, and ABS for durable brackets and custom enclosures.",
+              "Tuning retraction distances, nozzle temperatures, and volumetric flow to eliminate stringing.",
+              "Optimizing infill geometry and layer adhesion for maximum mechanical tensile strength."
+            ],
+            "tools": [
+              "FDM Printers",
+              "PETG / PLA+ / TPU",
+              "Mechanical Strength",
+              "0.4/0.6mm Nozzles"
+            ]
+          },
+          {
+            "text": "Chitubox & PrusaSlicer Workflow",
+            "cls": "badge-gold",
+            "desc": "Expert slicer configuration to prepare 3D models with minimal material waste and flawless print reliability.",
+            "bullets": [
+              "Manual and parametric support placement to avoid surface pitting on visible faces.",
+              "Model hollowing, infill perforation, and suction-release drain hole placement.",
+              "Configuring adaptive layer heights and gyroid infill patterns for balanced rigidity."
+            ],
+            "tools": [
+              "Chitubox Pro",
+              "PrusaSlicer",
+              "Custom Supports",
+              "Mesh Hollowing"
+            ]
+          },
+          {
+            "text": "E-step & Exposure Calibration",
+            "cls": "badge-cobalt",
+            "desc": "Rigorous dimensional metrology and exposure calibration to ensure sub-millimeter part accuracy.",
+            "bullets": [
+              "Utilizing exposure test matrices (Validation Matrix, Cones of Calibration) per resin batch.",
+              "Precise calibration of extruder motor steps (E-steps) and hotend PID temperature loops.",
+              "Applying X/Y/Z shrinkage compensation to hit exact assembly drawings."
+            ],
+            "tools": [
+              "Validation Matrix",
+              "PID Tuning",
+              "Digital Calipers",
+              "±0.1mm Tolerances"
+            ]
+          },
+          {
+            "text": "IPA Post-Processing & UV Curing",
+            "cls": "badge-cobalt",
+            "desc": "Controlled chemical wash cycles and secondary UV photopolymerization for full mechanical yield strength.",
+            "bullets": [
+              "Multi-stage pure Isopropyl Alcohol (IPA) ultrasonic cleaning bath sequence.",
+              "Temperature-controlled rotating chamber UV curing at 405nm wavelength.",
+              "Wet sanding, support scar removal, and optical surface sealing."
+            ],
+            "tools": [
+              "Wash & Cure Station",
+              "Isopropyl Alcohol",
+              "405nm UV Curing",
+              "Finishing"
+            ]
+          },
+          {
+            "text": "CAD Design & Mechanical Assembly",
+            "cls": "badge-gold",
+            "desc": "Parametric 3D CAD modeling engineered specifically for additive manufacturing and mechanical fit.",
+            "bullets": [
+              "Designing for press-fit tolerances, screw clearance holes, and heat-set brass threaded inserts.",
+              "Custom electronic enclosures tailored for development boards, sensors, and connectors.",
+              "Clean 3D asset export in STEP, STL, and watertight OBJ formats."
+            ],
+            "tools": [
+              "Parametric CAD",
+              "Threaded Inserts",
+              "Enclosure Design",
+              "STEP/STL Files"
+            ]
+          },
+          {
+            "text": "Hardware Maintenance & Bed Leveling",
+            "cls": "badge-emerald",
+            "desc": "Hands-on preventative maintenance and mechanical alignment for 3D printing machinery.",
+            "bullets": [
+              "Micrometric bed leveling and optical endstop / BLTouch sensor calibration.",
+              "Replacing, tensioning, and tuning FEP/PFA/NFEP release films on resin vats.",
+              "Linear rail degreasing, PTFE lubrication, and Z-axis anti-backlash lead screw maintenance."
+            ],
+            "tools": [
+              "3D Maintenance",
+              "FEP/PFA Films",
+              "Linear Rails",
+              "Bed Leveling"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-laser",
+        "title": "Precision Laser Cutting & Engraving",
+        "tag": "Laser Cutting",
+        "img": "img/laser.jpg",
+        "badges": [
+          {
+            "text": "LightBurn Control & Calibration",
+            "cls": "badge-gold",
+            "desc": "Mastery of industry-standard LightBurn software for CNC laser machine motion and vector processing.",
+            "bullets": [
+              "Configuring machine origin coordinates, travel limits, and USB/Ethernet communications.",
+              "Multi-layer color-coded setups with independent speed, power, and pass counts.",
+              "Toolpath optimization and lead-in tuning to minimize cycle times and heat warpage."
+            ],
+            "tools": [
+              "LightBurn Software",
+              "GRBL / Ruida",
+              "Power Layers",
+              "CNC Control"
+            ]
+          },
+          {
+            "text": "Diode / CO2 Cutting & Engraving",
+            "cls": "badge-gold",
+            "desc": "Operating high-output diode and CO2 laser systems across a versatile spectrum of technical materials.",
+            "bullets": [
+              "Precision cutting of Baltic birch plywood, cast acrylic, MDF, and genuine leather.",
+              "High-contrast surface marking on anodized aluminum, marked stainless steel, and glass.",
+              "Pinpoint focal length adjustment to achieve sharp edge profiles without soot."
+            ],
+            "tools": [
+              "Diode Laser",
+              "CO2 Laser",
+              "Plywood & Acrylic",
+              "Anodized Metal"
+            ]
+          },
+          {
+            "text": "Speed & Power Acceleration Curves",
+            "cls": "badge-cobalt",
+            "desc": "Empirical parameter calibration for smooth grayscale dithering and burn-free vector cutting.",
+            "bullets": [
+              "Generating material-specific speed vs. power test grids to dial in exact burn depths.",
+              "Tuning corner deceleration curves to prevent scorching on sharp vector transitions.",
+              "Configuring Atkinson and Jarvis image dithering modes for photo-realistic engraving."
+            ],
+            "tools": [
+              "Cut Test Grids",
+              "Image Dithering",
+              "Power Calibration",
+              "Shading Curves"
+            ]
+          },
+          {
+            "text": "Kerf Compensation & Vectorization",
+            "cls": "badge-cobalt",
+            "desc": "Sub-millimeter laser beam kerf offset calculation to achieve snug, glue-less press-fit joinery.",
+            "bullets": [
+              "Calculating kerf width offsets for tight interlocking finger joints and mechanical boxes.",
+              "Converting low-resolution raster imagery into clean, mathematically precise SVG/DXF vector paths.",
+              "Automated 2D nesting algorithms to maximize raw material surface efficiency."
+            ],
+            "tools": [
+              "Kerf Compensation",
+              "Finger Joint Boxes",
+              "SVG/DXF Tracing",
+              "2D Nesting"
+            ]
+          },
+          {
+            "text": "Acrylic, Wood & Technical Media",
+            "cls": "badge-amber",
+            "desc": "Material selection and thermal handling techniques tailored to exact project aesthetics and durability.",
+            "bullets": [
+              "Flame-polished cut edges directly produced on optical cast acrylic.",
+              "Reverse engraving on clear acrylic for LED-illuminated edge-lit signage and plaques.",
+              "Application of protective surface masking and post-process stain/varnish treatments."
+            ],
+            "tools": [
+              "Cast Acrylic",
+              "Hardwood / MDF",
+              "Edge-Lit Signage",
+              "Finishing"
+            ]
+          },
+          {
+            "text": "Operational Safety & Fume Extraction",
+            "cls": "badge-emerald",
+            "desc": "Strict adherence to Class 4 laser safety protocols and effective hazardous fume mitigation.",
+            "bullets": [
+              "Using certified wavelength-specific laser safety goggles with verified Optical Density (OD).",
+              "High-flow Air Assist setup and inline negative-pressure exhaust ducting.",
+              "Continuous active supervision and thermal fire suppression readiness."
+            ],
+            "tools": [
+              "Class 4 Safety",
+              "Air Assist",
+              "Fume Extraction",
+              "Certified Eyewear"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-drone",
+        "title": "Aerial Cinematography & FAA Drones",
+        "tag": "UAS Operations",
+        "img": "img/drone.jpg",
+        "badges": [
+          {
+            "text": "FAA Certified Drone Pilot (TRUST)",
+            "cls": "badge-cobalt",
+            "desc": "Official certification by the U.S. Federal Aviation Administration (FAA) for legal and safe UAS operations.",
+            "bullets": [
+              "Thorough knowledge of National Airspace System (NAS) classifications, altitude caps, and NOTAMs.",
+              "Managing FAA airspace authorizations and executing rigorous flight safety checklists.",
+              "Maintaining comprehensive flight logs and aircraft maintenance inspection histories."
+            ],
+            "tools": [
+              "FAA TRUST Certification",
+              "UAS Regulations",
+              "Airspace Maps",
+              "Flight Safety"
+            ]
+          },
+          {
+            "text": "Aerial Cinematography & 4K Capture",
+            "cls": "badge-gold",
+            "desc": "Capturing ultra-high-definition cinematic aerial footage for commercial productions, real estate, and digital media.",
+            "bullets": [
+              "Smooth multi-axis flight maneuvers: dynamic point-of-interest orbits, top-down reveals, and tracking shots.",
+              "Recording in flat D-Log/Cinetone profiles for maximum color grading dynamic range.",
+              "Using Neutral Density (ND/PL) optical filters to preserve the 180° cinematic shutter rule."
+            ],
+            "tools": [
+              "4K HDR Recording",
+              "D-Log Profiles",
+              "ND/PL Filters",
+              "Cinematic Motion"
+            ]
+          },
+          {
+            "text": "3D Photogrammetry & Aerial Mapping",
+            "cls": "badge-cobalt",
+            "desc": "Automated flight grids with orthogonal overlap for generating high-accuracy 3D terrain meshes and orthophotos.",
+            "bullets": [
+              "Programming autonomous grid flight paths with 75%+ longitudinal and lateral image overlap.",
+              "Generating dense point clouds, digital elevation models (DEM), and geo-referenced orthomosaics.",
+              "Applying 3D reality capture for topographic surveys and real estate development planning."
+            ],
+            "tools": [
+              "Aerial Photogrammetry",
+              "Flight Grids",
+              "Orthomosaics",
+              "3D Elevation Meshes"
+            ]
+          },
+          {
+            "text": "360° Virtual Tours",
+            "cls": "badge-amber",
+            "desc": "Capturing and stitching high-resolution spherical panoramas for immersive interactive virtual tours.",
+            "bullets": [
+              "Bracketed multi-shot HDR aerial and interior spherical panoramic photography.",
+              "Seamless panorama stitching eliminating seam artifacts and optical distortions.",
+              "Integrating 360 scenes into interactive web viewers with hot-spots and smooth navigation."
+            ],
+            "tools": [
+              "360° Panoramas",
+              "Bracketed HDR",
+              "Virtual Tours",
+              "Spherical Stitching"
+            ]
+          },
+          {
+            "text": "Commercial Flight Planning",
+            "cls": "badge-gold",
+            "desc": "Non-destructive aerial visual inspection for building envelopes, solar panel arrays, and roofs.",
+            "bullets": [
+              "Safely inspecting hard-to-reach industrial elevations without requiring hazardous scaffolding.",
+              "Capturing geo-tagged high-resolution imagery for structured engineering maintenance reports.",
+              "Aerial coverage for corporate brands, marketing events, and commercial showcases."
+            ],
+            "tools": [
+              "Aerial Inspection",
+              "GPS Geo-Tagging",
+              "Site Monitoring",
+              "Commercial Media"
+            ]
+          },
+          {
+            "text": "Airspace Safety & Compliance",
+            "cls": "badge-emerald",
+            "desc": "Pre-flight risk assessment and emergency protocol execution ensuring 100% accident-free flight records.",
+            "bullets": [
+              "Analyzing real-time weather metrics: wind shear, localized visibility, and geomagnetic Kp indices.",
+              "Setting fail-safe Return-to-Home (RTH) altitude baselines and designated emergency landing clearings.",
+              "LiPo flight battery management: cell voltage balance, discharge cycles, and temperature checks."
+            ],
+            "tools": [
+              "Pre-flight Checklists",
+              "LiPo Battery Care",
+              "Failsafe RTH",
+              "Weather Diagnostics"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-media",
+        "title": "Media Production & DaVinci Resolve",
+        "tag": "Media Tech",
+        "img": "img/podcast.jpg",
+        "badges": [
+          {
+            "text": "DaVinci Resolve (Editing & Scripting)",
+            "cls": "badge-gold",
+            "desc": "Professional non-linear editing in DaVinci Resolve Studio featuring automated Python workflows.",
+            "bullets": [
+              "High-speed assembly of long-form video episodes using dedicated edit consoles and shortcuts.",
+              "Automating media ingest, timeline generation, and rendering queues with custom Python scripts.",
+              "Configuring robust PostgreSQL collaborative project databases."
+            ],
+            "tools": [
+              "DaVinci Resolve Studio",
+              "Python Scripting",
+              "NLE Editing",
+              "Media Management"
+            ]
+          },
+          {
+            "text": "Multicam & Proxy Workflows",
+            "cls": "badge-gold",
+            "desc": "Real-time multi-angle camera switching and high-speed editing pipelines for podcasts and live events.",
+            "bullets": [
+              "Audio waveform and timecode synchronization across 3+ distinct camera feeds.",
+              "Automated lightweight ProRes/DNxHR proxy generation for lag-free 60fps scrubbing on timeline.",
+              "Live cut switching on the fly for dynamic conversational pacing."
+            ],
+            "tools": [
+              "Multicam Editing",
+              "ProRes/DNxHR Proxies",
+              "Waveform Sync",
+              "Timeline Trimming"
+            ]
+          },
+          {
+            "text": "Cinematic Color Grading",
+            "cls": "badge-cobalt",
+            "desc": "Professional color science correction in DaVinci Color Page to match diverse cameras into a cohesive aesthetic.",
+            "bullets": [
+              "Primary color balance, exposure matching, and skin tone fidelity across multiple camera manufacturers.",
+              "Deploying DaVinci YRGB Color Managed pipelines and ACES color spaces.",
+              "Custom visual look development using HSL qualifiers, power windows, and film emulation LUTs."
+            ],
+            "tools": [
+              "Color Grading",
+              "DaVinci Color Managed",
+              "HSL Qualifiers",
+              "Film Emulation"
+            ]
+          },
+          {
+            "text": "Podcast Audio Engineering",
+            "cls": "badge-cobalt",
+            "desc": "Digital audio processing, restoration, and mastering inside the Fairlight audio workstation.",
+            "bullets": [
+              "Room resonance removal, noise gate gating, and AI-assisted spectral dialogue isolation.",
+              "Vocal chain mastering: subtractive EQ, de-esser, multi-band compression, and peak limiting.",
+              "Loudness normalization conforming to international broadcast standards (-16 LUFS / -14 LUFS YouTube)."
+            ],
+            "tools": [
+              "Fairlight Audio",
+              "EQ & Compression",
+              "De-Esser & De-Noise",
+              "LUFS Standards"
+            ]
+          },
+          {
+            "text": "Hijos del Trago Podcast (53+ eps)",
+            "cls": "badge-emerald",
+            "desc": "Complete technical direction and continuous production of a weekly long-form video podcast (53+ episodes).",
+            "bullets": [
+              "Studio engineering: multi-camera 3-point lighting setup, dynamic microphone array, and live monitoring.",
+              "Streamlined post-production turnaround delivering fully mastered episodes within 48 hours.",
+              "Repurposing long-form episodes into viral Short/Reel clips with animated captions."
+            ],
+            "tools": [
+              "Podcast Production",
+              "3-Point Lighting",
+              "Dynamic Microphones",
+              "Shorts & Reels"
+            ]
+          },
+          {
+            "text": "Streaming & Multi-Platform Delivery",
+            "cls": "badge-amber",
+            "desc": "Live streaming configuration and multi-platform digital publishing pipeline.",
+            "bullets": [
+              "Configuring OBS Studio and hardware video switchers for zero-dropped-frame live streaming.",
+              "Multi-format hardware-accelerated video exports (H.264/H.265/AV1).",
+              "Publishing strategy, custom thumbnail design, and SEO metadata across YouTube, Spotify, and Apple Podcasts."
+            ],
+            "tools": [
+              "OBS Studio",
+              "H.265/AV1 Encoders",
+              "YouTube Studio",
+              "Spotify for Creators"
+            ]
+          }
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "title": "AI Content Creator & Technical Trainer",
+        "company": "Delta Prompt Labs (Educational Digital Initiative)",
+        "date": "June 2025 – Present",
+        "bullets": [
+          "Lead educational initiative and digital channel dedicated to teaching professionals, companies, and students how to leverage applied AI tools and assisted programming.",
+          "Create hands-on tutorials, workflow optimization guides, task automation solutions, and rapid web application development (Vibe Coding).",
+          "Direct full audio/video production and technical engineering for weekly 'Hijos del Trago Podcast' (53+ consecutive releases).",
+          "Manage digital fabrication & rapid prototyping: LightBurn precision laser cutting and additive 3D printing (FDM & SLA resin)."
+        ]
+      },
+      {
+        "title": "Lead Systems, Technical Support & Enterprise CRM",
+        "company": "4Arrow Corporate Services",
+        "date": "August 2021 – May 2025",
+        "bullets": [
+          "Provided direct customer support and comprehensive IT assistance to team members and executives, ensuring continuous workstation and local network uptime.",
+          "Designed, programmed, and deployed custom enterprise CRM on Google Workspace APIs, cutting prospect follow-up time by 40%.",
+          "Delivered 1-on-1 technical coaching and training to a 12+ advisor team, structuring KPI monitoring and automated contract workflows.",
+          "Implemented high-converting digital assets: 360° virtual tours, 3D photogrammetry, and aerial drone cinematography (FAA TRUST certified)."
+        ]
+      },
+      {
+        "title": "Quality Engineering & Systems Support Intern",
+        "company": "Visteon of Mexico (Altec)",
+        "date": "2012 (8 months)",
+        "bullets": [
+          "Provided operational support and testing verification across assembly lines and electronic test fixtures for automotive instrument clusters and ECUs.",
+          "Applied structured root cause problem-solving methodologies (Ishikawa / 5 Whys) to resolve test equipment and software discrepancies.",
+          "Updated Standard Operating Procedures (SOPs/WIs), operational documentation, and shift logging traceability."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "icon": "fa-brands fa-youtube",
+        "title": "@deltapromptlabs (AI Lab)",
+        "desc": "AI research and autonomous agent software engineering laboratory covering prompt architectures and Vibe Coding.",
+        "linkText": "Visit Lab",
+        "linkUrl": "https://youtube.com/@deltapromptlabs"
+      },
+      {
+        "icon": "fa-brands fa-instagram",
+        "title": "@samfrankmedia (Media & Drones)",
+        "desc": "Cinematography, aerial drone visuals under FAA certification, and high-impact commercial media production.",
+        "linkText": "Visit Instagram",
+        "linkUrl": "https://instagram.com/samfrankmedia"
+      },
+      {
+        "icon": "fa-solid fa-podcast",
+        "title": "Podcast Hijos del Trago",
+        "desc": "Full production and technical audio/video direction for weekly long-form podcast (53+ continuous episodes).",
+        "linkText": "Listen Episodes",
+        "linkUrl": "https://youtube.com/@hijosdeltrago"
+      },
+      {
+        "icon": "fa-solid fa-cube",
+        "title": "Digital Fabrication & Prototyping",
+        "desc": "CAD/CAM mechanical enclosures, diode laser cutting, and additive 3D printing (Elegoo Saturn SLA / FDM).",
+        "linkText": "Request Details",
+        "linkUrl": "mailto:samf3212@gmail.com"
+      }
+    ],
+    "education": {
+      "degreeTitle": "B.S. in Computer Systems Engineering",
+      "degreeSub": "Hardware Architecture Option",
+      "degreeDesc": "Autonomous University of Chihuahua (UACH) – 2012",
+      "langTitle": "Language Proficiency",
+      "langs": [
+        "🇲🇽 <strong>Spanish:</strong> Native",
+        "🇺🇸 <strong>English:</strong> C1 Advanced (90% / Technical & Business Fluency)",
+        "🇨🇳 <strong>Mandarin Chinese:</strong> HSK 1 (+600 days of daily self-taught study)"
+      ],
+      "certs": [
+        {
+          "title": "Google AI Essentials Specialization",
+          "sub": "Google",
+          "desc": "Generative AI for workflow efficiency and technical storytelling."
+        },
+        {
+          "title": "Prompting for Generative AI",
+          "sub": "Adobe",
+          "desc": "Prompt engineering and digital asset generation."
+        },
+        {
+          "title": "Introduction to Artificial Intelligence",
+          "sub": "IBM",
+          "desc": "AI architecture, Machine Learning, Deep Learning, and NLP."
+        },
+        {
+          "title": "The Recreational UAS Safety Test (TRUST)",
+          "sub": "FAA (Federal Aviation Administration)",
+          "desc": "Acreditación federal estadounidense para operaciones de dron."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "compositeTitle": "计算机系统与硬件 • 电脑技术支持与维护 • 一对一定制化客户服务 • 人工智能与影视",
+    "heroBadge": "<i class=\"fa-solid fa-crown\"></i> 计算机系统工程师 • 硬件运维与技术支持",
+    "heroTagline": "奇瓦瓦自治大学（UACH）计算机系统工程学士（硬件方向）。核心专长：<strong>1) 计算机硬件技术支持与维护</strong>（硬件故障诊断、整机组装与拆卸、软硬件预防性与纠正性维护）；<strong>2) 一对一深度定制化客户服务</strong>；以及 <strong>3) 基于人工智能的应用开发与业务流程自动化优化</strong>。",
+    "nav": {
+      "skills": "专业技能",
+      "exp": "工作经验",
+      "projects": "重点项目",
+      "certs": "教育背景",
+      "print": "下载简历 (PDF)"
+    },
+    "toastCopied": "已成功复制到剪贴板！",
+    "headings": {
+      "skills": "专业技术、技术支持与核心能力矩阵",
+      "exp": "职业经历与项目履历",
+      "projects": "代表性工程与实践案例",
+      "eduTitle": "教育背景与语言能力",
+      "certsTitle": "专业资质认证",
+      "searchPlaceholder": "搜索技能 (技术支持, 硬件, 电脑装机, 拆装, Python, 激光, 3D打印...)"
+    },
+    "pills": {
+      "loc": "墨西哥奇瓦瓦州 (Chihuahua, MX)",
+      "eng": "英语 C1 高级流利 (90%)",
+      "zh": "中文普通话 (HSK 1 - 连续自学600余天)"
+    },
+    "ctas": {
+      "email": "发送邮件联系",
+      "print": "下载简历 (PDF)"
+    },
+    "footer": {
+      "text": "© 2026 Gibran Samuel Villa Franco — 计算机系统与硬件工程师",
+      "sub": "基于 ⚡ <strong>Vibe Coding</strong> 敏捷构建 | 黑曜金奢华视觉系统"
+    },
+    "stats": [
+      {
+        "number": "12+",
+        "label": "计算机系统、硬件与IT专业底蕴 (UACH)"
+      },
+      {
+        "number": "1对1",
+        "label": "深度一对一定制化技术服务与咨询"
+      },
+      {
+        "number": "PC/笔记本",
+        "label": "硬件故障诊断、装机拆卸与维护"
+      },
+      {
+        "number": "3D/激光",
+        "label": "数字制造、全流程自动化与无人机"
+      }
+    ],
+    "modalLabels": {
+      "appTitle": "实战经验与应用场景：",
+      "toolsTitle": "关联技术与核心工具：",
+      "hint": "点击任意技能卡片查看深度详情",
+      "close": "关闭"
+    },
+    "bento": [
+      {
+        "id": "bento-software",
+        "title": "计算机系统、硬件运维与技术支持",
+        "tag": "核心IT与支持",
+        "img": "img/coding.jpg",
+        "badges": [
+          {
+            "text": "电脑硬件技术支持 (PC/笔记本)",
+            "cls": "badge-gold",
+            "desc": "全品牌台式机、工作站及笔记本电脑的全方位软硬件技术支持与维修服务。",
+            "bullets": [
+              "诊断开机黑屏、散热不良导致降频及蓝屏死机 (BSOD) 故障原因。",
+              "核心硬件更换：处理器、独立显卡、内存条、NVMe 高速固态及电源系统。",
+              "操作系统纯净安装、驱动程序适配调优与整机性能释放。"
+            ],
+            "tools": [
+              "电脑硬件",
+              "笔记本维护",
+              "NVMe/SATA",
+              "故障维修",
+              "压力测试"
+            ]
+          },
+          {
+            "text": "硬件故障诊断、装机与拆卸",
+            "cls": "badge-gold",
+            "desc": "面向工程设计、电竞及企业办公环境的定制化装机方案，并提供精细化拆解维护。",
+            "bullets": [
+              "依据整机功耗曲线与正压风道结构设计高能效装机配置。",
+              "精细拆解笔记本电脑进行主板超声波除尘与高导热硅脂更换。",
+              "运用 MemTest86、FurMark、Cinebench 和 HWMonitor 进行极限烤机验证。"
+            ],
+            "tools": [
+              "个性化装机",
+              "高导热硅脂",
+              "MemTest86",
+              "Cinebench",
+              "FurMark"
+            ]
+          },
+          {
+            "text": "软硬件预防性与纠正性维护",
+            "cls": "badge-cobalt",
+            "desc": "通过制定周期性预防维护方案延长硬件寿命，并快速处置各类突发运行故障。",
+            "bullets": [
+              "防静电深度清洁、风扇轴承润滑及高性能导热垫（Thermal Pad）更换。",
+              "主板 BIOS 与固件刷新，消除硬件兼容性与启动冲突。",
+              "顽固恶意软件清除与系统注册表碎片优化。"
+            ],
+            "tools": [
+              "防静电维护",
+              "BIOS 升级",
+              "导热垫更换",
+              "系统调优"
+            ]
+          },
+          {
+            "text": "一对一深度定制化客户服务",
+            "cls": "badge-gold",
+            "desc": "秉承以客户为中心的服务理念，用通俗易懂的语言为客户提供定制化技术咨询与支持。",
+            "bullets": [
+              "以透明的方式向客户解释故障根本原因，并给出最具性价比的解决方案。",
+              "为企业管理层及团队骨干提供一对一专属技术保障，确保快速响应响应时效 (SLA)。",
+              "服务完成后持续回访跟进，确保 100% 满意度与业务连续性。"
+            ],
+            "tools": [
+              "客户服务",
+              "技术咨询",
+              "无障碍沟通",
+              "高标准 SLA"
+            ]
+          },
+          {
+            "text": "应用系统开发与 AI 流程优化",
+            "cls": "badge-gold",
+            "desc": "依托大语言模型与 Vibe Coding 敏捷全栈开发实用 Web 工具、内部看板与自动化流程。",
+            "bullets": [
+              "研发高转化率落地页、轻量级 CRM 客户管理系统及定制 Web 工具。",
+              "集成大语言模型以消除企业日常运营中的重复性低效卡点。",
+              "基于 Vercel、Netlify 和 GitHub Pages 实现自动化持续集成与部署 (CI/CD)。"
+            ],
+            "tools": [
+              "Vibe Coding",
+              "JavaScript",
+              "Python",
+              "Vercel",
+              "GitHub Pages"
+            ]
+          },
+          {
+            "text": "操作系统调优 (Win/Linux) 与局域网",
+            "cls": "badge-cobalt",
+            "desc": "精细化调优操作系统与企业本地网络，实现极致响应速度与高安全防护。",
+            "bullets": [
+              "深度精简后台自启服务与遥测收集，实现极速开机与零卡顿响应。",
+              "配置企业局域网 (LAN/Wi-Fi)、交换机、路由器及规范化综合布线。",
+              "配置用户安全权限策略、系统防火墙及加密远程桌面通道。"
+            ],
+            "tools": [
+              "Windows 11/10",
+              "Ubuntu Linux",
+              "局域网 / Wi-Fi",
+              "路由器与交换机"
+            ]
+          },
+          {
+            "text": "系统集成与 Python API 开发",
+            "cls": "badge-cobalt",
+            "desc": "通过 Python 自动化脚本与 RESTful 接口串联本地系统、云端数据库及 SaaS 服务。",
+            "bullets": [
+              "实现与 Google Sheets 及 Google Workspace API 的双向数据自动同步流水线。",
+              "基于 FastAPI 和 Flask 开发轻量级后台数据处理与调度微服务。",
+              "运用 OAuth2 认证机制安全对接第三方外部 API 接口。"
+            ],
+            "tools": [
+              "Python",
+              "FastAPI",
+              "Google API",
+              "REST API",
+              "JSON Webhooks"
+            ]
+          },
+          {
+            "text": "数据安全备份与基础架构运维",
+            "cls": "badge-gold",
+            "desc": "设计并落地高可靠数据冗余备份方案，彻底杜绝企业核心数据丢失风险。",
+            "bullets": [
+              "搭建结合本地 NAS/RAID 存储阵列与安全云存储的 3-2-1 混合备份体系。",
+              "定期创建系统磁盘镜像快照，支持系统崩溃后的分钟级快速灾难恢复。",
+              "启用 BitLocker 全盘数据加密与严格的凭据密码箱安全管理。"
+            ],
+            "tools": [
+              "3-2-1 备份策略",
+              "NAS / RAID",
+              "磁盘快照镜像",
+              "BitLocker 加密"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-ai",
+        "title": "生成式人工智能与自动化",
+        "tag": "科技创新",
+        "img": "img/ai_lab.jpg",
+        "badges": [
+          {
+            "text": "Vibe Coding 敏捷协同开发",
+            "cls": "badge-gold",
+            "desc": "人机协同的前沿开发模式，数小时内完成全套软件架构设计、交互编写与上线部署。",
+            "bullets": [
+              "调度自主 AI 智能体执行代码生成、静态检查与持续重构。",
+              "无门槛快速迭代具有极致视觉与流畅动效的现代 Web 交互界面。",
+              "自动化验证代码语法正确性、网页加载性能与无障碍体验。"
+            ],
+            "tools": [
+              "Vibe Coding",
+              "AI 协同编程",
+              "Cursor",
+              "Antigravity"
+            ]
+          },
+          {
+            "text": "高阶提示词工程",
+            "cls": "badge-gold",
+            "desc": "设计严谨的结构化提示词体系，引导大语言模型输出高准确度、确定性的结果。",
+            "bullets": [
+              "构建少样本学习 (Few-Shot)、思维链 (Chain-of-Thought) 及元指令流水线。",
+              "强制模型输出严格符合规范的结构化 JSON 数据格式。",
+              "优化 Token 消耗开销，显著降低企业调用 AI API 的成本与延迟。"
+            ],
+            "tools": [
+              "思维链 (CoT)",
+              "少样本 (Few-Shot)",
+              "JSON 校验规范",
+              "元提示词"
+            ]
+          },
+          {
+            "text": "自主 AI 智能体流水线",
+            "cls": "badge-cobalt",
+            "desc": "研发具备多步逻辑推理、外部工具自主调用及自我修正能力的智能体执行系统。",
+            "bullets": [
+              "设计基于推理-行动循环 (ReAct) 的任务调度引擎与长短期记忆检索系统。",
+              "为智能体赋予操作系统级工具能力（终端子进程、命令行工具、无头浏览器）。",
+              "自动化监控异步任务执行状态并实现异常自动重试与兜底。"
+            ],
+            "tools": [
+              "ReAct 智能体",
+              "向量记忆",
+              "智能体工具库",
+              "自动化执行循环"
+            ]
+          },
+          {
+            "text": "模型上下文协议 (MCP)",
+            "cls": "badge-cobalt",
+            "desc": "基于开放标准协议将大模型与企业本地数据库、文件系统及专业工具无缝打通。",
+            "bullets": [
+              "基于 Python FastMCP 开发自定义 MCP 服务端，桥接本地业务与 AI 智能体。",
+              "集成 DaVinci Resolve、Google Drive、Sheets 及 Gmail 官方与定制 MCP 插件。",
+              "为企业级 AI 工作流建立统一、安全且高度可复用的工具调用标准。"
+            ],
+            "tools": [
+              "MCP 协议",
+              "FastMCP",
+              "JSON-RPC",
+              "API 深度集成"
+            ]
+          },
+          {
+            "text": "Gemini Pro / GPT-4 / Claude",
+            "cls": "badge-gold",
+            "desc": "熟练掌握全球顶级基座大语言模型，针对不同技术场景做出最佳引擎选型。",
+            "bullets": [
+              "针对长上下文窗口、多模态推理及生成速度进行模型性能全方位基准评测。",
+              "多模态解析百万字技术文档、高清音频、4K 视频及大型代码工程。",
+              "系统级角色设定调优与小样本对齐微调。"
+            ],
+            "tools": [
+              "Gemini 1.5/2.0",
+              "GPT-4o",
+              "Claude 3.5 Sonnet",
+              "多模态大模型"
+            ]
+          },
+          {
+            "text": "复杂工作流全自动调度",
+            "cls": "badge-cobalt",
+            "desc": "编排全链路自动化业务流水线，彻底消除企业跨部门协作中的低效重复性工作。",
+            "bullets": [
+              "利用 n8n、Make 与独立 Python 脚本将多个孤立 SaaS 平台无缝串联。",
+              "搭建针对新增客户商机、CRM 状态更新及服务器报警的实时通知机器人。",
+              "自动化执行数据抓取、文件自动生成与多平台内容定时同步发布。"
+            ],
+            "tools": [
+              "n8n 编排",
+              "Webhooks",
+              "自动通知机器人",
+              "Python RPA"
+            ]
+          },
+          {
+            "text": "文档解析与数据提取",
+            "cls": "badge-emerald",
+            "desc": "运用计算机视觉模型与智能 OCR 算法从非结构化文档中提取高价值数据。",
+            "bullets": [
+              "将复杂 PDF 报表、纸质扫描件及合同快速转化为整洁的结构化数据表格。",
+              "智能识别并提取合同法律条款、关键执行节点及财务金额数据。",
+              "自动生成高管精简摘要与可直接用于审计的数据日志。"
+            ],
+            "tools": [
+              "视觉 OCR",
+              "PDF 智能提取",
+              "文档 AI",
+              "数据清洗整理"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-3d",
+        "title": "光固化树脂 (Elegoo Saturn) 与 FDM 3D 智造",
+        "tag": "3D智造",
+        "img": "img/3d_print.jpg",
+        "badges": [
+          {
+            "text": "Elegoo Saturn (SLA/MSLA 光固化)",
+            "cls": "badge-amber",
+            "desc": "采用 8K/12K 超高精度紫外光固化增材制造技术，打造微米级精细结构模型与原型件。",
+            "bullets": [
+              "制造表面无可见层纹、微观细节极其清晰的高光洁度零部件。",
+              "熟练调配标准树脂、水洗树脂及高韧性类 ABS 工程级光敏树脂曝光参数。",
+              "精准设定底层曝光时间与抬升速度，彻底避免打印脱盘风险。"
+            ],
+            "tools": [
+              "Elegoo Saturn",
+              "8K/12K 树脂",
+              "SLA/MSLA",
+              "光敏聚合物"
+            ]
+          },
+          {
+            "text": "FDM 熔融沉积 3D 打印",
+            "cls": "badge-amber",
+            "desc": "采用熔融沉积成型技术制造高强度、耐冲击的机械功能件与工业外壳。",
+            "bullets": [
+              "支持 PLA+、PETG、柔性 TPU 及 ABS 耗材打印结构支架与设备保护壳。",
+              "精细校准回抽距离、喷嘴温度与挤出流量，彻底消除拉丝缺陷。",
+              "优化填充几何构型（如陀螺状 Gyroid）与层间结合力以获得极高机械抗拉强度。"
+            ],
+            "tools": [
+              "FDM 打印机",
+              "PETG / PLA+ / TPU",
+              "机械结构强度",
+              "0.4/0.6mm 喷嘴"
+            ]
+          },
+          {
+            "text": "Chitubox 与 PrusaSlicer 切片软件",
+            "cls": "badge-gold",
+            "desc": "深度掌握专业切片软件，以最低材料损耗和最高成功率完成 3D 打印前处理。",
+            "bullets": [
+              "手动与参数化精细添加支撑结构，避免在模型外观关键面留下凹坑痕迹。",
+              "模型内部掏空 (Hollowing)、轻量化排布及防爆吸真空排气孔设计。",
+              "配置自适应可变层高与高强度回转填充，兼顾打印速度与结构刚性。"
+            ],
+            "tools": [
+              "Chitubox Pro",
+              "PrusaSlicer",
+              "定制化支撑",
+              "模型抽壳打孔"
+            ]
+          },
+          {
+            "text": "步进电机与树脂曝光精准校准",
+            "cls": "badge-cobalt",
+            "desc": "遵循严谨的尺寸计量学标准进行设备与材料校准，确保打印件具备亚毫米级装配精度。",
+            "bullets": [
+              "针对每批次新树脂打印曝光验证测试卡（Validation Matrix 和 Cones of Calibration）。",
+              "精密校准挤出机电机步进值 (E-steps) 与热端 PID 温度控制闭环。",
+              "应用 X/Y/Z 轴材料热胀冷缩补偿，严格契合机械装配图纸公差。"
+            ],
+            "tools": [
+              "曝光验证卡",
+              "PID 调优",
+              "数显游标卡尺",
+              "±0.1mm 公差精度"
+            ]
+          },
+          {
+            "text": "化学清洗与 UV 二次固化",
+            "cls": "badge-cobalt",
+            "desc": "遵循标准化学后处理流程与受控二次紫外固化，使打印件达到最佳物理机械强度。",
+            "bullets": [
+              "采用高纯度异丙醇 (IPA) 进行多级梯度超声波振动清洗。",
+              "在温控 405nm 旋转紫外固化箱中充分交联硬化。",
+              "水砂纸打磨、支撑触点精细修平与高品质表面密封喷涂。"
+            ],
+            "tools": [
+              "清洗固化一体机",
+              "高纯度异丙醇",
+              "405nm 紫外固化",
+              "表面精细后处理"
+            ]
+          },
+          {
+            "text": "CAD 参数化建模与机械装配公差",
+            "cls": "badge-gold",
+            "desc": "专为增材制造工艺设计的 3D 参数化 CAD 建模，确保零部件一次装配成功。",
+            "bullets": [
+              "针对紧配合卡扣、螺栓沉头孔及热熔黄铜螺母预留精准过盈/间隙配合公差。",
+              "为开源主控板、传感器及外部接插件定制专用电子外壳结构件。",
+              "输出标准且无漏洞破面的 STEP、STL 和水密 OBJ 工业级三维格式。"
+            ],
+            "tools": [
+              "参数化 CAD",
+              "热熔螺母预埋",
+              "外壳结构设计",
+              "STEP/STL 工业文件"
+            ]
+          },
+          {
+            "text": "3D 打印机机械维护与平台调平",
+            "cls": "badge-emerald",
+            "desc": "对 3D 打印设备执行日常预防性维护、耗材更换与机械运动部件精准调校。",
+            "bullets": [
+              "微米级打印平台四角调平与光电限位/自动对刀传感器校准。",
+              "更换并张紧树脂料槽底部的 FEP/PFA/NFEP 高透离型膜。",
+              "导轨脱脂清洗、注入 PTFE 专业特氟龙润滑脂，彻底消除 Z 轴层纹与错层隐患。"
+            ],
+            "tools": [
+              "3D 设备维护",
+              "FEP/PFA 离型膜",
+              "直线导轨养护",
+              "微米级平台调平"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-laser",
+        "title": "高精度激光切割与雕刻",
+        "tag": "激光加工",
+        "img": "img/laser.jpg",
+        "badges": [
+          {
+            "text": "LightBurn 激光加工控制与校准",
+            "cls": "badge-gold",
+            "desc": "熟练操作全球顶尖的 CNC 激光控制软件，掌控运动控制与矢量切削全流程。",
+            "bullets": [
+              "配置机床机械零点坐标、软限位行程边界及 USB/以太网高速通信连接。",
+              "多图层分色管理，为不同切割对象独立赋予速度、功率及多重加工遍数。",
+              "优化激光空程运动路径与切入引线 (Lead-in)，大幅缩短加工周期并抑制热变形。"
+            ],
+            "tools": [
+              "LightBurn 软件",
+              "GRBL / Ruida 控制板",
+              "分层功率设定",
+              "CNC 运动控制"
+            ]
+          },
+          {
+            "text": "半导体二极管与 CO2 激光加工",
+            "cls": "badge-gold",
+            "desc": "熟练操作大功率半导体蓝光二极管与 CO2 气体激光设备，胜任多样化材料加工。",
+            "bullets": [
+              "高精度切割多层桦木夹板、MDF 密度板、浇铸亚克力及真皮皮革。",
+              "在阳极氧化铝、涂层不锈钢及玻璃表面呈现高对比度精细图案雕刻。",
+              "精准调谐微米级激光聚焦光斑，实现边缘光洁无熏黑毛刺。"
+            ],
+            "tools": [
+              "半导体激光",
+              "CO2 激光",
+              "实木与亚克力",
+              "阳极氧化金属"
+            ]
+          },
+          {
+            "text": "功率与加速度曲线优化",
+            "cls": "badge-cobalt",
+            "desc": "基于实验数据建立功率-速度对应关系，实现平滑细腻的灰度雕刻与利落切割。",
+            "bullets": [
+              "针对每种特定材料制作矩阵式功率与速度对照测试网格，锁定最佳切透参数。",
+              "调校尖角转向减速补偿曲线，彻底杜绝转角处热量积聚过度碳化烧蚀。",
+              "配置 Atkinson 与 Jarvis 图像抖动算法，完美再现高保真照片级雕刻质感。"
+            ],
+            "tools": [
+              "切割测试网格",
+              "图像抖动算法 (Dithering)",
+              "功率标定",
+              "灰度梯度优化"
+            ]
+          },
+          {
+            "text": "光斑切缝补偿 (Kerf) 与矢量化",
+            "cls": "badge-cobalt",
+            "desc": "精确计算激光光束切缝宽度（Kerf），打造严丝合缝、无需胶水粘接的榫卯拼插件。",
+            "bullets": [
+              "针对榫卯牙箱结构计算切缝偏移量，实现插接手感紧实牢固的自锁结构。",
+              "将低分辨率位图矢量化重绘为平滑、几何精准的 SVG/DXF 工业刀路文件。",
+              "运用 2D 自动排版（Nesting）算法实现原材料表面利用率最大化。"
+            ],
+            "tools": [
+              "切缝补偿 (Kerf)",
+              "榫卯拼插结构",
+              "SVG/DXF 矢量化",
+              "自动套料排版"
+            ]
+          },
+          {
+            "text": "亚克力、木材与特种材料工艺",
+            "cls": "badge-amber",
+            "desc": "依据产品美学要求与力学耐久性选择最适材料，并运用专业表面处理工艺。",
+            "bullets": [
+              "激光一步加工即可呈现犹如火焰抛光般清澈透明的亚克力切割边缘。",
+              "在透明亚克力背部进行镜向反雕刻，制作 LED 侧发光高端导光标牌与奖牌。",
+              "贴覆专用纸胶带保护膜防烟熏，后续配合木器漆、固化油完成高端成品封装。"
+            ],
+            "tools": [
+              "浇铸亚克力",
+              "高密度实木",
+              "LED 侧发光标牌",
+              "表面封护涂装"
+            ]
+          },
+          {
+            "text": "Class 4 激光安全防护与排烟系统",
+            "cls": "badge-emerald",
+            "desc": "严格遵守 Class 4 工业激光安全操作规程，配置完备的有害烟尘负压过滤系统。",
+            "bullets": [
+              "全员佩戴通过认证、对应激光特定波长并具备充足光学密度 (OD) 的防护眼镜。",
+              "配置高压吹气辅助 (Air Assist) 与大吸力管道负压强力排烟过滤装置。",
+              "设备运行全周期专人盯防，配备热感监控与完备的消防应急设备。"
+            ],
+            "tools": [
+              "Class 4 安全标准",
+              "吹气辅助 (Air Assist)",
+              "强力排烟过滤",
+              "认证防护眼镜"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-drone",
+        "title": "影视级航拍与美国 FAA 认证无人机",
+        "tag": "无人机飞行运作",
+        "img": "img/drone.jpg",
+        "badges": [
+          {
+            "text": "美国 FAA 认证无人机飞行员 (TRUST)",
+            "cls": "badge-cobalt",
+            "desc": "持有美国联邦航空管理局 (FAA) 官方安全资质，合法合规在管制空域执行飞行作业。",
+            "bullets": [
+              "熟练掌握国家空域系统 (NAS) 分级、限高法规及民航航行通告 (NOTAM) 查询。",
+              "申报空域通行许可，严格执行标准化的起飞前安全检查清单 (Checklist)。",
+              "规范登记无人机飞行日志与机身机械部件定期定检档案。"
+            ],
+            "tools": [
+              "FAA TRUST 认证",
+              "UAS 空域合规",
+              "空域航图查询",
+              "飞行安全规范"
+            ]
+          },
+          {
+            "text": "影视级航拍运镜与 4K 高清录制",
+            "cls": "badge-gold",
+            "desc": "为商业品牌宣传片、地产项目及纪录片提供超高分辨率、平稳大气的电影级航拍画面。",
+            "bullets": [
+              "熟练操纵复合飞行动作：大半径环绕运镜、垂直俯瞰揭幕运镜及定点平移跟拍。",
+              "采用 D-Log / Cinetone 平直色彩模式录制，为后期调色保留最大动态范围。",
+              "配备高品质中灰偏振滤镜 (ND/PL)，严格遵守电影级 180° 快门速度法则。"
+            ],
+            "tools": [
+              "4K HDR 录制",
+              "D-Log 色彩曲线",
+              "ND/PL 滤镜系统",
+              "电影级运镜技法"
+            ]
+          },
+          {
+            "text": "三维实景建模与正射影像测绘",
+            "cls": "badge-cobalt",
+            "desc": "自主航线规划与正射影像网格航拍，重建高精度三维实景模型与数字高程地图。",
+            "bullets": [
+              "全自动规划航拍航线网格，确保航向与旁向重叠率稳定达到 75%+ 以上。",
+              "生成超高密度三维点云、数字高程模型 (DEM) 及地理配准正射影像图。",
+              "广泛应用于地形地貌勘测、工业厂区规划及地产数字化全景底图制作。"
+            ],
+            "tools": [
+              "无人机航测",
+              "自动网格航线",
+              "正射影像图",
+              "三维 DEM 建模"
+            ]
+          },
+          {
+            "text": "360° 全景航拍与实景交互漫游",
+            "cls": "badge-amber",
+            "desc": "采集并无缝拼接超高分辨率全景球形图像，打造沉浸式 Web 交互漫游系统。",
+            "bullets": [
+              "执行空中与室内包围曝光 (Bracketed HDR) 多张连拍，兼顾高光与暗部细节。",
+              "运用专业全景算法拼接超大像素球形全景，彻底消除拼接缝隙与镜头畸变。",
+              "无缝嵌入 Web 端全景交互播放器，支持热点信息点击与场景流畅跳转。"
+            ],
+            "tools": [
+              "360° 全景航拍",
+              "包围曝光 HDR",
+              "虚拟全景漫游",
+              "全景高保真拼接"
+            ]
+          },
+          {
+            "text": "商业航拍巡检与品牌视觉呈现",
+            "cls": "badge-gold",
+            "desc": "为建筑立面、光伏太阳能电站及大型工程提供安全高效的非破坏性空中视觉巡检。",
+            "bullets": [
+              "免去搭设脚手架的高危风险，快速巡检高空死角与难抵达区域。",
+              "捕获带 GPS 地理坐标的高清图像，生成结构化工程维护检测报告。",
+              "为大型企业品牌发布会、商业活动提供全流程航拍视觉素材与宣传制作。"
+            ],
+            "tools": [
+              "高空巡检",
+              "GPS 地理标记",
+              "工程进度监测",
+              "商业视觉制作"
+            ]
+          },
+          {
+            "text": "飞行安全评估与应急返航保障",
+            "cls": "badge-emerald",
+            "desc": "执行严谨的起飞前风险研判与应急预案，保持 100% 零事故安全飞行记录。",
+            "bullets": [
+              "实时监测飞行环境气象条件：高空阵风风速、能见度及太阳磁暴 Kp 指数。",
+              "依据周围地形设定安全的自动返航 (RTH) 巡航高度与备用迫降降落点。",
+              "无人机 LiPo 锂电池健康度管理：单体压差监控、充放电循环与工作温控。"
+            ],
+            "tools": [
+              "起飞前检查清单",
+              "LiPo 电池保养",
+              "安全自动返航 (RTH)",
+              "气象风险研判"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bento-media",
+        "title": "影视制作与 DaVinci Resolve",
+        "tag": "影视科技",
+        "img": "img/podcast.jpg",
+        "badges": [
+          {
+            "text": "DaVinci Resolve 剪辑与脚本自动化",
+            "cls": "badge-gold",
+            "desc": "在 DaVinci Resolve Studio 中进行高效率非线性剪辑，结合 Python 脚本实现自动化处理。",
+            "bullets": [
+              "结合专业剪辑键盘与自定义快捷键，高速粗剪与精剪长视频内容。",
+              "编写 Python 自动化脚本批量导入素材、自动建立时间线并排队交付渲染。",
+              "搭建与配置局域网 PostgreSQL 协同数据库，支持团队多工位并行制作。"
+            ],
+            "tools": [
+              "DaVinci Resolve Studio",
+              "Python 自动化脚本",
+              "非线性剪辑",
+              "媒体资产管理"
+            ]
+          },
+          {
+            "text": "多机位剪辑与代理媒体极速工作流",
+            "cls": "badge-gold",
+            "desc": "针对大型播客与多角度实况录制，实现多机位音频对齐与 60fps 极速剪辑响应。",
+            "bullets": [
+              "依据音频波形或时间码 (Timecode) 自动毫秒级同步 3+ 机位不同画幅机位。",
+              "批量生成轻量级 ProRes/DNxHR 代理媒体文件，实现时间线拖拽无卡顿。",
+              "在回放过程中实时切换机位镜头角度，精准把控人物对话节奏。"
+            ],
+            "tools": [
+              "多机位实时剪辑",
+              "ProRes/DNxHR 代理",
+              "音频波形同步",
+              "时间线快速修剪"
+            ]
+          },
+          {
+            "text": "电影级调色与色彩科学管理",
+            "cls": "badge-cobalt",
+            "desc": "在达芬奇调色页面运用专业色彩科学，将不同品牌相机素材统一为极具电影质感的视觉风格。",
+            "bullets": [
+              "精确校准白平衡、曝光对比度与多机位人物肤色一致性。",
+              "部署 DaVinci YRGB Color Managed 色彩管理体系与 ACES 色彩空间流程。",
+              "运用 HSL 限定器、Power Windows 选区与定制胶片色彩 LUT 打造独特调色方案。"
+            ],
+            "tools": [
+              "达芬奇专业调色",
+              "DaVinci 色彩管理",
+              "HSL 颜色限定器",
+              "电影胶片 LUT"
+            ]
+          },
+          {
+            "text": "Fairlight 播客母带级音频工程",
+            "cls": "badge-cobalt",
+            "desc": "在 Fairlight 模块执行全流程人声降噪、动态处理与母带统一响度处理。",
+            "bullets": [
+              "消除房间驻波混响、环境低频噪声并运用 AI 对话智能分离纯净人声。",
+              "人声精细化效果链：陷波均衡、去齿音器 (De-Esser)、多频段动态压缩与限制器。",
+              "将母带统一响度校准至国际主流播客与视频流媒体标准（-16 LUFS / -14 LUFS）。"
+            ],
+            "tools": [
+              "Fairlight 音频工作站",
+              "均衡与动态压缩",
+              "去齿音与智能降噪",
+              "LUFS 响度标准"
+            ]
+          },
+          {
+            "text": "播客《Hijos del Trago》(53+ 期)",
+            "cls": "badge-emerald",
+            "desc": "独立统筹并全程制作大型周更长视频播客（连续发布 53+ 期精品节目）。",
+            "bullets": [
+              "全流程技术统筹：专业演播室三点布光、动圈麦克风阵列拾音与现场实时监听。",
+              "高效率后期制作流水线，在录制结束后 48 小时内交付全平台发布成品。",
+              "从长视频中提炼精彩爆点切片，批量制作带动态花字字幕的短视频 (Shorts/Reels/TikTok)。"
+            ],
+            "tools": [
+              "大型播客制作",
+              "演播室三点布光",
+              "动圈麦克风阵列",
+              "爆款短视频切片"
+            ]
+          },
+          {
+            "text": "直播推流与全平台分发部署",
+            "cls": "badge-amber",
+            "desc": "搭建高稳定性多路直播推流系统，并实现全渠道数字媒体资产分发矩阵。",
+            "bullets": [
+              "配置 OBS Studio 与硬件导播台，确保长周期直播推流 0 丢帧、0 延迟。",
+              "利用硬件加速编码技术（H.264/H.265/AV1）实现画质无损压缩极速导出。",
+              "制定封面排版策略与 SEO 关键词元数据，分发至 YouTube、Spotify 及 Apple Podcasts。"
+            ],
+            "tools": [
+              "OBS Studio",
+              "H.265/AV1 硬件编码",
+              "YouTube Studio",
+              "Spotify for Creators"
+            ]
+          }
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "title": "人工智能内容创作者与技术讲师",
+        "company": "Delta Prompt Labs (教育科普项目)",
+        "date": "2025年6月 – 至今",
+        "bullets": [
+          "主导 AI 教育科普项目与自媒体频道，致力于帮助专业人士、企业及学生掌握前沿人工智能工具与辅助编程技能。",
+          "制作实践教程、业务工作流优化指南、任务自动化脚本及敏捷 Web 应用开发（Vibe Coding）。",
+          "统筹大型周更多机位长视频播客《Hijos del Trago》（连续制作 53+ 期）全流程音视频工程与制作。",
+          "硬件快速原型开发与数字智造：LightBurn 激光加工与 FDM/SLA 高精度 3D 打印。"
+        ]
+      },
+      {
+        "title": "系统主管、IT 技术支持与企业 CRM 平台负责人",
+        "company": "4Arrow 商务投资集团",
+        "date": "2021年8月 – 2025年5月",
+        "bullets": [
+          "为企业管理层及顾问团队提供面对面、全方位的 IT 技术支持与计算机维护，保障业务设备与网络高效稳定运行。",
+          "基于 Google Workspace APIs 全栈研发定制 CRM 系统，将业务跟进周期缩短 40%。",
+          "对 12+ 人业务团队进行定制化技术培训，搭建 KPI 数据看板与合同自动化流转体系。",
+          "主导数字化商业资产建设：360° 全景漫游、三维实景建模与 FAA 认证无人机航拍。"
+        ]
+      },
+      {
+        "title": "质量工程与系统支持实习工程师",
+        "company": "墨西哥伟世通 (Visteon / Altec)",
+        "date": "2012年 (8个月)",
+        "bullets": [
+          "负责汽车仪表盘及电子控制单元 (ECU) 组装与测试工位的现场技术与运行支持。",
+          "运用因果图 (Ishikawa) 及 5Why 根本原因分析法，解决测试设备与测试软件出现的偏差。",
+          "维护并更新标准作业指导书 (SOPs/WIs)，确保班次运行记录的完整追溯。"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "icon": "fa-brands fa-youtube",
+        "title": "@deltapromptlabs (AI 实验室)",
+        "desc": "前沿人工智能、提示词工程、自主智能体流水线与敏捷开发科研频道。",
+        "linkText": "访问实验室",
+        "linkUrl": "https://youtube.com/@deltapromptlabs"
+      },
+      {
+        "icon": "fa-brands fa-instagram",
+        "title": "@samfrankmedia (影视与航拍)",
+        "desc": "航拍电影级视觉、商业品牌宣传片与数字化全景作品集。",
+        "linkText": "查看 Instagram 作品",
+        "linkUrl": "https://instagram.com/samfrankmedia"
+      },
+      {
+        "icon": "fa-solid fa-podcast",
+        "title": "播客《Hijos del Trago》",
+        "desc": "大型周更长视频播客全流程制作与音视频工程（连续发布 53+ 期）。",
+        "linkText": "收听播客",
+        "linkUrl": "https://youtube.com/@hijosdeltrago"
+      },
+      {
+        "icon": "fa-solid fa-cube",
+        "title": "数字智造与 3D 快速成型",
+        "desc": "CAD 结构件设计、LightBurn 激光精密加工与 Elegoo Saturn 3D 增材制造方案。",
+        "linkText": "咨询制造项目",
+        "linkUrl": "mailto:samf3212@gmail.com"
+      }
+    ],
+    "education": {
+      "degreeTitle": "计算机系统工程学士",
+      "degreeSub": "硬件架构 / 计算机系统方向",
+      "degreeDesc": "奇瓦瓦自治大学 (UACH) – 2012",
+      "langTitle": "语言能力",
+      "langs": [
+        "🇲🇽 <strong>西班牙语:</strong> 母语",
+        "🇺🇸 <strong>英语:</strong> C1 高级流利 (90% / 商务谈判与技术文档)",
+        "🇨🇳 <strong>中文普通话:</strong> HSK 1 (+600 天日常自学精进)"
+      ],
+      "certs": [
+        {
+          "title": "Google AI 核心专项认证",
+          "sub": "Google",
+          "desc": "生成式 AI 优化与技术叙事专项认证。"
+        },
+        {
+          "title": "Adobe 生成式 AI 提示词认证",
+          "sub": "Adobe",
+          "desc": "高阶提示词工程与数字化资产生成。"
+        },
+        {
+          "title": "IBM 人工智能基础认证",
+          "sub": "IBM",
+          "desc": "机器学习、深度学习与 NLP 系统架构。"
+        },
+        {
+          "title": "美国 FAA 无人机飞行员认证 (TRUST)",
+          "sub": "FAA",
+          "desc": "美国联邦航空局无人机操作资质。"
+        }
+      ]
+    }
+  }
+};
 
     // CURRENT APP STATE
     let currentLang = 'es';
@@ -1856,9 +4022,11 @@
     }
 
     // RENDER BENTO BLOCKS
+        // RENDER BENTO BLOCKS WITH INTERACTIVE DETAIL MODAL TRIGGERS
     function renderBentoGrid(bentoList) {
       const grid = document.getElementById('bento-grid');
-      grid.innerHTML = bentoList.map(b => `
+      if (!grid) return;
+      grid.innerHTML = bentoList.map((b, blockIdx) => `
         <div class="bento-block" id="${b.id}">
           <div class="bento-header">
             <span>${b.title}</span>
@@ -1867,11 +4035,72 @@
             <img src="${b.img}" alt="${b.title}" class="bento-img">
           </div>
           <div class="badge-list">
-            ${b.badges.map(bg => `<span class="badge ${bg.cls}">${bg.text}</span>`).join('')}
+            ${b.badges.map((bg, badgeIdx) => `
+              <span class="badge ${bg.cls}" 
+                    tabindex="0"
+                    role="button"
+                    title="${bg.text}"
+                    onclick="openSkillModal(${blockIdx}, ${badgeIdx})"
+                    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillModal(${blockIdx}, ${badgeIdx});}">
+                ${bg.text}
+              </span>
+            `).join('')}
           </div>
         </div>
       `).join('');
     }
+
+    // MODAL OPEN / CLOSE HANDLERS
+    function openSkillModal(blockIdx, badgeIdx) {
+      const dict = DICTIONARY[currentLang] || DICTIONARY['es'];
+      const block = dict.bento && dict.bento[blockIdx];
+      if (!block) return;
+      const skill = block.badges && block.badges[badgeIdx];
+      if (!skill) return;
+
+      const backdrop = document.getElementById('skill-modal-backdrop');
+      const tagEl = document.getElementById('modal-category-tag');
+      const titleEl = document.getElementById('modal-title');
+      const descEl = document.getElementById('modal-desc');
+      const appLabelEl = document.getElementById('modal-app-label-text');
+      const bulletsEl = document.getElementById('modal-bullets');
+      const toolsLabelEl = document.getElementById('modal-tools-label-text');
+      const tagsEl = document.getElementById('modal-tags');
+
+      if (tagEl) tagEl.innerText = `${block.tag || ''} • ${block.title || ''}`;
+      if (titleEl) titleEl.innerText = skill.text || '';
+      if (descEl) descEl.innerText = skill.desc || '';
+      if (appLabelEl) appLabelEl.innerText = dict.modalLabels ? dict.modalLabels.appTitle : 'Experiencia & Aplicación Práctica:';
+      if (toolsLabelEl) toolsLabelEl.innerText = dict.modalLabels ? dict.modalLabels.toolsTitle : 'Tecnologías & Herramientas:';
+
+      if (bulletsEl) {
+        bulletsEl.innerHTML = (skill.bullets || []).map(b => `<li>${b}</li>`).join('');
+      }
+
+      if (tagsEl) {
+        tagsEl.innerHTML = (skill.tools || []).map(t => `<span class="modal-tag-pill">${t}</span>`).join('');
+      }
+
+      if (backdrop) {
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeSkillModal(e) {
+      const backdrop = document.getElementById('skill-modal-backdrop');
+      if (backdrop) {
+        backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Escape key listener to close modal
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeSkillModal();
+      }
+    });
 
     // RENDER UNIFIED TIMELINE
     function renderExperienceTimeline(expList) {
