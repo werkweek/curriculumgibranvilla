@@ -1213,6 +1213,95 @@
       opacity: 1;
       transform: translateY(0);
     }
+  
+    /* Certifications & Organization Logos Grid */
+    .cert-logos-wrapper {
+      margin-top: 2.2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .cert-logos-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .cert-logos-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cert-logos-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .cert-logos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+    }
+    .cert-logo-card {
+      background: rgba(13, 17, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 1.1rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .cert-logo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--card-accent-color, var(--gold-primary));
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+    }
+    .cert-logo-card:hover {
+      transform: translateY(-4px);
+      background: rgba(20, 26, 40, 0.95);
+      border-color: var(--card-accent-color, var(--gold-primary));
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px var(--card-glow-color, rgba(212, 175, 55, 0.15));
+    }
+    .cert-logo-card:hover::before {
+      opacity: 1;
+    }
+    .cert-logo-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+      color: var(--card-accent-color, var(--gold-light));
+      transition: transform 0.3s ease;
+    }
+    .cert-logo-card:hover .cert-logo-icon {
+      transform: scale(1.12);
+    }
+    .cert-logo-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .cert-logo-badge {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3px 8px;
+      border-radius: 20px;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
   </style>
 </head>
 <body style="background-color: #07090e; color: #f8fafc;">
@@ -4537,6 +4626,85 @@
     // RENDER EDUCATION & CERTS
     function renderEducationCerts(eduData, headings) {
       const container = document.getElementById('education-certifications-container');
+      
+      const certLogos = [
+        {
+          name: "Google",
+          icon: "fa-brands fa-google",
+          cert: currentLang === 'zh' ? 'AI 基础专家认证' : currentLang === 'en' ? 'Google AI Essentials' : 'Google AI Essentials',
+          color: "#4285F4",
+          glow: "rgba(66, 133, 244, 0.25)"
+        },
+        {
+          name: "IBM",
+          icon: "fa-brands fa-ibm",
+          cert: currentLang === 'zh' ? '人工智能与机器学习' : currentLang === 'en' ? 'AI & Machine Learning' : 'IBM AI Introduction',
+          color: "#0f62fe",
+          glow: "rgba(15, 98, 254, 0.25)"
+        },
+        {
+          name: "AWS",
+          icon: "fa-brands fa-aws",
+          cert: currentLang === 'zh' ? '无服务器云架构' : currentLang === 'en' ? 'Serverless Architecture' : 'AWS Serverless Architecture',
+          color: "#FF9900",
+          glow: "rgba(255, 153, 0, 0.25)"
+        },
+        {
+          name: "Microsoft",
+          icon: "fa-brands fa-microsoft",
+          cert: currentLang === 'zh' ? 'Azure DevOps 管道' : currentLang === 'en' ? 'Azure DevOps Pipelines' : 'Azure DevOps Pipelines',
+          color: "#00a4ef",
+          glow: "rgba(0, 164, 239, 0.25)"
+        },
+        {
+          name: "Adobe",
+          icon: "fa-brands fa-adobe",
+          cert: currentLang === 'zh' ? '生成式 AI 提示工程' : currentLang === 'en' ? 'Generative AI Prompting' : 'Prompting for Generative AI',
+          color: "#FF0000",
+          glow: "rgba(255, 0, 0, 0.25)"
+        },
+        {
+          name: "FAA (USA)",
+          icon: "fa-solid fa-plane-departure",
+          cert: currentLang === 'zh' ? 'TRUST 无人机操作员认证' : currentLang === 'en' ? 'FAA TRUST UAS Certified' : 'FAA TRUST UAS Certified',
+          color: "#38bdf8",
+          glow: "rgba(56, 189, 248, 0.25)"
+        },
+        {
+          name: "Docker",
+          icon: "fa-brands fa-docker",
+          cert: currentLang === 'zh' ? '容器化与虚拟化' : currentLang === 'en' ? 'Containers & Virtualization' : 'Docker & Virtualización',
+          color: "#2496ED",
+          glow: "rgba(36, 150, 237, 0.25)"
+        },
+        {
+          name: "Cloudflare",
+          icon: "fa-brands fa-cloudflare",
+          cert: currentLang === 'zh' ? '边缘网络与 DNS 安全' : currentLang === 'en' ? 'Edge Network & DNS Security' : 'Edge Network & DNS',
+          color: "#F38020",
+          glow: "rgba(243, 128, 32, 0.25)"
+        },
+        {
+          name: "UACH",
+          icon: "fa-solid fa-building-columns",
+          cert: currentLang === 'zh' ? '计算机系统工程学士' : currentLang === 'en' ? 'B.S. Computer Systems' : 'Ingeniería en Sistemas (Titulado)',
+          color: "#d4af37",
+          glow: "rgba(212, 175, 55, 0.25)"
+        }
+      ];
+
+      const logosTitle = currentLang === 'zh' 
+        ? '认证与技术生态系统' 
+        : currentLang === 'en' 
+        ? 'Accreditations, Certifications & Tech Ecosystem' 
+        : 'Acreditaciones, Certificaciones & Ecosistema Tecnológico';
+
+      const logosSubtitle = currentLang === 'zh'
+        ? '官方认证、工程资质与专业云服务生态'
+        : currentLang === 'en'
+        ? 'Official certifications, engineering credentials, and enterprise cloud stack'
+        : 'Acreditaciones oficiales, formación avalada y ecosistema de infraestructura cloud';
+
       container.innerHTML = `
         <div>
           <h2 class="section-title">
@@ -4561,6 +4729,34 @@
               <div class="info-title">${c.title}</div>
               <div class="info-subtitle">${c.sub}</div>
               <div class="info-desc">${c.desc}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      // Render the logos block below the 2 columns
+      let logosWrapper = document.getElementById('cert-logos-wrapper');
+      if (!logosWrapper) {
+        logosWrapper = document.createElement('div');
+        logosWrapper.id = 'cert-logos-wrapper';
+        logosWrapper.className = 'cert-logos-wrapper';
+        container.parentElement.appendChild(logosWrapper);
+      }
+
+      logosWrapper.innerHTML = `
+        <div class="cert-logos-header">
+          <div class="cert-logos-title">
+            <i class="fa-solid fa-certificate" style="color: var(--gold-primary);"></i>
+            ${logosTitle}
+          </div>
+          <div class="cert-logos-subtitle">${logosSubtitle}</div>
+        </div>
+        <div class="cert-logos-grid">
+          ${certLogos.map(logo => `
+            <div class="cert-logo-card" style="--card-accent-color: ${logo.color}; --card-glow-color: ${logo.glow};">
+              <i class="${logo.icon} cert-logo-icon"></i>
+              <div class="cert-logo-name">${logo.name}</div>
+              <div class="cert-logo-badge">${logo.cert}</div>
             </div>
           `).join('')}
         </div>
